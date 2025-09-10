@@ -19,9 +19,8 @@
           toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
           # Fetch the entire repository including submodules
           repo = builtins.fetchTree {
-            type = "git";
-            url = self.url;
-            ref = self.rev;
+            type = "path";
+            path = self.outPath;
             submodules = true;
           };
         in
