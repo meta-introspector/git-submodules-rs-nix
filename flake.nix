@@ -27,30 +27,30 @@
         {
           checks = {
             gitoxide = pkgs.runCommand "gitoxide-tests" {
-              src = repo + "/gitoxide"; # Pass the specific submodule as source
+              src = repo; # Pass the specific submodule as source
               buildInputs = [ toolchain ];
               CARGO_HOME = "$TMPDIR/.cargo"; # Set CARGO_HOME to a writable directory
             } ''
               mkdir -p $CARGO_HOME # Create the directory
-              cargo test
+              cd gitoxide && cargo test
               touch $out
             '';
             submod = pkgs.runCommand "submod-tests" {
-              src = repo + "/submod"; # Pass the specific submodule as source
+              src = repo; # Pass the specific submodule as source
               buildInputs = [ toolchain ];
               CARGO_HOME = "$TMPDIR/.cargo"; # Set CARGO_HOME to a writable directory
             } ''
               mkdir -p $CARGO_HOME # Create the directory
-              cargo test
+              cd submod && cargo test
               touch $out
             '';
             magoo = pkgs.runCommand "magoo-tests" {
-              src = repo + "/magoo"; # Pass the specific submodule as source
+              src = repo; # Pass the specific submodule as source
               buildInputs = [ toolchain ];
               CARGO_HOME = "$TMPDIR/.cargo"; # Set CARGO_HOME to a writable directory
             } ''
               mkdir -p $CARGO_HOME # Create the directory
-              cargo test
+              cd magoo && cargo test
               touch $out
             '';
           };

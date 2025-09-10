@@ -1,1 +1,1 @@
-feat: Add submodules and nix flake for testing
+fix: Set CARGO_HOME and use specific submodule paths
