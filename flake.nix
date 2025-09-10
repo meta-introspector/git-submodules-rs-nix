@@ -1,4 +1,3 @@
-
 {
   description = "A flake for testing git submodules";
 
@@ -112,9 +111,9 @@
             submodule-collector = naersk.lib.${system}.buildPackage {
               pname = "submodule-collector";
               version = "0.1.0"; # Matches Cargo.toml
-              src = ./.; # Source is the entire project root (workspace root)
-              root = "submodule-collector"; # Specify the package within the workspace
+              src = ./submodule-collector; # Explicitly point to the directory
               # naersk handles toolchain and Cargo.lock internally
+              # Removed 'root' attribute
             };
           };
 
