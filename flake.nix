@@ -1,4 +1,3 @@
-
 {
   description = "A flake for testing git submodules";
 
@@ -133,6 +132,7 @@
               pkgs.pkg-config
               pkgs.openssl
               pkgs.cargo # Explicitly add cargo
+              pkgs.jq # Add jq here
             ];
             # Optionally, add environment variables needed for development
             # shellHook = ''
