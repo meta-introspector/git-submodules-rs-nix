@@ -24,7 +24,7 @@
             url = "https://github.com/jmikedupont2/git-submodules-rs-nix.git";
             rev = "b3da08e8e7fe2bb97b97bce5451d6750081256f8"; # Use the specific revision
             deepClone = true; # Ensure submodules are fetched
-            sha256 = "Oh+QTs0zkWiLC7Az55RDTb2B7xLmVfCiXTfRu7zi9rM=";
+            sha256 = "clsEx25K+hTb8vXbcSzP39l6bRwjS5X3OBYNaeDm10c=";
           };
         in
         {
