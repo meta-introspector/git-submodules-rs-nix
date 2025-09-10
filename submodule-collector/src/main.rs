@@ -20,15 +20,17 @@ struct Args {
 #[derive(Serialize, Deserialize, Debug)]
 struct SubmoduleInfo {
     name: String,
-    path: String,
+    path: String, // Relative path from the parent repository
     url: String,
     branch: Option<String>,
-    // Add more fields as needed from .git/config and .gitmodules
+    // Nested RepoInfo for recursive submodules
+    #[serde(skip_serializing_if = "Option::is_none")]
+    nested_repo: Option<RepoInfo>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 struct RepoInfo {
-    path: PathBuf,
+    path: PathBuf, // Absolute path to the repository on disk
     url: String,
     submodules: Vec<SubmoduleInfo>,
 }
@@ -49,6 +51,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let git_repos = find_git_repositories(&args.root_dir)?;
 
     for repo_path in git_repos {
+        // Process each found repository, including its submodules recursively
         if let Some(repo_info) = process_repository(&repo_path)? {
             report.repositories.insert(repo_info.url.clone(), repo_info);
         }
@@ -69,20 +72,10 @@ fn find_git_repositories(root_dir: &Path) -> Result<Vec<PathBuf>, Box<dyn std::e
     {
         if entry.file_type().is_dir() {
             let path = entry.path();
+            // Check if it's a Git repository
             if path.join(".git").exists() || path.join(".git").is_file() {
-                // Check if it's a GitHub repository
-                if let Ok(repo) = Repository::open(path) {
-                    if let Ok(remotes) = repo.remotes() {
-                        for remote_name in remotes.iter().filter_map(|s| s) {
-                            if let Some(url) = repo.find_remote(remote_name)?.url() {
-                                if url.contains("github.com") {
-                                    repos.push(path.to_path_buf());
-                                    break; // Found a GitHub remote, no need to check others for this repo
-                                }
-                            }
-                        }
-                    }
-                }
+                // No longer filtering by github.com here, process all git repos
+                repos.push(path.to_path_buf());
             }
         }
     }
@@ -93,39 +86,53 @@ fn process_repository(repo_path: &Path) -> Result<Option<RepoInfo>, Box<dyn std:
     let repo = Repository::open(repo_path)?;
     let mut repo_url = String::new();
     if let Ok(remotes) = repo.remotes() {
-        for remote_name in remotes.iter().filter_map(|s| s) {
+        if let Some(remote_name) = remotes.iter().filter_map(|s| s).next() { // Get the first remote
             if let Some(url) = repo.find_remote(remote_name)?.url() {
-                if url.contains("github.com") {
-                    repo_url = url.to_string();
-                    break;
-                }
+                repo_url = url.to_string();
             }
         }
     }
 
     if repo_url.is_empty() {
-        return Ok(None); // Not a GitHub repo or no remote found
+        // If no remote URL is found, it might be a local-only repo or a bare repo.
+        // For now, we'll skip it, but this might need refinement.
+        return Ok(None);
     }
 
     let mut submodules_info = Vec::new();
     if let Ok(submodules) = repo.submodules() {
-        for submodule in submodules {
+        for mut submodule in submodules { // `mut` is needed to open the submodule
             let name = submodule.name().unwrap_or("").to_string();
-            let path = submodule.path().to_string_lossy().to_string();
+            let relative_path = submodule.path().to_string_lossy().to_string();
             let url = submodule.url().unwrap_or("").to_string();
             let branch = submodule.branch().map(|s| s.to_string());
 
+            let absolute_submodule_path = repo_path.join(&relative_path);
+            let mut nested_repo_info: Option<RepoInfo> = None;
+
+            // Recursively process the submodule if it's a valid repository
+            // and it's not the current repository (to prevent infinite loops in case of misconfigured submodules)
+            if absolute_submodule_path.exists() && absolute_submodule_path.is_dir() && absolute_submodule_path != repo_path {
+                if let Ok(sub_repo) = Repository::open(&absolute_submodule_path) {
+                    // Only process if it's a valid Git repository
+                    if let Some(info) = process_repository(&absolute_submodule_path)? {
+                        nested_repo_info = Some(info);
+                    }
+                }
+            }
+
             submodules_info.push(SubmoduleInfo {
                 name,
-                path,
+                path: relative_path, // Store relative path here
                 url,
                 branch,
+                nested_repo: nested_repo_info,
             });
         }
     }
 
     Ok(Some(RepoInfo {
-        path: repo_path.to_path_buf(),
+        path: repo_path.to_path_buf(), // Store absolute path here
         url: repo_url,
         submodules: submodules_info,
     }))
