@@ -18,10 +18,11 @@
           };
           toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
           # Fetch the entire repository including submodules from remote
-          repo = builtins.fetchGit {
+          repo = pkgs.fetchgit {
             url = "https://github.com/jmikedupont2/git-submodules-rs-nix.git";
             rev = "b3da08e8e7fe2bb97b97bce5451d6750081256f8"; # Use the specific revision
-            submodules = true; # Fetch submodules
+            deepClone = true; # Ensure submodules are fetched
+            sha256 = "Oh+QTs0zkWiLC7Az55RDTb2B7xLmVfCiXTfRu7zi9rM=";
           };
         in
         {
@@ -52,6 +53,27 @@
               mkdir -p $CARGO_HOME # Create the directory
               cd magoo && cargo test
               touch $out
+            '';
+          };
+
+          packages = {
+            
+
+            submodules-managed = pkgs.runCommand "submodules-managed" {
+              src = repo; # Use the fetched repository as source
+              buildInputs = [ pkgs.coreutils ]; # Ensure cp is available
+            } ''
+              # Create target directories
+              mkdir -p $out/gitoxide
+              mkdir -p $out/submod
+              mkdir -p $out/magoo
+              mkdir -p $out/git-submodule-tools
+
+              # Manually copy submodules
+              cp -r $src/gitoxide $out/gitoxide
+              cp -r $src/submod $out/submod
+              cp -r $src/magoo $out/magoo
+              cp -r $src/git-submodule-tools $out/git-submodule-tools
             '';
           };
         });

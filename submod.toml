@@ -1,0 +1,20 @@
+[defaults]
+ignore = "dirty"
+update = "checkout"
+branch = "main"
+
+[gitoxide]
+path = "gitoxide"
+url = "https://github.com/GitoxideLabs/gitoxide"
+
+[submod]
+path = "submod"
+url = "https://github.com/bashandbone/submod"
+
+[magoo]
+path = "magoo"
+url = "https://github.com/Pistonite/magoo"
+
+[git-submodule-tools]
+path = "git-submodule-tools"
+url = "https://github.com/kollerma/git-submodule-tools"
