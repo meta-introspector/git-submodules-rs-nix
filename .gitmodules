@@ -10,3 +10,6 @@
 [submodule "git-submodule-tools"]
 	path = git-submodule-tools
 	url = https://github.com/kollerma/git-submodule-tools
+[submodule "naersk"]
+	path = naersk
+	url = https://github.com/nix-community/naersk

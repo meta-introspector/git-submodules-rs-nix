@@ -6,9 +6,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
+    naersk.url = "github:nix-community/naersk"; # Add naersk as an input
+    naersk.inputs.nixpkgs.follows = "nixpkgs"; # Ensure naersk uses our nixpkgs
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils }@inputs:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils, naersk }@inputs:
     let
       forAllSystems = flake-utils.lib.eachDefaultSystem (system:
         let
@@ -57,15 +59,60 @@
           };
 
           packages = {
-            git-config-parser = pkgs.rustPlatform.buildRustPackage {
-              pname = "git-config-parser";
-              version = "0.1.0"; # Get this from Cargo.toml
-              src = ./src/bin/git-config-parser; # Source of the git-config-parser binary
-              cargoLock = {
-                lockFile = ./src/bin/git-config-parser/Cargo.lock; # Path to the Cargo.lock for this package
-              };
-              buildInputs = [ toolchain ]; # Use the defined toolchain
+            lock-generator = pkgs.stdenv.mkDerivation {
+              pname = "lock-generator";
+              version = "0.0.0";
+              src = ./.; # Source is the entire project root
+              buildInputs = [ toolchain pkgs.cargo ]; # Ensure toolchain and cargo are available
+              shellHook = ''
+                echo "Generating Cargo.lock..."
+                cargo generate-lockfile --manifest-path Cargo.toml
+                echo "Cargo.lock generated."
+              '';
+              installPhase = ''
+                mkdir -p $out
+                cp Cargo.lock $out/Cargo.lock
+              '';
             };
+
+            cargo-lock-generator = naersk.lib.${system}.buildPackage {
+              pname = "cargo-lock-generator";
+              version = "0.0.0"; # Dummy version
+              src = ./.; # Source is the entire project root
+              dontCheckCargoLock = true; # Tell Naersk not to check for Cargo.lock
+              cargoHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Dummy hash to force build
+              # This derivation's purpose is to generate Cargo.lock, so we don't need to install anything
+              installPhase = "touch $out";
+            };
+
+            submodules-project = naersk.lib.${system}.buildPackage {
+              pname = "submodules";
+              version = "0.1.0"; # Get this from Cargo.toml
+              src = ./.; # Source is the entire project root
+              # naersk handles toolchain and Cargo.lock internally
+            };
+
+            git-config-parser = self.packages.${system}.submodules-project.overrideAttrs (finalAttrs: prevAttrs: {
+              installPhase = ''
+                mkdir -p $out/bin
+                cp ${finalAttrs.src}/bin/git-config-parser $out/bin/
+              '';
+            });
+
+                      packages = {
+            submodules-project = naersk.lib.${system}.buildPackage {
+              pname = "submodules";
+              version = "0.1.0"; # Get this from Cargo.toml
+              src = ./.; # Source is the entire project root
+              # naersk handles toolchain and Cargo.lock internally
+            };
+
+            git-config-parser = self.packages.${system}.submodules-project.overrideAttrs (finalAttrs: prevAttrs: {
+              installPhase = ''
+                mkdir -p $out/bin
+                cp ${finalAttrs.src}/bin/git-config-parser $out/bin/
+              '';
+            });
 
             submodules-managed = pkgs.runCommand "submodules-managed" {
               src = repo; # Use the fetched repository as source
@@ -83,6 +130,21 @@
               cp -r $src/magoo $out/magoo
               cp -r $src/git-submodule-tools $out/git-submodule-tools
             '';
+          };;
+          };
+
+          devShell = pkgs.mkShell {
+            buildInputs = [
+              toolchain
+              pkgs.git
+              pkgs.pkg-config
+              pkgs.openssl
+              pkgs.cargo # Explicitly add cargo
+            ];
+            # Optionally, add environment variables needed for development
+            # shellHook = ''
+            #   export MY_CUSTOM_VAR="hello"
+            # '';
           };
         });
     in
