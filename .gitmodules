@@ -1,0 +1,12 @@
+[submodule "gitoxide"]
+	path = gitoxide
+	url = https://github.com/GitoxideLabs/gitoxide
+[submodule "submod"]
+	path = submod
+	url = https://github.com/bashandbone/submod
+[submodule "magoo"]
+	path = magoo
+	url = https://github.com/Pistonite/magoo
+[submodule "git-submodule-tools"]
+	path = git-submodule-tools
+	url = https://github.com/kollerma/git-submodule-tools
