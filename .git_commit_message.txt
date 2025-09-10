@@ -1,5 +1,3 @@
-docs: Add SOPs for submodule management and project setup
+fix: Correct flake.nix syntax error
 
-feat: Automate submodule setup in Nix using direct copy
-
-build: Create submod.toml for submodule configuration
+This commit fixes a syntax error in flake.nix by removing a duplicate packages block and an extraneous semicolon, which was causing build failures.
