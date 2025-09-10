@@ -1,1 +1,5 @@
-result
+
+# Generated files
+dummy_git_config.txt
+git_history.json
+target/

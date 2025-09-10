@@ -75,15 +75,7 @@
               '';
             };
 
-            cargo-lock-generator = naersk.lib.${system}.buildPackage {
-              pname = "cargo-lock-generator";
-              version = "0.0.0"; # Dummy version
-              src = ./.; # Source is the entire project root
-              dontCheckCargoLock = true; # Tell Naersk not to check for Cargo.lock
-              cargoHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Dummy hash to force build
-              # This derivation's purpose is to generate Cargo.lock, so we don't need to install anything
-              installPhase = "touch $out";
-            };
+            
 
             submodules-project = naersk.lib.${system}.buildPackage {
               pname = "submodules";
@@ -92,12 +84,13 @@
               # naersk handles toolchain and Cargo.lock internally
             };
 
-            git-config-parser = self.packages.${system}.submodules-project.overrideAttrs (finalAttrs: prevAttrs: {
-              installPhase = ''
-                mkdir -p $out/bin
-                cp ${finalAttrs.src}/bin/git-config-parser $out/bin/
-              '';
-            });
+            git-config-parser = pkgs.runCommand "git-config-parser-wrapper" {
+              buildInputs = [ pkgs.coreutils ]; # For cp
+              submodulesProject = self.packages.${system}.submodules-project;
+            } ''
+              mkdir -p $out/bin
+              cp $submodulesProject/bin/git-config-parser $out/bin/
+            '';
 
                       submodules-managed = pkgs.runCommand "submodules-managed" {
               src = repo; # Use the fetched repository as source

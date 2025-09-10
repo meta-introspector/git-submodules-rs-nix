@@ -1,3 +1,3 @@
-fix: Correct flake.nix syntax error
+fix: Generate and commit Cargo.lock, update Cargo.toml for workspace
 
-This commit fixes a syntax error in flake.nix by removing a duplicate packages block and an extraneous semicolon, which was causing build failures.
+This commit generates the Cargo.lock file and updates Cargo.toml to define the project as a workspace. This resolves the Naersk build error related to missing Cargo.lock.
