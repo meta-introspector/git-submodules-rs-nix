@@ -61,12 +61,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     for repo_path in git_repos {
         // Process each found repository, including its submodules recursively
         match process_repository(&repo_path) {
-            Ok(Some(repo_info)) => {
+            Ok((Some(repo_info), nested_failed_submodules)) => {
                 report.repositories.insert(repo_info.url.clone(), repo_info);
+                report.failed_repositories.extend(nested_failed_submodules);
             }
-            Ok(None) => {
+            Ok((None, nested_failed_submodules)) => {
+                report.failed_repositories.extend(nested_failed_submodules);
                 // Repository skipped (e.g., no remote URL or other non-error skip)
-                // For now, we don't add these to failed_repositories unless they are explicit errors.
             }
             Err(e) => {
                 report.failed_repositories.push(FailedRepoInfo {
@@ -91,6 +92,15 @@ fn find_git_repositories(root_dir: &Path) -> Result<Vec<PathBuf>, Box<dyn std::e
         .into_iter()
         .filter_map(|e| e.ok())
         .filter(|e| e.file_type().is_dir())
+        .filter(|e| {
+            let path = e.path();
+            // If the directory is named ".git", skip it.
+            // This prevents traversing into .git/objects, .git/refs, etc.
+            if path.file_name().map_or(false, |name| name == ".git") {
+                return false;
+            }
+            true
+        })
     {
         let path = entry.path();
         let git_path = path.join(".git");
@@ -131,10 +141,12 @@ fn find_git_repositories(root_dir: &Path) -> Result<Vec<PathBuf>, Box<dyn std::e
     Ok(repos)
 }
 
-fn process_repository(repo_path: &Path) -> Result<Option<RepoInfo>, Box<dyn std::error::Error>> {
+fn process_repository(repo_path: &Path) -> Result<(Option<RepoInfo>, Vec<FailedRepoInfo>), Box<dyn std::error::Error>> {
+    let mut failed_submodules_collected = Vec::new();
     let repo = match Repository::open(repo_path) {
         Ok(r) => r,
         Err(e) => {
+            eprintln!("DEBUG: Repository::open failed for {}: {}", repo_path.display(), e);
             return Err(format!("Error opening repository {}: {}", repo_path.display(), e).into());
         }
     };
@@ -150,7 +162,7 @@ fn process_repository(repo_path: &Path) -> Result<Option<RepoInfo>, Box<dyn std:
 
     if repo_url.is_empty() {
         eprintln!("Warning: No remote URL found for repository {}", repo_path.display());
-        return Ok(None);
+        return Ok((None, Vec::new()));
     }
 
     let mut submodules_info = Vec::new();
@@ -168,13 +180,20 @@ fn process_repository(repo_path: &Path) -> Result<Option<RepoInfo>, Box<dyn std:
             // and it's not the current repository (to prevent infinite loops in case of misconfigured submodules)
             if absolute_submodule_path.exists() && absolute_submodule_path.is_dir() && absolute_submodule_path != repo_path {
                 match process_repository(&absolute_submodule_path) {
-                    Ok(Some(info)) => {
+                    Ok((Some(info), nested_failed_submodules)) => {
                         nested_repo_info = Some(info);
+                        failed_submodules_collected.extend(nested_failed_submodules);
                     }
-                    Ok(None) => {
+                    Ok((None, nested_failed_submodules)) => {
+                        failed_submodules_collected.extend(nested_failed_submodules);
                         // Submodule skipped (e.g., no remote URL)
                     }
                     Err(e) => {
+                        eprintln!("DEBUG: Nested process_repository failed for {}: {}", absolute_submodule_path.display(), e);
+                        failed_submodules_collected.push(FailedRepoInfo {
+                            path: absolute_submodule_path.clone(),
+                            error: e.to_string(),
+                        });
                         eprintln!("Error processing submodule {}: {}", absolute_submodule_path.display(), e);
                     }
                 }
@@ -190,9 +209,9 @@ fn process_repository(repo_path: &Path) -> Result<Option<RepoInfo>, Box<dyn std:
         }
     }
 
-        Ok(Some(RepoInfo {
+        Ok((Some(RepoInfo {
         path: repo_path.to_path_buf(), // Store absolute path here
         url: repo_url,
         submodules: submodules_info,
-    }))
+    }), failed_submodules_collected))
 }
