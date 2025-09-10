@@ -1,3 +1,4 @@
+
 {
   description = "A flake for testing git submodules";
 
@@ -114,7 +115,7 @@
               src = ./.; # Source is the entire project root (workspace root)
               cargoRoot = "submodule-collector"; # Specify the package within the workspace
               cargoLock = { lockFile = ./Cargo.lock; }; # Point to the workspace Cargo.lock
-              # rustPlatform handles toolchain and Cargo.lock internally
+              cargoPatches = [ ./Cargo.lock ]; # Copy Cargo.lock into the build directory
             };
           };
 
