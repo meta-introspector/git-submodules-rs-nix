@@ -1,4 +1,3 @@
-
 {
   description = "A flake for testing git submodules";
 
@@ -114,6 +113,7 @@
               version = "0.1.0"; # Matches Cargo.toml
               src = ./.; # Source is the entire project root (workspace root)
               cargoRoot = "submodule-collector"; # Specify the package within the workspace
+              cargoLock = { lockFile = ./Cargo.lock; }; # Point to the workspace Cargo.lock
               # rustPlatform handles toolchain and Cargo.lock internally
             };
           };
