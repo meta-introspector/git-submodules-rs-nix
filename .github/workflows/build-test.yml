@@ -1,0 +1,35 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+      - feature/naersk-integration
+  pull_request:
+
+env:
+  NIX_CONFIG: "extra-experimental-features = nix-command flakes"
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install Nix
+      uses: DeterminateSystems/nix-installer-action@main
+      with:
+        extra-features: "nix-command flakes"
+
+    - name: Build project
+      run: nix build .#submodules-project
+
+    - name: Build git-config-parser
+      run: nix build .#git-config-parser
+
+    - name: Run Nix flake checks
+      run: nix flake check
