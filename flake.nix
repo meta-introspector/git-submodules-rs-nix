@@ -1,3 +1,4 @@
+
 {
   description = "A flake for testing git submodules";
 
@@ -108,12 +109,12 @@
               cp -r $src/git-submodule-tools $out/git-submodule-tools
             '';
 
-            submodule-collector = naersk.lib.${system}.buildPackage {
+            submodule-collector = pkgs.rustPlatform.buildRustPackage {
               pname = "submodule-collector";
               version = "0.1.0"; # Matches Cargo.toml
-              src = ./submodule-collector; # Explicitly point to the directory
-              # naersk handles toolchain and Cargo.lock internally
-              # Removed 'root' attribute
+              src = ./.; # Source is the entire project root (workspace root)
+              cargoRoot = "submodule-collector"; # Specify the package within the workspace
+              # rustPlatform handles toolchain and Cargo.lock internally
             };
           };
 
