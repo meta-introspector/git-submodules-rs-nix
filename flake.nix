@@ -1,3 +1,4 @@
+
 {
   description = "A flake for testing git submodules";
 
@@ -113,7 +114,7 @@
               version = "0.1.0"; # Matches Cargo.toml
               src = ./.; # Source is the entire project root (workspace root)
               buildInputs = [ toolchain pkgs.cargo ]; # Ensure toolchain and cargo are available
-              shellHook = ''
+              buildPhase = ''
                 echo "Building submodule-collector..."
                 cargo build --release --package submodule-collector
               '';
