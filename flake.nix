@@ -17,36 +17,38 @@
             inherit system overlays;
           };
           toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
-          # Fetch the entire repository including submodules
+          # Fetch the entire repository
           repo = builtins.fetchTree {
-            type = "path";
-            path = self.outPath;
-            submodules = true;
+            type = "path"; # Use path
+            path = self.outPath; # Use self.outPath to refer to the current directory
           };
         in
         {
           checks = {
             gitoxide = pkgs.runCommand "gitoxide-tests" {
-              src = repo + "/gitoxide";
+              src = repo; # Pass the entire repo as source
               buildInputs = [ toolchain ];
             } ''
-              cd $src
+              cp -r $src/gitoxide . # Copy gitoxide submodule
+              cd gitoxide
               cargo test
               touch $out
             '';
             submod = pkgs.runCommand "submod-tests" {
-              src = repo + "/submod";
+              src = repo; # Pass the entire repo as source
               buildInputs = [ toolchain ];
             } ''
-              cd $src
+              cp -r $src/submod . # Copy submod submodule
+              cd submod
               cargo test
               touch $out
             '';
             magoo = pkgs.runCommand "magoo-tests" {
-              src = repo + "/magoo";
+              src = repo; # Pass the entire repo as source
               buildInputs = [ toolchain ];
             } ''
-              cd $src
+              cp -r $src/magoo . # Copy magoo submodule
+              cd magoo
               cargo test
               touch $out
             '';
