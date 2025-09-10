@@ -17,10 +17,11 @@
             inherit system overlays;
           };
           toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
-          # Fetch the entire repository
-          repo = builtins.fetchTree {
-            type = "path"; # Use path
-            path = self.outPath; # Use self.outPath to refer to the current directory
+          # Fetch the entire repository including submodules from remote
+          repo = builtins.fetchGit {
+            url = "https://github.com/jmikedupont2/git-submodules-rs-nix.git";
+            rev = self.rev; # Use the current revision
+            submodules = true; # Fetch submodules
           };
         in
         {
