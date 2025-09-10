@@ -20,7 +20,7 @@
           # Fetch the entire repository including submodules
           repo = builtins.fetchTree {
             type = "git";
-            url = self;
+            url = self.url;
             ref = self.rev;
             submodules = true;
           };
