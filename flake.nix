@@ -99,22 +99,7 @@
               '';
             });
 
-                      packages = {
-            submodules-project = naersk.lib.${system}.buildPackage {
-              pname = "submodules";
-              version = "0.1.0"; # Get this from Cargo.toml
-              src = ./.; # Source is the entire project root
-              # naersk handles toolchain and Cargo.lock internally
-            };
-
-            git-config-parser = self.packages.${system}.submodules-project.overrideAttrs (finalAttrs: prevAttrs: {
-              installPhase = ''
-                mkdir -p $out/bin
-                cp ${finalAttrs.src}/bin/git-config-parser $out/bin/
-              '';
-            });
-
-            submodules-managed = pkgs.runCommand "submodules-managed" {
+                      submodules-managed = pkgs.runCommand "submodules-managed" {
               src = repo; # Use the fetched repository as source
               buildInputs = [ pkgs.coreutils ]; # Ensure cp is available
             } ''
@@ -130,7 +115,6 @@
               cp -r $src/magoo $out/magoo
               cp -r $src/git-submodule-tools $out/git-submodule-tools
             '';
-          };;
           };
 
           devShell = pkgs.mkShell {
