@@ -20,7 +20,7 @@
           # Fetch the entire repository including submodules from remote
           repo = builtins.fetchGit {
             url = "https://github.com/jmikedupont2/git-submodules-rs-nix.git";
-            rev = self.rev; # Use the current revision
+            rev = "b3da08e8e7fe2bb97b97bce5451d6750081256f8"; # Use the specific revision
             submodules = true; # Fetch submodules
           };
         in
