@@ -1,28 +1,34 @@
-# Next Steps
+# Current Development Plan
 
-Based on the current project documentation and Git status, here are the proposed next steps:
+This document outlines the immediate next steps for the project, focusing on the `submodule-collector` and its reporting capabilities.
 
-## 1. Commit Pending Changes
+## 1. Generate Comprehensive Submodule Report
 
-The repository has modifications related to the `naersk` submodule and associated Nix/Rust configuration files. It's important to commit these changes to bring the repository to a consistent state.
+The `submodule-collector` has been updated to improve error reporting. The next step is to run it to generate a comprehensive JSON report of all Git repositories and their submodules within the main project scope.
 
-*   **Action**: Stage and commit the modified `.gitmodules`, the new `naersk` submodule, and the changes in `Cargo.toml`, `flake.lock`, `flake.nix`, and `rust-toolchain.toml`.
+*   **Action:** Execute the `submodule-collector` from the appropriate root directory, ensuring the output JSON includes both successfully processed repositories and detailed information on any failures.
+*   **Command (example):**
+    ```bash
+    /nix/store/cprwxaxn2fb151r7lsnqd0djrdf7p621-submodule-collector-0.1.0/bin/submodule-collector --root-dir ../../../ --output-file /data/data/com.termux.nix/files/home/pick-up-nix/source/github/meta-introspector/submodules/submodule_report_recursive_resilient.json
+    ```
+    *(Note: The exact path to `submodule-collector` may vary after rebuilds.)*
 
-## 2. Verify Git Submodule Health
+## 2. Develop Submodule Report Function
 
-After committing the submodule-related changes, it's crucial to ensure the submodules are correctly configured and in a healthy state, aligning with the objectives of **CRQ-007: Git Submodules Reconciliation and Health Check**.
+A new reporting capability is required to analyze the generated JSON report. This function will extract key statistics and insights.
 
-*   **Action**: Run `git submodule status` to verify the state of all submodules. If a more comprehensive tool for submodule health checks exists (as envisioned in CRQ-007), consider utilizing it.
+*   **Objective:** Create a mechanism to read `submodule_report_recursive_resilient.json` and provide:
+    *   Counts of successful vs. failed repositories.
+    *   Identification of duplicate repository entries.
+    *   Analysis of most frequently mentioned organizations (from repository URLs).
+    *   Analysis of most frequently mentioned names or strings (e.g., submodule names, repository names).
+*   **Implementation Approach:** This can be implemented as a new Rust binary, a subcommand to `submodule-collector`, or a Python script that parses the JSON. For immediate interactive use, a Python script or direct parsing within the agent is feasible.
 
-## 3. Continue Development on Core CRQs
+## 3. Document Changes (CRQ & README)
 
-The current changes likely contribute to the broader goals outlined in the Change Requests. Focus should remain on advancing the foundational CRQs.
+Formalize the recent debugging efforts and the plan for the reporting function.
 
-*   **Focus Area 1: Project Context Introspector (CRQ-003)**: This is identified as a critical enabler for many other CRQs. Continue development on its architecture and data ingestion capabilities as outlined in `docs/design/context_introspector_architecture.md`.
-*   **Focus Area 2: Automate SOP Steps into Rust Programs (CRQ-002)**: Leverage the updated Nix/Rust environment to begin automating operational steps from existing SOPs into executable Rust programs. This will directly utilize the `gitoxide`, `submod`, and `magoo` submodules.
+*   **Action (CRQ):** Create a new CRQ document outlining the task of developing the submodule report function, its objectives, and expected outcomes.
+*   **Action (README):** Update the project's `README.md` to reflect the enhanced `submodule-collector` capabilities and the new reporting feature.
 
-## 4. Review Untracked Files
-
-There are several untracked files (`generate-lock.nix`, `result`, `shell.nix`, `src/bin/`, `tools/`). Determine if these should be added to version control, ignored, or are temporary artifacts.
-
-*   **Action**: Review the purpose of these untracked files and decide on appropriate action (add to `.gitignore`, add to repository, or remove if temporary).
+---
