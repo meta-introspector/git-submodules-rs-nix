@@ -38,6 +38,7 @@
               buildInputs = [ toolchain ];
             } ''
               cd $src
+              ls -la
               cargo test
               touch $out
             '';
