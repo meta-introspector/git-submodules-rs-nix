@@ -3,6 +3,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, BTreeMap};
 use std::fs;
 use regex::Regex;
+use std::path::PathBuf;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct SubmoduleInfo {
@@ -39,9 +40,34 @@ struct Args {
     /// Path to the submodule report JSON file
     #[arg(long)]
     report_path: String,
+    /// Optional: Path to an ontology JSON file for emoji mapping
+    #[arg(long)]
+    ontology_path: Option<PathBuf>,
 }
 
-fn analyze_strings(report: &Report) -> Result<(), Box<dyn std::error::Error>> {
+#[derive(Debug, Deserialize, Serialize)]
+struct Ontology(HashMap<String, String>);
+
+fn apply_emoji_ontology(text: &str, ontology: &Option<Ontology>) -> String {
+    if let Some(ont) = ontology {
+        let mut result = text.to_string();
+        // Sort keys by length in descending order to prioritize longer matches (n-grams)
+        let mut sorted_keys: Vec<&String> = ont.0.keys().collect();
+        sorted_keys.sort_by(|a, b| b.len().cmp(&a.len()));
+
+        for key in sorted_keys {
+            if let Some(emoji) = ont.0.get(key) {
+                // Replace all occurrences of the key with the emoji
+                result = result.replace(key, emoji);
+            }
+        }
+        result
+    } else {
+        text.to_string()
+    }
+}
+
+fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<(), Box<dyn std::error::Error>> {
     let mut all_tokens: Vec<String> = Vec::new();
     let tokenizer_re = Regex::new(r"[^a-zA-Z0-9]+")?; // Split on non-alphanumeric characters
 
@@ -96,10 +122,9 @@ fn analyze_strings(report: &Report) -> Result<(), Box<dyn std::error::Error>> {
 
         println!("\n--- Most Frequently Mentioned Tokens ---");
         for (token, count) in sorted_token_counts.iter().take(20) {
-            println!("{}: {}", token, count);
+            println!("{}: {}", apply_emoji_ontology(token, ontology), count);
         }
-    } else {
-        }
+    }
 
     let n_gram_sizes = vec![1, 2, 3, 5, 7, 11, 13, 17, 19];
 
@@ -127,7 +152,7 @@ fn analyze_strings(report: &Report) -> Result<(), Box<dyn std::error::Error>> {
 
             println!("\n--- Most Frequently Mentioned {}-grams ---", n);
             for (n_gram, count) in sorted_n_gram_counts.iter().take(10) {
-                println!( \"{}: {{}}\" , n_gram, count);
+                println!("{}: {}", apply_emoji_ontology(n_gram, ontology), count);
             }
         } else {
             println!("\n--- Not enough tokens to generate {}-grams ---", n);
@@ -166,6 +191,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let report_content = fs::read_to_string(&args.report_path)?;
     let report: Report = serde_json::from_str(&report_content)?;
+
+    let ontology: Option<Ontology> = if let Some(path) = &args.ontology_path {
+        let ontology_content = fs::read_to_string(path)?;
+        Some(serde_json::from_str(&ontology_content)?)
+    } else {
+        None
+    };
 
     let successful_repos = report.repositories.len();
     let failed_repos = report.failed_repositories.len();
@@ -219,12 +251,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
     if !duplicate_urls_found {
-        println!("No Duplicate Repository URLs Found");
+        println!("No Duplicate Repository URLs Found ");
     }
 
     // Analysis of most frequently mentioned organizations (from repository URLs)
     let mut organizations: Vec<String> = Vec::new();
-    let re_org = Regex::new(r"https://github.com/([^/]+)/.*")?;
+    let re_org = Regex::new(r"https://github.com/([^/]+)/.*" ).unwrap();
 
     for url in report.repositories.keys() {
         if let Some(captures) = re_org.captures(url) {
@@ -249,7 +281,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         println!("\n--- Most Frequently Mentioned Organizations ---");
         for (org, count) in sorted_org_counts.iter().take(10) {
-            println!("{}: {}", org, count);
+            println!("{}: {}", apply_emoji_ontology(org, &ontology), count);
         }
     } else {
         println!("\n--- No Organizations Found ---");
@@ -257,7 +289,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Analysis of most frequently mentioned names or strings (submodule names, repository names)
     let mut all_names: Vec<String> = Vec::new();
-    let re_repo_name = Regex::new(r"https://github.com/[^/]+/([^/]+).*")?;
+    let re_repo_name = Regex::new(r"https://github.com/[^/]+/([^/]+).*").unwrap();
 
     for (url, info) in &report.repositories {
         // Add repository name from URL
@@ -287,13 +319,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         println!("\n--- Most Frequently Mentioned Repository/Submodule Names ---");
         for (name, count) in sorted_name_counts.iter().take(10) {
-            println!("{}: {}", name, count);
+            println!("{}: {}", apply_emoji_ontology(name, &ontology), count);
         }
     } else {
         println!("\n--- No Repository/Submodule Names Found ---");
     }
 
-    analyze_strings(&report)?;
+    analyze_strings(&report, &ontology)?;
 
     Ok(())
 }
