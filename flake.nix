@@ -1,4 +1,3 @@
-
 {
   description = "A flake for testing git submodules";
 
@@ -108,6 +107,13 @@
               cp -r $src/magoo $out/magoo
               cp -r $src/git-submodule-tools $out/git-submodule-tools
             '';
+
+            submodule-collector = naersk.lib.${system}.buildPackage {
+              pname = "submodule-collector";
+              version = "0.1.0"; # Matches Cargo.toml
+              src = ./submodule-collector; # Source is the new directory
+              # naersk handles toolchain and Cargo.lock internally
+            };
           };
 
           devShell = pkgs.mkShell {
