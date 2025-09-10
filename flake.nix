@@ -21,26 +21,26 @@
         {
           checks = {
             gitoxide = pkgs.runCommand "gitoxide-tests" {
-              src = self.outPath + "/gitoxide";
+              src = self;
               buildInputs = [ toolchain ];
             } ''
-              cd $src
+              cd $src/gitoxide
               cargo test
               touch $out
             '';
             submod = pkgs.runCommand "submod-tests" {
-              src = self.outPath + "/submod";
+              src = self;
               buildInputs = [ toolchain ];
             } ''
-              cd $src
+              cd $src/submod
               cargo test
               touch $out
             '';
             magoo = pkgs.runCommand "magoo-tests" {
-              src = self.outPath + "/magoo";
+              src = self;
               buildInputs = [ toolchain ];
             } ''
-              cd $src
+              cd $src/magoo
               cargo test
               touch $out
             '';
