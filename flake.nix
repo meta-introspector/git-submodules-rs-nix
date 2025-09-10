@@ -17,36 +17,37 @@
             inherit system overlays;
           };
           toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
+          # Fetch the entire repository including submodules
+          repo = builtins.fetchTree {
+            type = "git";
+            url = self;
+            ref = self.rev;
+            submodules = true;
+          };
         in
         {
           checks = {
             gitoxide = pkgs.runCommand "gitoxide-tests" {
-              src = self;
-              buildInputs = [ toolchain pkgs.git ];
+              src = repo + "/gitoxide";
+              buildInputs = [ toolchain ];
             } ''
               cd $src
-              git submodule update --init --recursive gitoxide
-              cd gitoxide
               cargo test
               touch $out
             '';
             submod = pkgs.runCommand "submod-tests" {
-              src = self;
-              buildInputs = [ toolchain pkgs.git ];
+              src = repo + "/submod";
+              buildInputs = [ toolchain ];
             } ''
               cd $src
-              git submodule update --init --recursive submod
-              cd submod
               cargo test
               touch $out
             '';
             magoo = pkgs.runCommand "magoo-tests" {
-              src = self;
-              buildInputs = [ toolchain pkgs.git ];
+              src = repo + "/magoo";
+              buildInputs = [ toolchain ];
             } ''
               cd $src
-              git submodule update --init --recursive magoo
-              cd magoo
               cargo test
               touch $out
             '';
