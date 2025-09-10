@@ -1,5 +1,5 @@
 [workspace]
-members = [".", "git_test_repo", "submodule-collector"]
+members = [".", "git_test_repo", "report-analyzer-rs", "submodule-collector"]
 
 [package]
 name = "submodules"

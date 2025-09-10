@@ -4,3 +4,4 @@ git_history.json
 target/
 .git_commit_message.txt
 result/
+submodule_collector_strace.log
