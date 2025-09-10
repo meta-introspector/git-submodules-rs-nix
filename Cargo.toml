@@ -8,3 +8,11 @@ edition = "2021"
 [dependencies]
 magoo = "0.2.2"
 submod = "0.1.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+clap = { version = "4.0", features = ["derive"] } # For command-line argument parsing
+
+[[bin]]
+name = "git-config-parser"
+path = "src/bin/git-config-parser.rs"

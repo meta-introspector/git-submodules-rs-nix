@@ -57,7 +57,15 @@
           };
 
           packages = {
-            
+            git-config-parser = pkgs.rustPlatform.buildRustPackage {
+              pname = "git-config-parser";
+              version = "0.1.0"; # Get this from Cargo.toml
+              src = ./src/bin/git-config-parser; # Source of the git-config-parser binary
+              cargoLock = {
+                lockFile = ./src/bin/git-config-parser/Cargo.lock; # Path to the Cargo.lock for this package
+              };
+              buildInputs = [ toolchain ]; # Use the defined toolchain
+            };
 
             submodules-managed = pkgs.runCommand "submodules-managed" {
               src = repo; # Use the fetched repository as source

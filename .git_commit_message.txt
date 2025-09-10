@@ -1,1 +1,5 @@
-fix: Set CARGO_HOME and use specific submodule paths
+docs: Add SOPs for submodule management and project setup
+
+feat: Automate submodule setup in Nix using direct copy
+
+build: Create submod.toml for submodule configuration
