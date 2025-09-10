@@ -1,3 +1,4 @@
+
 {
   description = "A flake for testing git submodules";
 
@@ -112,7 +113,7 @@
               pname = "submodule-collector";
               version = "0.1.0"; # Matches Cargo.toml
               src = ./.; # Source is the entire project root (workspace root)
-              buildInputs = [ toolchain pkgs.cargo ]; # Ensure toolchain and cargo are available
+              buildInputs = [ toolchain pkgs.cargo pkgs.pkg-config pkgs.openssl ]; # Add pkg-config and openssl
               buildPhase = ''
                 export CARGO_HOME=$TMPDIR/.cargo
                 echo "Building submodule-collector..."
