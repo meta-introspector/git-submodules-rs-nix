@@ -1,4 +1,3 @@
-
 {
   description = "A flake for testing git submodules";
 
@@ -109,13 +108,19 @@
               cp -r $src/git-submodule-tools $out/git-submodule-tools
             '';
 
-            submodule-collector = pkgs.rustPlatform.buildRustPackage {
+            submodule-collector = pkgs.stdenv.mkDerivation {
               pname = "submodule-collector";
               version = "0.1.0"; # Matches Cargo.toml
               src = ./.; # Source is the entire project root (workspace root)
-              cargoRoot = "submodule-collector"; # Specify the package within the workspace
-              cargoLock = { lockFile = ./Cargo.lock; }; # Point to the workspace Cargo.lock
-              cargoPatches = [ ./Cargo.lock ]; # Copy Cargo.lock into the build directory
+              buildInputs = [ toolchain pkgs.cargo ]; # Ensure toolchain and cargo are available
+              shellHook = ''
+                echo "Building submodule-collector..."
+                cargo build --release --package submodule-collector
+              '';
+              installPhase = ''
+                mkdir -p $out/bin
+                cp target/release/submodule-collector $out/bin/
+              '';
             };
           };
 
