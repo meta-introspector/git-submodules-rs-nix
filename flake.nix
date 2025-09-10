@@ -1,4 +1,3 @@
-
 {
   description = "A flake for testing git submodules";
 
@@ -115,6 +114,7 @@
               src = ./.; # Source is the entire project root (workspace root)
               buildInputs = [ toolchain pkgs.cargo ]; # Ensure toolchain and cargo are available
               buildPhase = ''
+                export CARGO_HOME=$TMPDIR/.cargo
                 echo "Building submodule-collector..."
                 cargo build --release --package submodule-collector
               '';
