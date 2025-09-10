@@ -6,22 +6,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
-
-    gitoxide = {
-      url = "path:./gitoxide";
-      flake = false;
-    };
-    submod = {
-      url = "path:./submod";
-      flake = false;
-    };
-    magoo = {
-      url = "path:./magoo";
-      flake = false;
-    };
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, gitoxide, submod, magoo }@inputs:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils }@inputs:
     let
       forAllSystems = flake-utils.lib.eachDefaultSystem (system:
         let
@@ -34,16 +21,15 @@
         {
           checks = {
             gitoxide = pkgs.runCommand "gitoxide-tests" {
-              src = gitoxide;
+              src = self.outPath + "/gitoxide";
               buildInputs = [ toolchain ];
             } ''
               cd $src
-              ls -la
               cargo test
               touch $out
             '';
             submod = pkgs.runCommand "submod-tests" {
-              src = submod;
+              src = self.outPath + "/submod";
               buildInputs = [ toolchain ];
             } ''
               cd $src
@@ -51,7 +37,7 @@
               touch $out
             '';
             magoo = pkgs.runCommand "magoo-tests" {
-              src = magoo;
+              src = self.outPath + "/magoo";
               buildInputs = [ toolchain ];
             } ''
               cd $src
