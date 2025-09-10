@@ -52,8 +52,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     for repo_path in git_repos {
         // Process each found repository, including its submodules recursively
-        if let Some(repo_info) = process_repository(&repo_path)? {
-            report.repositories.insert(repo_info.url.clone(), repo_info);
+        match process_repository(&repo_path) {
+            Ok(Some(repo_info)) => {
+                report.repositories.insert(repo_info.url.clone(), repo_info);
+            }
+            Ok(None) => {
+                // Repository skipped (e.g., no remote URL)
+            }
+            Err(e) => {
+                eprintln!("Error processing repository {}: {}", repo_path.display(), e);
+            }
         }
     }
 
@@ -74,8 +82,13 @@ fn find_git_repositories(root_dir: &Path) -> Result<Vec<PathBuf>, Box<dyn std::e
             let path = entry.path();
             // Check if it's a Git repository
             if path.join(".git").exists() || path.join(".git").is_file() {
-                // No longer filtering by github.com here, process all git repos
-                repos.push(path.to_path_buf());
+                // Attempt to open the repository to confirm it's valid
+                if let Ok(repo) = Repository::open(path) {
+                    // No longer filtering by github.com here, process all git repos
+                    repos.push(path.to_path_buf());
+                } else {
+                    eprintln!("Warning: Could not open Git repository at {}", path.display());
+                }
             }
         }
     }
@@ -83,7 +96,14 @@ fn find_git_repositories(root_dir: &Path) -> Result<Vec<PathBuf>, Box<dyn std::e
 }
 
 fn process_repository(repo_path: &Path) -> Result<Option<RepoInfo>, Box<dyn std::error::Error>> {
-    let repo = Repository::open(repo_path)?;
+    let repo = match Repository::open(repo_path) {
+        Ok(r) => r,
+        Err(e) => {
+            eprintln!("Error opening repository {}: {}", repo_path.display(), e);
+            return Ok(None);
+        }
+    };
+
     let mut repo_url = String::new();
     if let Ok(remotes) = repo.remotes() {
         if let Some(remote_name) = remotes.iter().filter_map(|s| s).next() { // Get the first remote
@@ -94,8 +114,7 @@ fn process_repository(repo_path: &Path) -> Result<Option<RepoInfo>, Box<dyn std:
     }
 
     if repo_url.is_empty() {
-        // If no remote URL is found, it might be a local-only repo or a bare repo.
-        // For now, we'll skip it, but this might need refinement.
+        eprintln!("Warning: No remote URL found for repository {}", repo_path.display());
         return Ok(None);
     }
 
@@ -113,10 +132,15 @@ fn process_repository(repo_path: &Path) -> Result<Option<RepoInfo>, Box<dyn std:
             // Recursively process the submodule if it's a valid repository
             // and it's not the current repository (to prevent infinite loops in case of misconfigured submodules)
             if absolute_submodule_path.exists() && absolute_submodule_path.is_dir() && absolute_submodule_path != repo_path {
-                if let Ok(sub_repo) = Repository::open(&absolute_submodule_path) {
-                    // Only process if it's a valid Git repository
-                    if let Some(info) = process_repository(&absolute_submodule_path)? {
+                match process_repository(&absolute_submodule_path) {
+                    Ok(Some(info)) => {
                         nested_repo_info = Some(info);
+                    }
+                    Ok(None) => {
+                        // Submodule skipped (e.g., no remote URL)
+                    }
+                    Err(e) => {
+                        eprintln!("Error processing submodule {}: {}", absolute_submodule_path.display(), e);
                     }
                 }
             }
