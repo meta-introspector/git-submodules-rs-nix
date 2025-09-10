@@ -39,27 +39,27 @@
           gitoxide = pkgs.runCommand "gitoxide-tests" {
             src = gitoxide;
             buildInputs = [ rust-toolchain ];
-          } '''
+          } ''
             cd $src
             cargo test
             touch $out
-          ''';
+          '';
           submod = pkgs.runCommand "submod-tests" {
             src = submod;
             buildInputs = [ rust-toolchain ];
-          } '''
+          } ''
             cd $src
             cargo test
             touch $out
-          ''';
+          '';
           magoo = pkgs.runCommand "magoo-tests" {
             src = magoo;
             buildInputs = [ rust-toolchain ];
-          } '''
+          } ''
             cd $src
             cargo test
             touch $out
-          ''';
+          '';
         });
     };
 }
