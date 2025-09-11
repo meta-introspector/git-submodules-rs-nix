@@ -69,7 +69,7 @@ fn apply_emoji_ontology(text: &str, ontology: &Option<Ontology>) -> String {
 
 fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<(), Box<dyn std::error::Error>> {
     let mut all_tokens: Vec<String> = Vec::new();
-    let tokenizer_re = Regex::new(r"[^a-zA-Z0-9]+")?; // Split on non-alphanumeric characters
+    let tokenizer_re = Regex::new(r"[^a-zA-Z0-9]+")?;
 
     // Collect tokens from successful repositories
     for (url, info) in &report.repositories {
@@ -126,17 +126,22 @@ fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<(), B
         }
     }
 
+    // Generate emoji tokens for n-gram analysis
+    let all_emoji_tokens: Vec<String> = all_tokens.iter()
+        .map(|token| apply_emoji_ontology(token, ontology))
+        .collect();
+
     let n_gram_sizes = vec![1, 2, 3, 5, 7, 11, 13, 17, 19];
 
     for &n in &n_gram_sizes {
-        if all_tokens.len() >= n {
+        if all_emoji_tokens.len() >= n {
             let mut n_grams: Vec<String> = Vec::new();
-            for i in 0..all_tokens.len() - (n - 1) {
+            for i in 0..all_emoji_tokens.len() - (n - 1) {
                 let mut current_n_gram = String::new();
                 for j in 0..n {
-                    current_n_gram.push_str(&all_tokens[i + j]);
+                    current_n_gram.push_str(&all_emoji_tokens[i + j]);
                     if j < n - 1 {
-                        current_n_gram.push_str(" ");
+                        current_n_gram.push_str(" "); // Add space between emoji tokens
                     }
                 }
                 n_grams.push(current_n_gram);
@@ -152,7 +157,8 @@ fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<(), B
 
             println!("\n--- Most Frequently Mentioned {}-grams ---", n);
             for (n_gram, count) in sorted_n_gram_counts.iter().take(10) {
-                println!("{}: {}", apply_emoji_ontology(n_gram, ontology), count);
+                let compressed_n_gram = apply_emoji_ontology(n_gram, ontology);
+                println!("{}: {}", compressed_n_gram.replace(" ", ""), count); // Remove spaces for final output
             }
         } else {
             println!("\n--- Not enough tokens to generate {}-grams ---", n);
