@@ -1,6 +1,7 @@
 mod types;
 mod input;
 mod processing;
+mod new_processing;
 use types::{Args, Report, Ontology};
 use input::{parse_args, load_data};
 use processing::{apply_emoji_ontology, analyze_strings, perform_lcp_analysis, print_lcp_analysis};
@@ -46,7 +47,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     processing::print_names_analysis(&name_counts, &ontology);
 
     let suggested_rules = processing::analyze_strings(&report, &ontology)?;
-    processing::print_suggested_rules(&suggested_rules);
+    new_processing::print_suggested_rules_with_emojis(&suggested_rules, &ontology);
 
     Ok(())
 }
