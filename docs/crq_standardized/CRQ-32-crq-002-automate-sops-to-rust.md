@@ -1,3 +1,6 @@
+# CRQ-32-crq-002-automate-sops-to-rust.md
+
+## Change Request: crq 002 automate sops to rust
 **Change Request (CRQ)**
 
 **Title:** Automate SOP Steps into Rust Programs using Git Submodules

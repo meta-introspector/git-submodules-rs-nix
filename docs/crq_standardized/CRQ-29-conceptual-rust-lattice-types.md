@@ -1,3 +1,6 @@
+# CRQ-29-conceptual-rust-lattice-types.md
+
+## Change Request: conceptual rust lattice types
 ## Conceptual Rust Implementation: The Lattice of Types
 
 This document describes the conceptual Rust implementation of the Lattice Idea Framework's core data structures, as defined in `src/lattice_types.rs`. This implementation uses Rust's powerful type system, including enums, structs, traits, and generics, to create a flexible and extensible representation of the multi-layered lattice.

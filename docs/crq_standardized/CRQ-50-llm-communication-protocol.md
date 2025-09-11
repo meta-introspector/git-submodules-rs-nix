@@ -1,3 +1,6 @@
+# CRQ-50-llm-communication-protocol.md
+
+## Change Request: llm communication protocol
 ## LLM Communication Protocol: Audited, Controlled, Curried, and Continuable
 
 This document outlines the conceptual design for a robust communication protocol enabling secure, auditable, and stateful interactions with Large Language Models (LLMs) within the Lattice Idea Framework. This protocol is a critical component of the "Grand Unified Search" architecture, facilitating advanced knowledge extraction and collaborative reasoning.

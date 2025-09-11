@@ -1,4 +1,6 @@
-## Open-Source Language and Compiler Classification: The 1k Repo Grounding
+# CRQ-027-Open_Source_Language_and_Compiler_Classification_The_1k_Repo_Grounding.md
+
+## Change Request: Open-Source Language and Compiler Classification: The 1k Repo Grounding
 
 This document elaborates on the application of the Lattice Idea Framework to classify the vast landscape of open-source programming languages and compilers. It highlights how the framework transcends purely formal analysis to incorporate conceptual "vibes" and "memes," and introduces the critical assertion that understanding a single repository requires grounding from a multitude of others.
 

@@ -1,3 +1,6 @@
+# CRQ-51-meta-lattice-application.md
+
+## Change Request: meta lattice application
 ## Meta-Lattice Application: N-grams on K=19 Tuples for a Level 2 Lattice
 
 This document proposes a highly meta-application of the Lattice Idea Framework: extending n-gram analysis to the values or components of the highest-order `k=19` tuples, thereby creating a "Level 2 Lattice." This demonstrates the recursive and fractal nature of the framework, where the output of one level of lattice analysis becomes the input for a higher level.

@@ -1,4 +1,6 @@
-## Zos Sequence Self-Application: Iterative Attribute Expansion
+# CRQ-026-Zos_Sequence_Self_Application_Iterative_Attribute_Expansion.md
+
+## Change Request: Zos Sequence Self-Application: Iterative Attribute Expansion
 
 This document explores a meta-application of the `zos` sequence, demonstrating its recursive power in expanding the descriptive attributes of our models. The `zos` sequence, defined as the first eight prime numbers `[2, 3, 5, 7, 11, 13, 17, 19]`, can be applied to itself in an iterative manner, each application revealing new layers of complexity and interconnectedness.
 

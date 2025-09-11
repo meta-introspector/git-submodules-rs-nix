@@ -1,3 +1,6 @@
+# CRQ-43-crq-010-dynamic-information-flow.md
+
+## Change Request: crq 010 dynamic information flow
 **Change Request (CRQ)**
 
 **Title:** Dynamic Information Flow and Influence Modeling (Inspired by Navier-Stokes & Multivector Concepts)

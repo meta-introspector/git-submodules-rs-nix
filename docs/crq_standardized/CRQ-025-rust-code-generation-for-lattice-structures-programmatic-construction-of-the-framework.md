@@ -1,4 +1,6 @@
-## Rust Code Generation for Lattice Structures: Programmatic Construction of the Framework
+# CRQ-025-Rust_Code_Generation_for_Lattice_Structures.md
+
+## Change Request: Rust Code Generation for Lattice Structures: Programmatic Construction of the Framework
 
 This document details the process of programmatically generating Rust code for the Lattice Idea Framework's core structures. This approach leverages Rust's powerful metaprogramming capabilities, specifically the `syn` and `quote` crates, to ensure consistency, scalability, and maintainability of the lattice definitions.
 

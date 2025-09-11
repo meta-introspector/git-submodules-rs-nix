@@ -1,3 +1,6 @@
+# CRQ-30-concrete-lattice-analysis-example.md
+
+## Change Request: concrete lattice analysis example
 ## Concrete Lattice Analysis Example: Identifying Repeating Patterns in N-grams
 
 This document outlines a concrete analytical workflow within the Lattice Idea Framework, demonstrating how to identify repeating elements and patterns within selected top N n-grams across specific layers. This process showcases the framework's ability to extract granular insights from complex data by systematically traversing the lattice.

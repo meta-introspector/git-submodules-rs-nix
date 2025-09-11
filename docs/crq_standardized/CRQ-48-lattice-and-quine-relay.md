@@ -1,3 +1,6 @@
+# CRQ-48-lattice-and-quine-relay.md
+
+## Change Request: lattice and quine relay
 ## The Lattice Idea and the 128 Quine Relay: A Grand Unification of Languages
 
 This document proposes the ultimate application of the Lattice Idea Framework: its translation and application across all programming languages, specifically targeting the monumental task of mapping out all languages involved in a 128-language quine relay. This endeavor represents a grand unification of linguistic understanding, demonstrating the framework's universal applicability and its capacity to bridge diverse programming paradigms.

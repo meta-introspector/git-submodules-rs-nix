@@ -1,3 +1,6 @@
+# CRQ-46-crq-document-index.md
+
+## Change Request: crq document index
 ## CRQ Document Index: A Guide to the Lattice Idea Framework's Conceptual Development
 
 This document serves as an index and guide to the various Conceptual Research Questions (CRQ) documents that detail the development, implications, and applications of the Lattice Idea Framework. Each CRQ document explores a specific facet of the framework, contributing to its comprehensive understanding.

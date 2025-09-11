@@ -1,3 +1,6 @@
+# CRQ-37-crq-006-process-unification-kether-review.md
+
+## Change Request: crq 006 process unification kether review
 **Change Request (CRQ)**
 
 **Title:** Process Unification and Core Principle Alignment (Kether Review)

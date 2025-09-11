@@ -1,3 +1,6 @@
+# CRQ-52-orchestration-layer-architecture.md
+
+## Change Request: orchestration layer architecture
 ## Orchestration Layer Architecture: Unifying the Lattice Framework Components
 
 This document outlines the conceptual architecture for an "Orchestration Layer" within the Lattice Idea Framework. This layer is responsible for integrating and coordinating the various Rust programs and conceptual components developed, managing the flow of data, orchestrating analysis steps, and ultimately guiding the system towards knowledge convergence through mechanisms like the fixed point search.

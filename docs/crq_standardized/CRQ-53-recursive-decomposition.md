@@ -1,3 +1,6 @@
+# CRQ-53-recursive-decomposition.md
+
+## Change Request: recursive decomposition
 ## Recursive Decomposition: Unpacking Complexity through Nested N-gram Analysis
 
 This document elaborates on the concept of "recursive decomposition" within the Lattice Idea Framework, a powerful analytical technique that involves identifying and analyzing smaller n-grams nested within larger n-grams. This process allows for a granular unpacking of complex structures, revealing their constituent patterns and relationships across different levels of abstraction.

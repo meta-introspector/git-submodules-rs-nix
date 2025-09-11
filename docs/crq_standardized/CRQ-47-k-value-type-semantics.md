@@ -1,3 +1,6 @@
+# CRQ-47-k-value-type-semantics.md
+
+## Change Request: k value type semantics
 ## K-Value Type Semantics: Expanding Predicate Granularity in the Lattice
 
 This document conceptually defines the semantic interpretation of different `k`-value types within the Lattice Idea Framework, extending beyond simple boolean predicates and RDF-like triples. These `k`-value types, derived from the `zos` sequence of prime numbers, represent increasing levels of granularity and complexity in knowledge representation.

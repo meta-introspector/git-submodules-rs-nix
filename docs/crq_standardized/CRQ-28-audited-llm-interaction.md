@@ -1,3 +1,6 @@
+# CRQ-28-audited-llm-interaction.md
+
+## Change Request: audited llm interaction
 ## Audited and Controlled LLM Interaction: Ensuring Trust and Transparency in Knowledge Extraction
 
 This document expands on the critical aspects of auditing and control within the LLM communication protocol, emphasizing how the Lattice Idea Framework provides the necessary structure for ensuring trust, transparency, and reliability in knowledge extraction from Large Language Models.
