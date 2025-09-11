@@ -31,3 +31,14 @@ To enhance the `crq_parser` within the `crq_table_generator` project to automati
 
 **Justification/Impact:**
 This enhancement will make the `crq_parser` more intelligent and context-aware by incorporating external communication context into its classification decisions. It will automate the identification of CRQs that require manual intervention to trigger a CoderabbitAI review, improving workflow efficiency and ensuring that skipped reviews are addressed proactively.
+
+**Progress Update (2025-09-11):**
+
+The core implementation of the proposed solution has been completed and integrated into the `crq_table_generator`. This includes:
+
+*   Refined `NextStep` enum with new states: `ReviewProvided`, `ReviewSkipped (No Meaningful Response)`, `ReviewNeeded from CoderabbitAI`, and `Respond To / Our Turn`.
+*   Implementation of `check_coderabbitai_comms` to analyze communication logs for skipped reviews and meaningful responses.
+*   Updated `determine_next_step` with a prioritized state machine logic, incorporating n-gram analysis and communication log data.
+*   The `crq_table_generator` now produces a detailed report reflecting these new classifications.
+
+This phase of the CRQ is considered complete. Further work will be tracked under new CRQs, such as `CRQ-046-crq-classification-via-comms-analysis-and-state-machine.md` for more advanced comms analysis.
