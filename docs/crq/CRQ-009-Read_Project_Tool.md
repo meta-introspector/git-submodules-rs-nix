@@ -33,4 +33,5 @@ The `submodule-collector` will be a primary consumer of this library, allowing i
 
 *   Rust toolchain.
 *   `git2` crate (for Git interactions, if chosen over shelling out).
-*   Integration into `submodule-collector` (subsequent CRQ or task).
+*   Integration into `submodule-collector` (subsequent CRQ or task) - *ready for integration*.
+).

@@ -23,7 +23,7 @@ This CRQ encompasses the following additions:
     *   Scripts for listing, viewing, creating, and checking out pull requests.
     *   A script (`gh_extract_actors.sh`) to extract unique users (actors) from issues and comments, providing valuable insights into project interactions.
 
-These additions aim to streamline development workflows, improve documentation accessibility, and facilitate interaction with automated agents.
+These additions aim to streamline development workflows, improve documentation accessibility, and facilitate interaction with automated agents. The shell scripts have been created and their shebangs adjusted for compatibility.
 
 ### Expected Outcome
 
@@ -42,3 +42,5 @@ These additions aim to streamline development workflows, improve documentation a
 ### Dependencies
 
 *   GitHub CLI (`gh`) installed and authenticated.
+pt.
+*   Implement a Git pre-commit hook with `shellcheck`.
