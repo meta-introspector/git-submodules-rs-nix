@@ -1,40 +1,176 @@
+use regex::Regex;
+use lazy_static::lazy_static;
+
 pub struct Crq {
     pub problem_goal: String,
     pub proposed_solution: String,
     pub justification_impact: String,
 }
 
-#[derive(Debug, PartialEq, Eq, Hash)]
+#[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
 pub enum NextStep {
+    ReviewProvided,             // CoderabbitAI has provided a meaningful review
+    ReviewSkipped,              // CoderabbitAI skipped, no meaningful review
+    ReviewNeededFromCoderabbitAI, // We need to request a review from CoderabbitAI
     Develop,
     Refactor,
     Document,
-    RespondTo,
-    CoderabbitAIReview, // New variant
+    RespondToHuman,             // Our turn for human attention/decision
     Unknown,
 }
 
-pub fn determine_next_step(crq_content: &str) -> NextStep {
+pub struct CommsAnalysisResult {
+    pub skipped_review_present: bool,
+    pub response_count: usize,
+    pub total_size: usize,
+    pub meaningful_response_present: bool,
+}
+
+lazy_static! {
+    static ref WORD_REGEX: Regex = Regex::new(r"[a-z]+").unwrap();
+}
+
+fn extract_tokens(text: &str) -> Vec<String> {
+    let words: Vec<String> = WORD_REGEX.find_iter(&text.to_lowercase())
+        .map(|m| m.as_str().to_string())
+        .collect();
+
+    let mut tokens = Vec::new();
+
+    // Add single words (1-grams)
+    tokens.extend(words.clone());
+
+    // Add n-grams
+    let n_gram_lengths = vec![2, 3, 5, 7];
+    for n in n_gram_lengths {
+        if n > words.len() {
+            continue;
+        }
+        for i in 0..=words.len() - n {
+            tokens.push(words[i..i + n].join(" "));
+        }
+    }
+    tokens
+}
+
+fn contains_any_ngram(text: &str, ngrams: &[&str]) -> bool {
+    let tokens = extract_tokens(text);
+    for ngram in ngrams {
+        if tokens.contains(&ngram.to_string()) {
+            return true;
+        }
+    }
+    false
+}
+
+// New function to check CoderabbitAI communication logs
+pub fn check_coderabbitai_comms(crq_id: &str) -> CommsAnalysisResult {
+    let comms_path = format!("analysis_data/comms/git/coderabbitai/{}/responses/", crq_id);
+    let full_comms_path = std::path::PathBuf::from("/data/data/com.termux.nix/files/home/pick-up-nix/source/github/meta-introspector/submodules/").join(comms_path);
+
+    let mut skipped_review_present = false;
+    let mut response_count = 0;
+    let mut total_size = 0;
+
+    if let Ok(entries) = std::fs::read_dir(&full_comms_path) {
+        for entry in entries {
+            if let Ok(entry) = entry {
+                let path = entry.path();
+                if path.is_file() {
+                    if let Ok(content) = std::fs::read_to_string(&path) {
+                        response_count += 1;
+                        total_size += content.as_bytes().len();
+                        let lower_content = content.to_lowercase();
+                        if lower_content.contains("review skipped") || lower_content.contains("auto reviews are disabled") {
+                            skipped_review_present = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    let meaningful_response_present = response_count >= 2 || total_size >= 5000; // New heuristic
+
+    CommsAnalysisResult {
+        skipped_review_present,
+        response_count,
+        total_size,
+        meaningful_response_present,
+    }
+}
+
+pub fn determine_next_step(crq_content: &str, crq_id: &str) -> NextStep {
     let lower_content = crq_content.to_lowercase();
     let content_byte_size = crq_content.as_bytes().len();
 
-    // Rule 1: CoderabbitAI Review based on size
-    if content_byte_size < 2500 { // N = 2500 bytes
-        return NextStep::CoderabbitAIReview;
+    let comms_analysis = check_coderabbitai_comms(crq_id);
+
+    // State 1: ReviewProvided (Highest Priority)
+    // CoderabbitAI has provided a meaningful review
+    if comms_analysis.meaningful_response_present {
+        return NextStep::ReviewProvided;
     }
 
-    // Rule 2: Respond To / Our Turn (if not already classified for CoderabbitAI Review)
-    if lower_content.contains("clarify") || lower_content.contains("question") || lower_content.contains("decision") || lower_content.contains("feedback") || lower_content.contains("input") || lower_content.contains("discuss") || lower_content.contains("confirm") || lower_content.contains("review") || lower_content.contains("audit") || lower_content.contains("verify") || lower_content.contains("assess") || lower_content.contains("reflect") || lower_content.contains("strategic") || lower_content.contains("conceptual") || lower_content.contains("architecture") || lower_content.contains("plan") {
-        NextStep::RespondTo
-    } else if lower_content.contains("develop") || lower_content.contains("implement") || lower_content.contains("build") {
-        NextStep::Develop
-    } else if lower_content.contains("refactor") || lower_content.contains("restructure") || lower_content.contains("improve") {
-        NextStep::Refactor
-    } else if lower_content.contains("document") || lower_content.contains("sop") || lower_content.contains("guide") {
-        NextStep::Document
-    } else {
-        NextStep::Unknown
+    // State 2: ReviewSkipped (If skipped and no meaningful response)
+    if comms_analysis.skipped_review_present && !comms_analysis.meaningful_response_present {
+        return NextStep::ReviewSkipped;
     }
+
+    // State 3: ReviewNeededFromCoderabbitAI (If small and not yet reviewed)
+    if content_byte_size < 2500 { // N = 2500 bytes
+        return NextStep::ReviewNeededFromCoderabbitAI;
+    }
+
+    // State 4: RespondToHuman (Our turn for human attention/decision)
+    let respond_to_human_keywords = [
+        "clarify", "question", "decision", "feedback", "input", "discuss", "confirm",
+        "reflect", "strategic", "conceptual", "architecture", "plan"
+    ];
+    let respond_to_human_ngrams = [
+        "change request", "request quality", "quality crq", "crq document",
+        "purpose structure", "lifecycle all", "all other", "other crq", "crq documents",
+        "deep dive", "formal qa", "branch as a holistic", "one to one mapping",
+        "braindump update", "zos sequence", "open source language", "audited llm",
+        "conceptual rust", "concrete lattice", "crq 001 review", "crq 002 automate",
+        "submodule report function", "context introspector", "formalize interaction",
+        "strategic alignment", "process unification", "gitmodules recon",
+        "category theory", "grand unified framework", "dynamic information flow",
+        "bott periodicity", "naersk integration", "crq document index",
+        "k value type semantics", "lattice and quine", "lattice code generation",
+        "llm communication protocol", "meta lattice application", "orchestration layer",
+        "recursive decomposition"
+    ];
+    if lower_content.contains("review") || lower_content.contains("audit") || lower_content.contains("verify") || lower_content.contains("assess") ||
+       contains_any_ngram(&lower_content, &respond_to_human_ngrams) ||
+       respond_to_human_keywords.iter().any(|&k| lower_content.contains(k)) {
+        return NextStep::RespondToHuman;
+    }
+
+    // State 5: Develop/Implement
+    let develop_keywords = ["develop", "implement", "build"];
+    let develop_ngrams = [
+        "rust code", "gh cli", "code generation", "new sops",
+        "crq driven", "driven development", "add crq"
+    ];
+    if develop_keywords.iter().any(|&k| lower_content.contains(k)) ||
+       contains_any_ngram(&lower_content, &develop_ngrams) {
+        return NextStep::Develop;
+    }
+
+    // State 6: Document
+    let document_keywords = ["document", "sop", "guide"];
+    if document_keywords.iter().any(|&k| lower_content.contains(k)) {
+        return NextStep::Document;
+    }
+
+    // State 7: Refactor
+    let refactor_keywords = ["refactor", "restructure", "improve"];
+    if refactor_keywords.iter().any(|&k| lower_content.contains(k)) {
+        return NextStep::Refactor;
+    }
+
+    NextStep::Unknown
 }
 
 pub fn parse_crq(content: &str) -> Option<Crq> {
