@@ -494,6 +494,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "project_file_lattice_builder"
+version = "0.1.0"
+dependencies = [
+ "walkdir",
+]
+
+[[package]]
 name = "quote"
 version = "1.0.40"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -646,6 +653,7 @@ dependencies = [
  "serde",
  "serde_json",
  "toml",
+ "walkdir",
 ]
 
 [[package]]
