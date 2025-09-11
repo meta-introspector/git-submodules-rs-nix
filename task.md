@@ -1,6 +1,7 @@
 Current Git Branch: `main`
 
 Open Pull Requests:
+*   24: CRQ-54: deterministic crq parser (`feature/crq-54-deterministic-crq-parser`)
 *   23: CRQ-34: crq 003 context introspector (`feature/crq-34-crq-003-context-introspector`)
 *   22: CRQ-35: crq 004 formalize interaction procedure (`feature/crq-35-crq-004-formalize-interaction-procedure`)
 *   21: CRQ-36: crq 005 strategic alignment (`feature/crq-36-crq-005-strategic-alignment`)
@@ -93,8 +94,19 @@ CRQ Documents (in `docs/crq_standardized/`):
 *   CRQ-46-crq-document-index.md
 *   CRQ-47-k-value-type-semantics.md
 *   CRQ-48-lattice-and-quine-relay.md
-*   CRQ-49-lattice-code-generation-and-mapping.md
+*   CRQ-49-lattice-code-generation and mapping.md
 *   CRQ-50-llm-communication-protocol.md
 *   CRQ-51-meta-lattice-application.md
 *   CRQ-52-orchestration-layer-architecture.md
 *   CRQ-53-recursive-decomposition.md
+
+**CRQ: Deterministic CRQ Parser for Project Next Steps**
+
+**Problem/Goal:**
+To establish a clear and automated mechanism for identifying and prioritizing the next steps in the project development lifecycle.
+
+**Proposed Solution:**
+Develop a deterministic CRQ parser capable of analyzing change requests/questions to programmatically determine the subsequent actions required for project progression.
+
+**Justification/Impact:**
+This parser will enable more efficient and consistent project management by providing a structured approach to decision-making, akin to an "AI shepherd" guiding the project towards optimal outcomes. It will reduce ambiguity and streamline the process of identifying critical path items.
