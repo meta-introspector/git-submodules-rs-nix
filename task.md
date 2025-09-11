@@ -1,1 +1,10 @@
-review all sops and crqs first and look at our current branch and open prs into it and review them.
+# Task for CRQ-44: crq 011 bott periodicity
+
+## Objective
+
+
+## Description
+
+
+Refer to /data/data/com.termux.nix/files/home/pick-up-nix/source/github/meta-introspector/submodules/docs/crq_standardized/CRQ-44-crq-011-bott-periodicity.md for full details.
+
