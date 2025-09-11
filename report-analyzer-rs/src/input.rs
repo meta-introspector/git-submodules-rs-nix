@@ -1,6 +1,7 @@
 use crate::types::{Args, Report, Ontology};
 use std::fs;
-use std::path::PathBuf;
+// use std::path::PathBuf; // Removed unused import
+use clap::Parser;
 
 pub fn parse_args() -> Args {
     Args::parse()

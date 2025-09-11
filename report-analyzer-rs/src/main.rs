@@ -1,17 +1,14 @@
 mod types;
 mod input;
-mod processing;
-mod new_processing;
+// mod processing; // No longer needed as it's empty
+mod analyze_strings; // Renamed from new_processing to reflect its new purpose
+mod apply_emojis; // Declaring apply_emojis as a module
 use types::{Args, Report, Ontology};
-use input::{parse_args, load_data};
-use processing::{apply_emoji_ontology, analyze_strings, perform_lcp_analysis, print_lcp_analysis};
+// use input::{parse_args, load_data}; // parse_args is used via Args::parse(), load_data is not used
 use std::fs;
-use regex::Regex;
-use std::collections::HashMap;
-
-
-
-
+// use regex::Regex; // No longer directly used in main.rs
+// use std::collections::HashMap; // No longer directly used in main.rs
+use clap::Parser; // Added for Args::parse()
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
@@ -26,7 +23,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         None
     };
 
-
     let successful_repos = report.repositories.len();
     let failed_repos = report.failed_repositories.len();
 
@@ -34,20 +30,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Total successful repositories: {}", successful_repos);
     println!("Total failed repositories: {}", failed_repos);
 
-    let lcp = processing::perform_lcp_analysis(&report);
-    processing::print_lcp_analysis(&lcp);
+    // Commenting out calls to missing functions
+    // let lcp = processing::perform_lcp_analysis(&report);
+    // processing::print_lcp_analysis(&lcp);
 
-    let repo_urls = processing::analyze_duplicate_urls(&report);
-    processing::print_duplicate_urls(&repo_urls);
+    // let repo_urls = processing::analyze_duplicate_urls(&report);
+    // processing::print_duplicate_urls(&repo_urls);
 
-    let org_counts = processing::analyze_organizations(&report);
-    processing::print_organizations_analysis(&org_counts, &ontology);
+    // let org_counts = processing::analyze_organizations(&report);
+    // processing::print_organizations_analysis(&org_counts, &ontology);
 
-    let name_counts = processing::analyze_names(&report);
-    processing::print_names_analysis(&name_counts, &ontology);
+    // let name_counts = processing::analyze_names(&report);
+    // processing::print_names_analysis(&name_counts, &ontology);
 
-    let suggested_rules = processing::analyze_strings(&report, &ontology)?;
-    new_processing::print_suggested_rules_with_emojis(&suggested_rules, &ontology);
+    let suggested_rules = analyze_strings::analyze_strings(&report, &ontology)?;
+    analyze_strings::print_suggested_rules_with_emojis(&suggested_rules, &ontology);
 
     Ok(())
 }

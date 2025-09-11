@@ -1,3 +1,5 @@
+use crate::types::Ontology; // Added import
+
 pub fn apply_emoji_ontology(text: &str, ontology: &Option<Ontology>) -> String {
     if let Some(ont) = ontology {
         let mut result = text.to_string();

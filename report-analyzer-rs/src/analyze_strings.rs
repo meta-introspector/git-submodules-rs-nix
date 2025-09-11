@@ -1,9 +1,8 @@
 use regex::Regex;
 use std::collections::HashMap;
 
-use crate::report::{Report, RepositoryInfo, SubmoduleInfo, FailedRepository};
-use crate::ontology::Ontology;
-use crate::apply_emoji_ontology; // Assuming this function is in the crate root or another module
+use crate::types::{Report, Ontology};
+use super::apply_emojis::apply_emoji_ontology; // Corrected import path
 
 // New private function to collect all tokens
 fn collect_all_tokens(report: &Report, tokenizer_re: &Regex) -> Vec<String> {
@@ -111,8 +110,8 @@ fn generate_and_analyze_ngrams(
                     println!("{}: {}", compressed_n_gram.replace(" ", ""), count); // Remove spaces for final output
 
                     // Collect suggestions
-                    if n_gram != &compressed_n_gram {
-                        suggested_rules.push((n_gram.clone(), *count));
+                    if *n_gram != compressed_n_gram { // Fixed type mismatch
+                        suggested_rules.push((n_gram.to_string(), **count));
                     }
 
                     // For the next iteration, we want the compressed version of the n-gram
@@ -156,4 +155,17 @@ pub fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<V
     let suggested_rules = generate_and_analyze_ngrams(&all_tokens, ontology);
 
     Ok(suggested_rules)
+}
+
+pub fn print_suggested_rules_with_emojis(suggested_rules: &Vec<(String, usize)>, ontology: &Option<Ontology>) {
+    if !suggested_rules.is_empty() {
+        let mut sorted_suggestions = suggested_rules.clone();
+        sorted_suggestions.sort_by(|a, b| b.1.cmp(&a.1));
+
+        println!("\n--- Suggested New Ontology Rules (with Emojis) ---");
+        for (n_gram, count) in sorted_suggestions.iter().take(5) {
+            let emoji_n_gram = apply_emoji_ontology(n_gram, ontology);
+            println!("\"{}\": \"{}\"", n_gram.replace(" ", ""), emoji_n_gram.replace(" ", "")); // Count: {}", n_gram.replace(" ", ""), emoji_n_gram.replace(" ", ""), count);
+        }
+    }
 }
