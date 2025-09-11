@@ -1,5 +1,5 @@
 [workspace]
-members = [".", "git_test_repo", "report-analyzer-rs", "submodule-collector"]
+members = [".", "git_test_repo", "lattice_code_generator", "lattice_generator_app", "lattice_structure_generator", "report-analyzer-rs", "submodule-collector"]
 
 [package]
 name = "submodules"
