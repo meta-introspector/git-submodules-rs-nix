@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/nix/store/5z7w1hywa0i56d4a90fs77dj6im21jkf-bash-5.3p3/bin/bash
 # Script to extract unique actors (users) from GitHub issues and comments
 
 # Ensure gh CLI is installed and authenticated
@@ -10,7 +10,7 @@ fi
 
 # Fetch all issues (open and closed) with their comments in JSON format
 # We request 'number' and 'comments' fields. 'comments' will contain 'author.login'
-ISSUES_JSON=$(gh issue list --state all --json number,comments,author,assignees,timelineItems)
+ISSUES_JSON=$(gh issue list --state all --json number,comments,author)
 
 # Initialize an empty array for actors
 ACTORS=()
@@ -19,11 +19,12 @@ ACTORS=()
 # .[] iterates over each issue
 # .author.login gets the issue author
 # .comments[].author.login gets each comment author
-# .assignees[].login gets each assignee
-# .timelineItems[].actor.login gets actors from timeline events (e.g., reviewers, closers)
 # select(. != null) filters out null values (e.g., for deleted users or system events without a direct actor)
 # unique sorts and removes duplicates
-ACTORS_ARRAY=$(echo "$ISSUES_JSON" | jq -r '[ .[] | .author.login, .[] | .comments[].author.login, .[] | .assignees[].login, .[] | .timelineItems[].actor.login ] | flatten | unique | .[] | select(. != null)))
+ACTORS_ARRAY=$(echo "$ISSUES_JSON" | jq -r '[
+    .[] | .author.login,
+    .[] | .comments[].author.login
+] | flatten | unique | .[] | select(. != null)')
 
 # Populate the bash array
 while IFS= read -r actor; do
