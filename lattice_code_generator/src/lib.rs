@@ -3,8 +3,7 @@
 //! for defining lattice structures, such as enums for value types, and structs for instances and layers.
 
 use proc_macro2::{Ident, Span, TokenStream};
-use quote::{quote, ToTokens};
-use syn::{parse_quote, Type, Visibility};
+use quote::quote;
 
 /// Generates Rust code for the `ValueType` enum based on a list of prime numbers.
 /// This enum represents the 'k' in k-value types (e.g., 2 for Bit, 3 for ThreeValue).
@@ -14,7 +13,7 @@ pub fn generate_value_type_enum(primes: &[u8]) -> TokenStream {
             2 => "Bit".to_string(),
             3 => "ThreeValue".to_string(),
             5 => "FiveValue".to_string(),
-            _ => format!("PrimeValue{}", p),
+            _ => format!("P{}", p),
         };
         let variant_ident = Ident::new(&name_str, Span::call_site());
         if p == 2 || p == 3 || p == 5 {
@@ -29,13 +28,13 @@ pub fn generate_value_type_enum(primes: &[u8]) -> TokenStream {
             2 => "Bit".to_string(),
             3 => "ThreeValue".to_string(),
             5 => "FiveValue".to_string(),
-            _ => format!("PrimeValue{}", p),
+            _ => format!("P{}", p),
         };
         let variant_ident = Ident::new(&name_str, Span::call_site());
         if p == 2 || p == 3 || p == 5 {
-            quote! { ValueType::#variant_ident }
+            quote! { ValueType::#variant_ident => #p }
         } else {
-            quote! { ValueType::#variant_ident(p) }
+            quote! { ValueType::#variant_ident(val) => *val }
         }
     });
 
@@ -44,13 +43,13 @@ pub fn generate_value_type_enum(primes: &[u8]) -> TokenStream {
             2 => "Bit".to_string(),
             3 => "ThreeValue".to_string(),
             5 => "FiveValue".to_string(),
-            _ => format!("PrimeValue{}", p),
+            _ => format!("P{}", p),
         };
         let variant_ident = Ident::new(&name_str, Span::call_site());
         if p == 2 || p == 3 || p == 5 {
             quote! { ValueType::#variant_ident }
         } else {
-            quote! { ValueType::#variant_ident }
+            quote! { ValueType::#variant_ident(#p) }
         }
     });
 
@@ -234,4 +233,64 @@ pub fn main() {
 
     println!("\n// This output represents the Rust code that would be generated.");
     println!("// You would typically write this TokenStream to a file or use it in a procedural macro.");
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_generate_value_type_enum_basic() {
+        let primes = vec![2, 3, 5];
+        let generated_code = generate_value_type_enum(&primes).to_string();
+        println!("Generated Code (Basic):\n{}", generated_code);
+        let _expected_code = r###"#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum ValueType {
+    Bit,
+    ThreeValue,
+    FiveValue,
+}
+impl ValueType {
+    pub fn count(&self) -> u8 {
+        match self {
+            ValueType::Bit => { /* compiler will fill this */ }
+            ValueType::ThreeValue => { /* compiler will fill this */ }
+            ValueType::FiveValue => { /* compiler will fill this */ }
+        }
+    }
+    pub fn zos_sequence() -> Vec<ValueType> {
+        vec![
+            ValueType::Bit,
+            ValueType::ThreeValue,
+            ValueType::FiveValue,
+        ]
+    }
+}"###;
+        // Due to `quote!` macro expansion, the exact formatting might vary slightly.
+        // We'll check for key components rather than exact string match for now.
+        assert!(generated_code.contains("pub enum ValueType {"));
+        assert!(generated_code.contains("Bit,"));
+        assert!(generated_code.contains("ThreeValue,"));
+        assert!(generated_code.contains("FiveValue,"));
+        assert!(generated_code.contains("pub fn count(&self) -> u8 {"));
+        assert!(generated_code.contains("ValueType::Bit => 2"));
+        assert!(generated_code.contains("ValueType::ThreeValue => 3"));
+        assert!(generated_code.contains("ValueType::FiveValue => 5"));
+        assert!(generated_code.contains("pub fn zos_sequence() -> Vec<ValueType> {"));
+        assert!(generated_code.contains("ValueType::Bit"));
+        assert!(generated_code.contains("ValueType::ThreeValue"));
+        assert!(generated_code.contains("ValueType::FiveValue"));
+    }
+
+    #[test]
+    fn test_generate_value_type_enum_with_prime_value() {
+        let primes = vec![2, 7];
+        let generated_code = generate_value_type_enum(&primes).to_string();
+        println!("Generated Code (Prime Value):\n{}", generated_code);
+        assert!(generated_code.contains("pub enum ValueType {"));
+        assert!(generated_code.contains("Bit,"));
+        assert!(generated_code.contains("P7(u8),"));
+        assert!(generated_code.contains("ValueType::P7(val) => *val"));
+        assert!(generated_code.contains("ValueType::P7(7u8)")); // Changed from ValueType::P7(7) to ValueType::P7(7u8)
+    }
 }
