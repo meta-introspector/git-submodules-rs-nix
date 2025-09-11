@@ -3,9 +3,10 @@
 set -e
 
 PR_NUMBER=$1
+BASE_OUTPUT_DIR=${2:-.} # Optional second argument for base output directory, defaults to current directory
 
 if [ -z "$PR_NUMBER" ]; then
-  echo "Usage: $0 <PR_NUMBER>"
+  echo "Usage: $0 <PR_NUMBER> [BASE_OUTPUT_DIR]"
   exit 1
 fi
 
@@ -16,14 +17,9 @@ PR_DATA=$(gh pr view "$PR_NUMBER" --json title,body,author,url,createdAt,baseRef
 
 # Extract CRQ ID from PR title (assuming format "CRQ-XXX: ...")
 PR_TITLE=$(echo "$PR_DATA" | jq -r '.title')
-CRQ_ID=$(echo "$PR_TITLE" | grep -oP 'CRQ-\d+') # Extract CRQ-XXX
+CRQ_ID=$(echo "$PR_TITLE" | grep -oP 'CRQ-\d+' || echo "PR-$PR_NUMBER") # Extract CRQ-XXX, fallback if not found
 
-if [ -z "$CRQ_ID" ]; then
-  echo "Warning: Could not extract CRQ ID from PR title: '$PR_TITLE'. Using PR number as fallback."
-  CRQ_ID="PR-$PR_NUMBER"
-fi
-
-BASE_DIR="comms/git/$CRQ_ID"
+BASE_DIR="$BASE_OUTPUT_DIR/comms/git/$CRQ_ID"
 RESPONSES_DIR="$BASE_DIR/coderabbitai/responses"
 
 # Create directories
