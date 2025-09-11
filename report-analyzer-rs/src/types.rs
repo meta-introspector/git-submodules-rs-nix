@@ -1,0 +1,41 @@
+use std::collections::HashMap;
+use std::path::PathBuf;
+use serde::{Deserialize, Serialize};
+use clap::{Parser, command, arg};
+
+pub struct SubmoduleInfo {
+    pub name: String,
+    pub path: String,
+    pub url: String,
+    pub branch: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub nested_repo: Option<RepoInfo>,
+}
+
+pub struct RepoInfo {
+    pub path: String,
+    pub url: String,
+    pub submodules: Vec<SubmoduleInfo>,
+}
+
+pub struct FailedRepoInfo {
+    pub path: String,
+    pub error: String,
+}
+
+pub struct Report {
+    pub repositories: HashMap<String, RepoInfo>,
+    #[serde(default)]
+    pub failed_repositories: Vec<FailedRepoInfo>,
+}
+
+pub struct Args {
+    /// Path to the submodule report JSON file
+    #[arg(long)]
+    pub report_path: String,
+    /// Optional: Path to an ontology JSON file for emoji mapping
+    #[arg(long)]
+    pub ontology_path: Option<PathBuf>,
+}
+
+pub struct Ontology(pub HashMap<String, String>);
