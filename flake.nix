@@ -147,6 +147,9 @@
               #pkgs.emacsPackages.merlin-mode
               #pkgs.emacsPackages.dune-mode
               pkgs.emacsPackages.utop
+              pkgs.shellcheck
+              pkgs.shfmt
+              pkgs.nixpkgs-fmt
             ];
             # Optionally, add environment variables needed for development
             # shellHook = ''
