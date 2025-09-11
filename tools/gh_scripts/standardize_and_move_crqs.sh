@@ -11,7 +11,8 @@ STANDARDIZED_DIR="/data/data/com.termux.nix/files/home/pick-up-nix/source/github
 
 # Ensure standardized directory exists
 if [ ! -d "$STANDARDIZED_DIR" ]; then
-  if $DRY_RUN; then
+  if $DRY_RUN;
+  then
     echo "Would create directory: $STANDARDIZED_DIR"
   else
     mkdir -p "$STANDARDIZED_DIR"
@@ -40,7 +41,7 @@ done
 # Iterate through all files to find the highest CRQ number from their content if they have a CRQ-XXX header
 for CRQ_FILE_PATH in $CRQ_FILES;
 do
-  CRQ_NUMBER_FROM_HEADER=$(grep -m 1 "^# CRQ-\K[0-9]+" "$CRQ_FILE_PATH" | grep -oP 'CRQ-\K[0-9]+')
+  CRQ_NUMBER_FROM_HEADER=$(grep -m 1 "^# CRQ-\\K[0-9]+" "$CRQ_FILE_PATH" | grep -oP 'CRQ-\K[0-9]+')
   if [[ -n "$CRQ_NUMBER_FROM_HEADER" ]]; then
     ALL_CRQ_NUMBERS+=("$CRQ_NUMBER_FROM_HEADER")
   fi
@@ -94,6 +95,7 @@ do
     FINAL_CRQ_NUMBER="$NEXT_CRQ_NUMBER"
     FINAL_CRQ_TITLE="$CRQ_TITLE_FROM_HEADER"
     NEEDS_RENAME=true
+    NEEDS_HEADER_UPDATE=true # Set to true if renamed, to update header with new CRQ number
     NEXT_CRQ_NUMBER=$((10#$NEXT_CRQ_NUMBER + 1)) # Increment for next assignment
     echo "Status: Non-conforming filename, but header is good. Assigning new CRQ number."
   else
@@ -112,9 +114,11 @@ do
   NEW_FILE_PATH="${CRQ_DIR}${NEW_FILENAME}"
   DEST_FILE_PATH="${STANDARDIZED_DIR}${NEW_FILENAME}"
 
-  if $DRY_RUN; then
+  if $DRY_RUN;
+  then
     echo "  Proposed New Filename: $NEW_FILENAME"
-    if $NEEDS_HEADER_UPDATE; then
+    if $NEEDS_HEADER_UPDATE;
+    then
       echo "  Proposed New Header: # CRQ-${FINAL_CRQ_NUMBER}-${SANITIZED_TITLE}.md\n\n## Change Request: ${FINAL_CRQ_TITLE}"
     fi
     echo "  Would move from $CRQ_FILE_PATH to $DEST_FILE_PATH"
