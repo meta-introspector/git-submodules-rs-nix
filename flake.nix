@@ -133,6 +133,20 @@
               pkgs.openssl
               pkgs.cargo # Explicitly add cargo
               pkgs.jq # Add jq here
+              pkgs.valgrind # Add valgrind for profiling
+              pkgs.emacsPackages.magit
+              pkgs.emacsPackages.rustic
+              pkgs.emacsPackages.cargo-mode
+              pkgs.emacsPackages.rust-mode
+              pkgs.emacsPackages.lsp-mode
+              pkgs.emacsPackages.company
+              pkgs.emacsPackages.flycheck
+              pkgs.emacsPackages.lsp-ui
+              pkgs.emacsPackages.dap-mode
+              pkgs.emacsPackages.tuareg
+              #pkgs.emacsPackages.merlin-mode
+              #pkgs.emacsPackages.dune-mode
+              pkgs.emacsPackages.utop
             ];
             # Optionally, add environment variables needed for development
             # shellHook = ''

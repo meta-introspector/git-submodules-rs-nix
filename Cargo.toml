@@ -15,6 +15,14 @@ toml = "0.8"
 clap = { version = "4.0", features = ["derive"] } # For command-line argument parsing
 walkdir = "2.5"
 
+[dev-dependencies]
+iai-callgrind = "0.8"
+
 [[bin]]
 name = "git-config-parser"
 path = "src/bin/git-config-parser.rs"
+
+[[bench]]
+name = "my_profiling_bench"
+path = "benches/my_profiling_bench.rs"
+harness = false
