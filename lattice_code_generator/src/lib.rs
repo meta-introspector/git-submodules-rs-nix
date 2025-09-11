@@ -269,8 +269,8 @@ impl ValueType {
         // Due to `quote!` macro expansion, the exact formatting might vary slightly.
         // We'll check for key components rather than exact string match for now.
         assert!(generated_code.contains("pub enum ValueType {"));
-        assert!(generated_code.contains("Bit,"));
-        assert!(generated_code.contains("ThreeValue,"));
+        assert!(generated_code.contains("Bit ,"));
+        assert!(generated_code.contains("ThreeValue ,"));
         assert!(generated_code.contains("FiveValue,"));
         assert!(generated_code.contains("pub fn count(&self) -> u8 {"));
         assert!(generated_code.contains("ValueType::Bit => 2"));
@@ -288,7 +288,7 @@ impl ValueType {
         let generated_code = generate_value_type_enum(&primes).to_string();
         println!("Generated Code (Prime Value):\n{}", generated_code);
         assert!(generated_code.contains("pub enum ValueType {"));
-        assert!(generated_code.contains("Bit,"));
+        assert!(generated_code.contains("Bit ,"));
         assert!(generated_code.contains("P7(u8),"));
         assert!(generated_code.contains("ValueType::P7(val) => *val"));
         assert!(generated_code.contains("ValueType::P7(7u8)")); // Changed from ValueType::P7(7) to ValueType::P7(7u8)

@@ -1,3 +1,6 @@
+//! `submodule-collector` is a command-line tool designed to scan a specified root directory for Git repositories and their submodules.
+//! It recursively processes nested submodules, collects detailed information about each repository and its submodules (including remote URLs, paths, and branches),
+//! and outputs a comprehensive JSON report. The tool is resilient to errors, logging failures and continuing processing where possible.
 use clap::Parser;
 use serde::{Serialize, Deserialize};
 use std::collections::HashMap;
@@ -17,36 +20,60 @@ struct Args {
     output_file: PathBuf,
 }
 
+/// Represents detailed information about a Git submodule.
 #[derive(Serialize, Deserialize, Debug)]
 struct SubmoduleInfo {
+    /// The name of the submodule.
     name: String,
+    /// The relative path of the submodule from its parent repository's root.
     path: String, // Relative path from the parent repository
+    /// The remote URL of the submodule.
     url: String,
+    /// The branch of the submodule, if specified.
     branch: Option<String>,
-    // Nested RepoInfo for recursive submodules
+    /// Nested repository information if this submodule is itself a Git repository.
     #[serde(skip_serializing_if = "Option::is_none")]
     nested_repo: Option<RepoInfo>,
 }
 
+/// Represents detailed information about a Git repository.
 #[derive(Serialize, Deserialize, Debug)]
 struct RepoInfo {
+    /// The absolute path to the repository on disk.
     path: PathBuf, // Absolute path to the repository on disk
+    /// The remote URL of the repository.
     url: String,
+    /// A list of submodules contained within this repository.
     submodules: Vec<SubmoduleInfo>,
 }
 
+/// Represents information about a Git repository or submodule that failed to be processed.
 #[derive(Serialize, Deserialize, Debug)]
 struct FailedRepoInfo {
+    /// The path to the repository or submodule that failed.
     path: PathBuf,
+    /// The error message describing the failure.
     error: String,
 }
 
+/// The top-level structure for the JSON report, containing successfully processed repositories and a list of failed ones.
 #[derive(Serialize, Deserialize, Debug)]
 struct Report {
+    /// A map of successfully processed repositories, keyed by their remote URL.
     repositories: HashMap<String, RepoInfo>,
+    /// A list of repositories or submodules that could not be processed due to errors.
     failed_repositories: Vec<FailedRepoInfo>,
 }
 
+/// Main entry point for the `submodule-collector` application.
+///
+/// Parses command-line arguments, finds Git repositories, processes them recursively
+/// to collect submodule information, and generates a JSON report.
+///
+/// # Returns
+///
+/// `Ok(())` if the operation completes successfully, otherwise an `Err` containing
+/// a boxed error.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
 
@@ -86,6 +113,20 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+/// Recursively finds all Git repositories within a specified root directory.
+///
+/// It traverses the directory tree, looking for `.git` directories or `.git` files
+/// (for worktrees or linked repositories). It attempts to open found repositories
+/// to confirm their validity.
+///
+/// # Arguments
+///
+/// * `root_dir` - The starting directory to scan.
+///
+/// # Returns
+///
+/// A `Result` containing a `Vec<PathBuf>` of absolute paths to valid Git repository
+/// working directories, or an `Err` if an I/O error occurs during scanning.
 fn find_git_repositories(root_dir: &Path) -> Result<Vec<PathBuf>, Box<dyn std::error::Error>> {
     let mut repos = Vec::new();
     for entry in WalkDir::new(root_dir)
@@ -141,6 +182,27 @@ fn find_git_repositories(root_dir: &Path) -> Result<Vec<PathBuf>, Box<dyn std::e
     Ok(repos)
 }
 
+/// Processes a single Git repository, collecting its remote URL and recursively
+/// processing its submodules.
+///
+/// This function attempts to open the repository, retrieve its remote URL, and then
+/// iterates through its submodules. For each submodule, it recursively calls
+/// `process_repository` to collect nested information. Errors encountered during
+/// submodule processing are collected and returned.
+///
+/// # Arguments
+///
+/// * `repo_path` - The absolute path to the Git repository to process.
+///
+/// # Returns
+///
+/// A `Result` containing a tuple:
+/// * `Option<RepoInfo>`: `Some` with `RepoInfo` if the repository was successfully
+///   processed and had a remote URL, `None` otherwise (e.g., no remote URL found).
+/// * `Vec<FailedRepoInfo>`: A list of any submodules that failed to be processed
+///   within this repository's hierarchy.
+///
+/// Or an `Err` if the main repository itself cannot be opened or processed.
 fn process_repository(repo_path: &Path) -> Result<(Option<RepoInfo>, Vec<FailedRepoInfo>), Box<dyn std::error::Error>> {
     let mut failed_submodules_collected = Vec::new();
     let repo = match Repository::open(repo_path) {

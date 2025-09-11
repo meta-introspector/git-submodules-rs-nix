@@ -110,7 +110,7 @@ fn generate_and_analyze_ngrams(
                     println!("{}: {}", compressed_n_gram.replace(" ", ""), count); // Remove spaces for final output
 
                     // Collect suggestions
-                    if *n_gram != compressed_n_gram { // Fixed type mismatch
+                    if **n_gram != compressed_n_gram { // Fixed type mismatch
                         suggested_rules.push((n_gram.to_string(), **count));
                     }
 

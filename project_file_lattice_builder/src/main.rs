@@ -8,21 +8,28 @@ use std::path::PathBuf;
 // --- Simplified Lattice Types (Conceptual) ---
 // These are minimal definitions needed for this conceptual demonstration.
 
+/// Represents a boolean predicate associated with a word or concept.
 #[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 pub struct WordPredicate(bool);
 
 impl WordPredicate {
+    /// Creates a new `WordPredicate` with the given boolean value.
     fn new(value: bool) -> Self { WordPredicate(value) }
 }
 
+/// Represents a classified instance (e.g., a file) within the conceptual lattice.
 #[derive(Debug, Clone)]
 pub struct Instance {
+    /// A unique identifier for the instance (e.g., file path).
     pub id: String,
+    /// A list of `WordPredicate`s extracted for this instance.
     pub predicates: Vec<WordPredicate>,
+    /// The conceptual path in the lattice hierarchy where this instance is classified.
     pub classification_path: String, // Conceptual path in the lattice hierarchy
 }
 
 impl Instance {
+    /// Creates a new `Instance` with the specified ID, predicates, and classification path.
     pub fn new(id: &str, predicates: Vec<WordPredicate>, classification_path: &str) -> Self {
         Self { id: id.to_string(), predicates, classification_path: classification_path.to_string() }
     }
@@ -34,6 +41,9 @@ struct PredicateClassifier {
 }
 
 impl PredicateClassifier {
+    /// Creates a new `PredicateClassifier` with a list of target predicates.
+    ///
+    /// All target predicates are converted to lowercase for case-insensitive matching.
     fn new(predicates: Vec<&str>) -> Self {
         Self { target_predicates: predicates.into_iter().map(|s| s.to_lowercase()).collect() }
     }
@@ -49,6 +59,20 @@ impl PredicateClassifier {
 
 // --- Main Logic ---
 
+/// Main entry point for the `project_file_lattice_builder` application.
+///
+/// This program conceptually constructs a "lattice of all the files in our project."
+/// It simulates the process of identifying, processing, and classifying each file
+/// according to the Lattice Idea Framework, treating files as "large objects"
+/// that are mapped into the lattice structure.
+///
+/// It scans the current directory, extracts conceptual content from files,
+/// applies word predicates, and classifies them into a simplified lattice hierarchy.
+///
+/// # Returns
+///
+/// `Ok(())` if the operation completes successfully, otherwise an `Err` containing
+/// a boxed error.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("\n--- Project File Lattice Builder ---");
 
@@ -139,15 +163,15 @@ mod tests {
 
         assert_eq!(instance.id, "test_id");
         assert_eq!(instance.predicates.len(), 2);
-        assert_eq!(instance.predicates[0].0, true);
-        assert_eq!(instance.predicates[1].0, false);
+        assert_eq!(instance.predicates[0].0, true); // rust
+        assert_eq!(instance.predicates[1].0, false); // test
         assert_eq!(instance.classification_path, "test/path");
     }
 
     #[test]
     fn test_predicate_classifier_new() {
         let classifier = PredicateClassifier::new(vec!["Rust", "PYTHON", "Js"]);
-        assert_eq!(classifier.target_predicates, vec!["rust", "python", "js"]);
+        assert_eq!(classifier.target_predicates, vec!["rust", "python", "js"])
     }
 
     #[test]
