@@ -1,8 +1,13 @@
-pub fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<Vec<(String, usize)>, Box<dyn std::error::Error>> {
-    let mut all_tokens: Vec<String> = Vec::new();
-    let tokenizer_re = Regex::new(r"[^a-zA-Z0-9]+")?;
+use regex::Regex;
+use std::collections::HashMap;
 
-    let mut suggested_rules: Vec<(String, usize)> = Vec::new(); // Store (n_gram, count) for suggestions
+use crate::report::{Report, RepositoryInfo, SubmoduleInfo, FailedRepository};
+use crate::ontology::Ontology;
+use crate::apply_emoji_ontology; // Assuming this function is in the crate root or another module
+
+// New private function to collect all tokens
+fn collect_all_tokens(report: &Report, tokenizer_re: &Regex) -> Vec<String> {
+    let mut all_tokens: Vec<String> = Vec::new();
 
     // Collect tokens from successful repositories
     for (url, info) in &report.repositories {
@@ -43,37 +48,35 @@ pub fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<V
             }
         }
     }
+    all_tokens
+}
 
-    if !all_tokens.is_empty() {
-        let mut token_counts: HashMap<String, usize> = HashMap::new();
-        for token in &all_tokens {
-            *token_counts.entry(token.to_string()).or_insert(0) += 1;
-        }
-
-        let mut sorted_token_counts: Vec<(&String, &usize)> = token_counts.iter().collect();
-        sorted_token_counts.sort_by(|a, b| b.1.cmp(a.1));
-
-        println!("\n--- Most Frequently Mentioned Tokens ---");
-        for (token, count) in sorted_token_counts.iter().take(20) {
-            println!("{}: {}", apply_emoji_ontology(token, ontology), count);
-        }
+// New private function to count token frequencies
+fn count_token_frequencies(tokens: &[String]) -> HashMap<String, usize> {
+    let mut token_counts: HashMap<String, usize> = HashMap::new();
+    for token in tokens {
+        *token_counts.entry(token.to_string()).or_insert(0) += 1;
     }
+    token_counts
+}
 
-    // Generate initial emoji tokens
-    let mut current_emoji_tokens: Vec<String> = all_tokens.iter()
+// New private function to generate and analyze n-grams
+fn generate_and_analyze_ngrams(
+    all_tokens: &[String],
+    ontology: &Option<Ontology>,
+) -> Vec<(String, usize)> {
+    let mut suggested_rules: Vec<(String, usize)> = Vec::new();
+    let n_gram_sizes = vec![1, 2, 3, 5, 7, 11, 13, 17, 19];
+    let max_iterations = 20; // A practical limit to prevent infinite loops
+
+    let mut current_emoji_tokens: Vec<String> = all_tokens
+        .iter()
         .map(|token| apply_emoji_ontology(token, ontology))
         .collect();
 
-    let n_gram_sizes = vec![1, 2, 3, 5, 7, 11, 13, 17, 19];
-    let mut iteration = 0;
-    let max_iterations = 20; // A practical limit to prevent infinite loops
-
-    loop {
-        iteration += 1;
+    for iteration in 1..=max_iterations {
         println!("\n--- Iteration {} ---", iteration);
-        let mut changed = false;
         let previous_emoji_tokens = current_emoji_tokens.clone(); // For convergence check
-
         let mut next_iteration_tokens: Vec<String> = Vec::new(); // Tokens for the next iteration
 
         for &n in &n_gram_sizes {
@@ -95,10 +98,14 @@ pub fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<V
                     *n_gram_counts.entry(n_gram).or_insert(0) += 1;
                 }
 
-                let mut sorted_n_gram_counts: Vec<(&String, &usize)> = n_gram_counts.iter().collect();
+                let mut sorted_n_gram_counts: Vec<(&String, &usize)> =
+                    n_gram_counts.iter().collect();
                 sorted_n_gram_counts.sort_by(|a, b| b.1.cmp(a.1));
 
-                println!("\n--- Most Frequently Mentioned {}-grams (Iteration {}) ---", n, iteration);
+                println!(
+                    "\n--- Most Frequently Mentioned {}-grams (Iteration {}) ---",
+                    n, iteration
+                );
                 for (n_gram, count) in sorted_n_gram_counts.iter().take(10) {
                     let compressed_n_gram = apply_emoji_ontology(n_gram, ontology);
                     println!("{}: {}", compressed_n_gram.replace(" ", ""), count); // Remove spaces for final output
@@ -114,7 +121,10 @@ pub fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<V
                     next_iteration_tokens.push(compressed_n_gram.replace(" ", ""));
                 }
             } else {
-                println!("\n--- Not enough tokens to generate {}-grams (Iteration {}) ---", n, iteration);
+                println!(
+                    "\n--- Not enough tokens to generate {}-grams (Iteration {}) ---",
+                    n, iteration
+                );
             }
         }
 
@@ -124,7 +134,26 @@ pub fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<V
         }
         current_emoji_tokens = next_iteration_tokens;
     }
+    suggested_rules
+}
+
+pub fn analyze_strings(report: &Report, ontology: &Option<Ontology>) -> Result<Vec<(String, usize)>, Box<dyn std::error::Error>> {
+    let tokenizer_re = Regex::new(r"[^a-zA-Z0-9]+")?;
+    let all_tokens = collect_all_tokens(report, &tokenizer_re);
+
+    if !all_tokens.is_empty() {
+        let token_counts = count_token_frequencies(&all_tokens);
+
+        let mut sorted_token_counts: Vec<(&String, &usize)> = token_counts.iter().collect();
+        sorted_token_counts.sort_by(|a, b| b.1.cmp(a.1));
+
+        println!("\n--- Most Frequently Mentioned Tokens ---");
+        for (token, count) in sorted_token_counts.iter().take(20) {
+            println!("{}: {}", apply_emoji_ontology(token, ontology), count);
+        }
+    }
+
+    let suggested_rules = generate_and_analyze_ngrams(&all_tokens, ontology);
 
     Ok(suggested_rules)
 }
-
