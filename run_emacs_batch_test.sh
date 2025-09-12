@@ -14,6 +14,9 @@ cd "$SCRIPT_DIR/.emacs.d/terlar-emacs-config" || { echo "Error: Could not change
 
 echo "Running headless Emacs configuration test..."
 
+# Ensure XDG_DATA_DIRS is set for the Nix environment
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+
 # Run Emacs in batch mode using nix develop
 # The -l flag loads the specified Emacs Lisp file
 nix run .# -- --batch -l "$EMACS_LISP_TEST_FILE"
