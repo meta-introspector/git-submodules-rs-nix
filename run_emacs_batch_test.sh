@@ -16,7 +16,7 @@ echo "Running headless Emacs configuration test..."
 
 # Run Emacs in batch mode using nix develop
 # The -l flag loads the specified Emacs Lisp file
-nix develop --command "emacs --batch -l \"$EMACS_LISP_TEST_FILE\""
+nix run .# -- --batch -l "$EMACS_LISP_TEST_FILE"
 
 # Capture the exit code of the Emacs process
 TEST_EXIT_CODE=$?
