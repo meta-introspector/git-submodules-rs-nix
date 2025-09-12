@@ -2,9 +2,15 @@ pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
-mod lattice_model;
+pub mod lattice_model;
+pub mod crq_parser;
+pub mod word_classifier;
+pub mod ngram_analyzer;
+pub mod crq_state_recognizer;
 
-use lattice_model::{Lattice, LatticeLayer, Instance, PredicateClassifier, ValueType};
+use lattice_model::{Lattice, LatticeLayer, Instance, ValueType};
+
+use word_classifier::PredicateClassifier;
 
 pub fn build_zos_lattice(files: &[(String, String, String)]) -> Lattice {
     let mut lattice = Lattice::new("ZOS Project Lattice");

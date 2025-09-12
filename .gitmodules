@@ -13,3 +13,6 @@
 [submodule "naersk"]
 	path = naersk
 	url = https://github.com/nix-community/naersk
+[submodule ".emacs.d/terlar-emacs-config"]
+	path = .emacs.d/terlar-emacs-config
+	url = https://github.com/terlar/emacs-config

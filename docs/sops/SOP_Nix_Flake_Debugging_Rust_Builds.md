@@ -67,6 +67,14 @@ This SOP outlines common issues and their resolutions when debugging Nix flakes 
       defaultFeatures = false; # Disable features that pull in problematic dependencies
       # features = [ "some-other-feature" ]; # Optionally enable other desired features
     };
+
+### 2.3 `rust-toolchain.toml` and Nix Toolchain Management
+
+**Problem**: Inconsistent Rust toolchain versions between local development and Nix builds, leading to compilation errors or unexpected behavior.
+
+**Solution**: Ensure that the `rust-toolchain.toml` file in the project root (or crate root) is aligned with the Rust toolchain provided by Nix. Nix's `rust-overlay` or `pkgs.rustPlatform` typically provides a specific Rust toolchain. If `rust-toolchain.toml` specifies a different version or components, it can cause conflicts. Consider removing `rust-toolchain.toml` if Nix is the sole source of truth for the toolchain, or ensure it points to a compatible version.
+
+**Best Practice**: For Nix-managed Rust projects, it's often best to let Nix fully manage the Rust toolchain. If `rust-toolchain.toml` is used, ensure it's compatible with the Nix-provided toolchain or used in conjunction with `nix-shell` or `direnv` to load the Nix-provided toolchain.
     ```
 
 ## 3. Debugging Process

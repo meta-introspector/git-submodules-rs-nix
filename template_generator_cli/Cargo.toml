@@ -1,0 +1,7 @@
+[package]
+name = "template_generator_cli"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+wikimedia-template-introspector = { path = "../wikimedia-template-introspector" }
