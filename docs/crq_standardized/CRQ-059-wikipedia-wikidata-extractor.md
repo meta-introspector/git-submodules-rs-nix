@@ -6,7 +6,12 @@ To expand our knowledge base by extracting content from Wikipedia articles and t
 **Proposed Solution:**
 
 1.  **Create `wikipedia_extractor` Rust Crate:** (Already initiated) A new Rust crate named `wikipedia_extractor` will be developed to encapsulate all Wikipedia and Wikidata extraction logic.
-2.  **Define Data Structures:**
+2.  **Integrate `wikimedia-template-introspector`:** Utilize the `wikimedia-template-introspector` crate to parse and interpret MediaWiki templates found within Wikipedia article content, enabling structured extraction of templated data.
+    *   **Update (2025-09-12):**
+        *   The `wikimedia-template-introspector-core` crate has been developed to provide core parsing logic for MediaWiki template invocations.
+        *   The `wikimedia-template-introspector` (procedural macro) crate has been updated to depend on `wikimedia-template-introspector-core` and now attempts to use its `parse_template_invocation` function to generate Rust code representing the parsed template structure.
+        *   Currently, there are compilation issues related to incorrect regex escaping within `wikimedia-template-introspector/src/parser_codegen.rs` that are being actively addressed.
+3.  **Define Data Structures:**
     *   Implement Rust structs to represent Wikipedia article content (text, links, metadata) and Wikidata RDF facts.
     *   Consider using existing crates for RDF parsing if available and suitable.
 3.  **Wikipedia Article Fetching:**

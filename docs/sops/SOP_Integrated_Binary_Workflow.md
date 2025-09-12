@@ -54,6 +54,10 @@ Utilize the `project_file_lattice_builder` to classify project files. For a trul
 *   **Automated Analysis:** Automate the collection and analysis of complex project structures, reducing manual effort.
 *   **Customizable Classification:** Enable more sophisticated and context-aware file classification based on Git properties.
 
+## Current Status
+
+This SOP currently describes a conceptual workflow. The individual tools (`submodule-collector`, `git-config-parser`, `project_file_lattice_builder`) exist, but their seamless integration as described in Steps 2 and 3 requires further development, including custom scripting for data orchestration and potential modifications to the tools' input/output mechanisms.
+
 ## Notes
 
 *   The integration of Step 2 and Step 3 requires custom scripting or modifications to the existing binaries to handle data passing and processing.

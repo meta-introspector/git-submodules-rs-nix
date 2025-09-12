@@ -174,6 +174,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2fd1289c04a9ea8cb22300a459a72a385d7c73d3259e2ed7dcb2af674838cfa9"
 
 [[package]]
+name = "chrono"
+version = "0.4.42"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "145052bdd345b87320e369255277e3fb5152762ad123a901ef5c262dd38fe8d2"
+dependencies = [
+ "num-traits",
+ "serde",
+]
+
+[[package]]
 name = "clap"
 version = "4.5.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1106,6 +1116,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "650eef8c711430f1a879fdd01d4745a7deea475becfb90269c06775983bbf086"
 
 [[package]]
+name = "num-traits"
+version = "0.2.19"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841"
+dependencies = [
+ "autocfg",
+]
+
+[[package]]
 name = "object"
 version = "0.36.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1965,6 +1984,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "thiserror"
+version = "2.0.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3467d614147380f2e4e374161426ff399c91084acd2363eaf549172b3d5e60c0"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "2.0.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c5e1be1c48b9172ee610da68fd9cd2770e7a4056cb3fc98710ee6906f0c7960"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.106",
+]
+
+[[package]]
 name = "tinystr"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2362,12 +2401,71 @@ dependencies = [
 ]
 
 [[package]]
+name = "wiki_data_extractor"
+version = "0.1.0"
+dependencies = [
+ "reqwest",
+ "tokio",
+ "url",
+ "wikipedia_extractor",
+]
+
+[[package]]
+name = "wikidata"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a34b80c94c1d2e5df9e3e7dcb886e646b2cf148773f689da670d8f11849d8c72"
+dependencies = [
+ "chrono",
+ "lazy_static",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "wikimedia-template-introspector"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "regex",
+ "syn 2.0.106",
+ "wikimedia-template-introspector-core",
+]
+
+[[package]]
+name = "wikimedia-template-introspector-core"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "regex",
+ "syn 2.0.106",
+]
+
+[[package]]
+name = "wikipedia"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0d1862a480c756c18d13e3e4bb262ff9f8a09e42385e2a2cdd4eb79041ebd68a"
+dependencies = [
+ "reqwest",
+ "serde_json",
+ "thiserror",
+ "url",
+]
+
+[[package]]
 name = "wikipedia_extractor"
 version = "0.1.0"
 dependencies = [
  "reqwest",
  "scraper",
+ "serde",
+ "serde_json",
  "tokio",
+ "wikidata",
+ "wikipedia",
 ]
 
 [[package]]

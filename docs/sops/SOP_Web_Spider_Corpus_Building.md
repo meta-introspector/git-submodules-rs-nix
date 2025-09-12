@@ -33,7 +33,7 @@ target/debug/web_spider_corpus_builder -m docs/reflection/conceptual_path_recons
 ```
 
 #### 3.3. Output
-The tool will create a directory named `corpus/web_sources/` in the project root. Inside this directory, each successfully fetched and processed web page will have its extracted text content saved as a *new* `.txt` file. The filenames are derived from the URL to ensure uniqueness and readability. No existing files will be modified.
+The tool will create a directory named `corpus/web_sources/` in the project root. Inside this directory, each successfully fetched and processed web page will have its extracted text content saved as a *new* `.txt` file. *   The filenames are derived from the URL to ensure uniqueness and readability (e.g., `https://example.com/path/to/page.html` might become `example.com_path_to_page.html.txt`). No existing files will be modified.
 
 ### 4. Configuration
 URLs are now read from Markdown files specified as command-line arguments. This allows for flexible input of URLs without modifying the source code.

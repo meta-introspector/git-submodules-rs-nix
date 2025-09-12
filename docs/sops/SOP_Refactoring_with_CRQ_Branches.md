@@ -22,6 +22,7 @@ To provide a systematic approach for refactoring existing code into CRQ-driven b
 *   **Small, Focused Commits:** Within the refactoring branch, make small, focused commits. Each commit should represent a logical step in the refactoring process, making it easier to review and revert if necessary.
 *   **Continuous Testing:** Ensure that automated tests (unit, integration) are run frequently during the refactoring process to catch regressions early. New tests should be added to cover the refactored code.
 *   **No New Features:** Strictly avoid introducing new features within a refactoring branch. The sole purpose of the branch is to refactor existing code.
+*   **Rollback Strategy:** Plan for a clear rollback strategy in case issues are discovered after merging. This might involve preparing revert commits or having a clear understanding of how to quickly undo the refactoring if necessary.
 
 ### 4. 100% Readiness for Merge
 
