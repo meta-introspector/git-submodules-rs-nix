@@ -1,0 +1,1 @@
+This idea is living in my mind as we speak. So this idea occupies my mind now.
