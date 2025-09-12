@@ -18,6 +18,10 @@ struct Args {
     /// Path to a file containing URLs to spider (one URL per line)
     #[arg(long)]
     url_file: Option<PathBuf>,
+
+    /// Output directory for the corpus
+    #[arg(short, long, default_value = "corpus/web_sources")]
+    output_dir: PathBuf,
 }
 
 fn extract_urls_from_markdown(file_path: &Path) -> Result<Vec<String>, Box<dyn std::error::Error>> {
@@ -51,8 +55,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
 
-    let output_dir = PathBuf::from("corpus/web_sources");
-    fs::create_dir_all(&output_dir)?;
+    fs::create_dir_all(&args.output_dir)?;
 
     let client = Client::new();
 
@@ -67,18 +70,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .and_then(|value| value.to_str().ok());
 
             let file_name = sanitize(url.host_str().unwrap_or("unknown").to_string() + &url.path().replace('/', "_")) + ".txt";
-            let output_path = output_dir.join(file_name);
+            let output_path = args.output_dir.join(file_name);
 
             if let Some(ct) = content_type {
                 if ct.contains("text/html") {
                     let html_content = response.text()?;
                     let document = Html::parse_document(&html_content);
-                    let selector = Selector::parse("p").unwrap(); // Extract text from paragraph tags
+                    let selector = Selector::parse("p, h1").unwrap(); // Extract text from paragraph and heading tags
                     let text_content: String = document.select(&selector)
                         .map(|element| element.text().collect::<String>())
                         .collect::<Vec<String>>()
                         .join("\n");
                     fs::write(&output_path, text_content)?;
+                    println!("Successfully wrote HTML content to: {}", output_path.display());
                 } else if ct.contains("application/pdf") {
                     // Handle PDF by just noting it, as direct text extraction is complex
                     println!("  Skipping PDF: {}", url_str);
@@ -94,10 +98,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         } else {
             eprintln!("Failed to fetch {}: Status {}", url_str, response.status());
+            println!("DEBUG: Fetch failed for {}: Status {}", url_str, response.status());
         }
         std::thread::sleep(std::time::Duration::from_secs(1)); // Be polite
     }
 
-    println!("Corpus building complete in {}", output_dir.display());
+    println!("Corpus building complete in {}", args.output_dir.display());
     Ok(())
 }

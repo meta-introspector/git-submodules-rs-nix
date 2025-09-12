@@ -30,18 +30,22 @@ fn test_corpus_creation_and_html_fetch_from_markdown() {
     assert!(build_output.status.success(), "Build failed: {:?}", build_output);
 
     // Run the spider executable with the dummy markdown file
-    let run_output = Command::new("target/debug/web_spider_corpus_builder")
+    let run_output = Command::new("/data/data/com.termux.nix/files/home/pick-up-nix/source/github/meta-introspector/submodules/target/debug/web_spider_corpus_builder")
         .arg("-m")
         .arg(&test_md_file)
+        .arg("-o")
+        .arg(&test_output_dir)
         .output()
         .expect("Failed to run web_spider_corpus_builder");
+    println!("web_spider_corpus_builder stdout: {}", String::from_utf8_lossy(&run_output.stdout));
+    println!("web_spider_corpus_builder stderr: {}", String::from_utf8_lossy(&run_output.stderr));
     assert!(run_output.status.success(), "Spider run failed: {:?}", run_output);
 
     // Assertions
     assert!(test_output_dir.exists());
 
     // Check for the fetched file (filename derived from URL)
-    let expected_file_name = sanitize_filename::sanitize("example.com_index.html") + ".txt";
+    let expected_file_name = sanitize_filename::sanitize("example.com_") + ".txt";
     let expected_file_path = test_output_dir.join(expected_file_name);
     assert!(expected_file_path.exists());
 

@@ -9,8 +9,8 @@ pub mod ngram_analyzer;
 pub mod crq_state_recognizer;
 
 use lattice_model::{Lattice, LatticeLayer, Instance, ValueType};
-use crq_parser::CRQ;
-use word_classifier::{PredicateClassifier, WordPredicate};
+
+use word_classifier::PredicateClassifier;
 
 pub fn build_zos_lattice(files: &[(String, String, String)]) -> Lattice {
     let mut lattice = Lattice::new("ZOS Project Lattice");
