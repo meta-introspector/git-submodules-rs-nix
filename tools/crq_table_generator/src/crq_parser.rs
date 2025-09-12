@@ -1,6 +1,3 @@
-use regex::Regex;
-use lazy_static::lazy_static;
-
 pub struct Crq {
     pub problem_goal: String,
     pub proposed_solution: String,
@@ -9,6 +6,8 @@ pub struct Crq {
 
 #[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
 pub enum NextStep {
+    IssueTooLarge,              // New: CoderabbitAI indicates issue is too large
+    OverQuota,                  // New: CoderabbitAI indicates rate limit/over quota
     ReviewProvided,             // CoderabbitAI has provided a meaningful review
     ReviewSkipped,              // CoderabbitAI skipped, no meaningful review
     ReviewNeededFromCoderabbitAI, // We need to request a review from CoderabbitAI
@@ -24,7 +23,12 @@ pub struct CommsAnalysisResult {
     pub response_count: usize,
     pub total_size: usize,
     pub meaningful_response_present: bool,
+    pub contains_issue_too_large: bool,
+    pub contains_over_quota: bool,
 }
+
+use regex::Regex;
+use lazy_static::lazy_static;
 
 lazy_static! {
     static ref WORD_REGEX: Regex = Regex::new(r"[a-z]+").unwrap();
@@ -71,6 +75,8 @@ pub fn check_coderabbitai_comms(crq_id: &str) -> CommsAnalysisResult {
     let mut skipped_review_present = false;
     let mut response_count = 0;
     let mut total_size = 0;
+    let mut contains_issue_too_large = false;
+    let mut contains_over_quota = false;
 
     if let Ok(entries) = std::fs::read_dir(&full_comms_path) {
         for entry in entries {
@@ -83,6 +89,12 @@ pub fn check_coderabbitai_comms(crq_id: &str) -> CommsAnalysisResult {
                         let lower_content = content.to_lowercase();
                         if lower_content.contains("review skipped") || lower_content.contains("auto reviews are disabled") {
                             skipped_review_present = true;
+                        }
+                        if lower_content.contains("too large") || lower_content.contains("exceeds size limit") || lower_content.contains("quota") {
+                            contains_issue_too_large = true;
+                        }
+                        if lower_content.contains("rate limit") || lower_content.contains("over quota") || lower_content.contains("wait") || lower_content.contains("try again later") || lower_content.contains("reset time") {
+                            contains_over_quota = true;
                         }
                     }
                 }
@@ -97,17 +109,45 @@ pub fn check_coderabbitai_comms(crq_id: &str) -> CommsAnalysisResult {
         response_count,
         total_size,
         meaningful_response_present,
+        contains_issue_too_large,
+        contains_over_quota,
     }
 }
 
-pub fn determine_next_step(crq_content: &str, crq_id: &str) -> NextStep {
+// New function for Phase 2 actions (Develop, Document, Refactor)
+fn classify_phase2_actions(lower_content: &str) -> Option<NextStep> {
+    // State: Develop/Implement
+    let develop_keywords = ["develop", "implement", "build"];
+    let develop_ngrams = [
+        "rust code", "gh cli", "code generation", "new sops",
+        "crq driven", "driven development", "add crq"
+    ];
+    if develop_keywords.iter().any(|&k| lower_content.contains(k)) ||
+       contains_any_ngram(&lower_content, &develop_ngrams) {
+        return Some(NextStep::Develop);
+    }
+
+    // State: Document
+    let document_keywords = ["document", "sop", "guide"];
+    if document_keywords.iter().any(|&k| lower_content.contains(k)) {
+        return Some(NextStep::Document);
+    }
+
+    // State: Refactor
+    let refactor_keywords = ["refactor", "restructure", "improve"];
+    if refactor_keywords.iter().any(|&k| lower_content.contains(k)) {
+        return Some(NextStep::Refactor);
+    }
+
+    None
+}
+
+// New function to classify all other states (Phase 2)
+pub fn classify_phase2_states(crq_content: &str, crq_id: &str, comms_analysis: &CommsAnalysisResult) -> NextStep {
     let lower_content = crq_content.to_lowercase();
     let content_byte_size = crq_content.as_bytes().len();
 
-    let comms_analysis = check_coderabbitai_comms(crq_id);
-
-    // State 1: ReviewProvided (Highest Priority)
-    // CoderabbitAI has provided a meaningful review
+    // State 1: ReviewProvided (CoderabbitAI has provided a meaningful review)
     if comms_analysis.meaningful_response_present {
         return NextStep::ReviewProvided;
     }
@@ -125,7 +165,7 @@ pub fn determine_next_step(crq_content: &str, crq_id: &str) -> NextStep {
     // State 4: RespondToHuman (Our turn for human attention/decision)
     let respond_to_human_keywords = [
         "clarify", "question", "decision", "feedback", "input", "discuss", "confirm",
-        "reflect", "strategic", "conceptual", "architecture", "plan"
+        "review", "audit", "verify", "assess", "reflect", "strategic", "conceptual", "architecture", "plan"
     ];
     let respond_to_human_ngrams = [
         "change request", "request quality", "quality crq", "crq document",
@@ -141,36 +181,38 @@ pub fn determine_next_step(crq_content: &str, crq_id: &str) -> NextStep {
         "llm communication protocol", "meta lattice application", "orchestration layer",
         "recursive decomposition"
     ];
-    if lower_content.contains("review") || lower_content.contains("audit") || lower_content.contains("verify") || lower_content.contains("assess") ||
-       contains_any_ngram(&lower_content, &respond_to_human_ngrams) ||
-       respond_to_human_keywords.iter().any(|&k| lower_content.contains(k)) {
+    if respond_to_human_keywords.iter().any(|&k| lower_content.contains(k)) ||
+       contains_any_ngram(&lower_content, &respond_to_human_ngrams) {
         return NextStep::RespondToHuman;
     }
 
-    // State 5: Develop/Implement
-    let develop_keywords = ["develop", "implement", "build"];
-    let develop_ngrams = [
-        "rust code", "gh cli", "code generation", "new sops",
-        "crq driven", "driven development", "add crq"
-    ];
-    if develop_keywords.iter().any(|&k| lower_content.contains(k)) ||
-       contains_any_ngram(&lower_content, &develop_ngrams) {
-        return NextStep::Develop;
-    }
-
-    // State 6: Document
-    let document_keywords = ["document", "sop", "guide"];
-    if document_keywords.iter().any(|&k| lower_content.contains(k)) {
-        return NextStep::Document;
-    }
-
-    // State 7: Refactor
-    let refactor_keywords = ["refactor", "restructure", "improve"];
-    if refactor_keywords.iter().any(|&k| lower_content.contains(k)) {
-        return NextStep::Refactor;
+    // State 5: Phase 2 Actions (Develop, Document, Refactor)
+    if let Some(phase2_action) = classify_phase2_actions(&lower_content) {
+        return phase2_action;
     }
 
     NextStep::Unknown
+}
+
+pub fn determine_next_step(crq_content: &str, crq_id: &str) -> NextStep {
+    let lower_content = crq_content.to_lowercase();
+    let content_byte_size = crq_content.as_bytes().len();
+
+    let comms_analysis = check_coderabbitai_comms(crq_id);
+
+    // Phase 1 States (Highest Priority)
+    // State 1: OverQuota (Immediate action to wait)
+    if comms_analysis.contains_over_quota {
+        return NextStep::OverQuota;
+    }
+
+    // State 2: IssueTooLarge (Specific action for size)
+    if comms_analysis.contains_issue_too_large {
+        return NextStep::IssueTooLarge;
+    }
+
+    // All other states are Phase 2
+    classify_phase2_states(crq_content, crq_id, &comms_analysis)
 }
 
 pub fn parse_crq(content: &str) -> Option<Crq> {

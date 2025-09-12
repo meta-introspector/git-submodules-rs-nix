@@ -50,26 +50,28 @@ echo "Created $PR_DESCRIPTION_FILE"
 
 # --- Write comments ---
 COMMENTS=$(echo "$PR_DATA" | jq -c '.comments[]')
-COMMENT_COUNT=0
+CODERABBITAI_COMMENT_COUNT=0
 
 echo "$COMMENTS" | while read -r comment; do
-  COMMENT_COUNT=$((COMMENT_COUNT + 1))
   COMMENT_AUTHOR=$(echo "$comment" | jq -r '.author.login')
   COMMENT_BODY=$(echo "$comment" | jq -r '.body')
   COMMENT_CREATED_AT=$(echo "$comment" | jq -r '.createdAt')
 
-  COMMENT_FILE="$RESPONSES_DIR/$(printf "%03d" "$COMMENT_COUNT").md"
-  {
-    echo "---"
-    echo "crq: \"$CRQ_ID\""
-    echo "messageId: \"$(printf "%03d" "$COMMENT_COUNT")\"" # Sequential number as message ID for comments
-    echo "timestamp: \"$COMMENT_CREATED_AT\"" # Using createdAt as timestamp
-    echo "author: \"$COMMENT_AUTHOR\""
-    echo "---"
-    echo ""
-    echo "$COMMENT_BODY"
-  } > "$COMMENT_FILE"
-  echo "Created $COMMENT_FILE"
+  if [ "$COMMENT_AUTHOR" == "coderabbitai" ]; then
+    CODERABBITAI_COMMENT_COUNT=$((CODERABBITAI_COMMENT_COUNT + 1))
+    COMMENT_FILE="$RESPONSES_DIR/$(printf "%03d" "$CODERABBITAI_COMMENT_COUNT")_coderabbitai.md"
+    {
+      echo "---"
+      echo "crq: \"$CRQ_ID\""
+      echo "messageId: \"$(printf "%03d" "$CODERABBITAI_COMMENT_COUNT")\"" # Sequential number as message ID for comments
+      echo "timestamp: \"$COMMENT_CREATED_AT\""
+      echo "author: \"$COMMENT_AUTHOR\""
+      echo "---"
+      echo ""
+      echo "$COMMENT_BODY"
+    } > "$COMMENT_FILE"
+    echo "Created $COMMENT_FILE"
+  fi
 done
 
 echo "Finished processing PR #$PR_NUMBER."

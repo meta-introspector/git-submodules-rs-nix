@@ -42,3 +42,29 @@ The core implementation of the proposed solution has been completed and integrat
 *   The `crq_table_generator` now produces a detailed report reflecting these new classifications.
 
 This phase of the CRQ is considered complete. Further work will be tracked under new CRQs, such as `CRQ-046-crq-classification-via-comms-analysis-and-state-machine.md` for more advanced comms analysis.
+
+
+## CRQ Status Report (Appended 2025-09-11)
+
+**1. Agent Rate Limit Management and Interaction Receipts (CRQ-046)**
+
+*   **Problem/Goal:** To manage interactions with external agents (like CoderabbitAI) by respecting their API rate limits and to record these interactions within CRQ documents.
+*   **Progress:**
+    *   The `crq_table_generator` has been enhanced to include new classification states: `IssueTooLarge` and `OverQuota`. These states are now prioritized in the classification logic, allowing for immediate identification of CRQs affected by size limits or rate limits.
+    *   The `check_coderabbitai_comms` function within the `crq_table_generator` has been updated to detect keywords related to "issue too large" and "over quota" messages in CoderabbitAI's communication logs.
+    *   The `process_all_crq_branches.sh` script, which pulls communication data from GitHub, has been fixed to correctly mirror all CoderabbitAI responses, ensuring accurate data for analysis.
+    *   The `crq_table_generator` can now generate `gh pr comment` commands for CRQs classified as `ReviewSkipped`, facilitating manual review requests.
+*   **Next Steps:** The core logic for detecting rate limit and size issues is in place. The next phase for this CRQ would involve implementing the actual rate limit management (e.g., delaying command execution based on reset times) and the mechanism for adding interaction receipts directly into CRQ files.
+
+**2. CRQ Classification via Comms Analysis and State Machine (Proposed as CRQ-056)**
+
+*   **Problem/Goal:** To achieve a more deterministic and nuanced classification of CRQs by analyzing their communication history with CoderabbitAI, moving towards a state machine model.
+*   **Progress:**
+    *   The `crq_table_generator` now employs a more granular state machine logic for CRQ classification. This includes states suchs `ReviewProvided`, `ReviewSkipped (No Meaningful Response)`, `ReviewNeeded from CoderabbitAI`, and `Respond To / Our Turn`.
+    *   The `crq_word_analyzer` tool has been significantly enhanced to support advanced text analysis:
+        *   It can now perform n-gram analysis (for lengths 2, 3, 5, 7, 11, 13, 17, 19) to identify more contextual patterns in text.
+        *   It includes a new mode for classifying individual CoderabbitAI responses into types like `SkippedMessage`, `RateLimitMessage`, `ReviewSummary`, and `QuestionMessage`.
+        *   It can perform sequential response analysis, identifying common words/n-grams at different positions within a communication sequence.
+*   **Next Steps:** Further refinement of the classification rules based on the insights gained from n-gram analysis and individual response type classification. This will lead to a more robust and accurate state machine for CRQ triage.
+
+This report summarizes the significant progress made in automating and refining our CRQ management and classification processes.
