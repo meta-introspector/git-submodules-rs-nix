@@ -1,6 +1,8 @@
 Current Git Branch: `feature/CRQ-055-enhance-crq-parser-for-coderabbitai-skipped-reviews`
 
 Open Pull Requests:
+*   27: CRQ-058: Remove Unused Imports in `hash_extractor_rust` Crate (`feature/crq-058-remove-unused-imports-hash-extractor-rust`)
+*   26: CRQ-057: Remove Stabilized `edition2024` Feature from Cargo.toml Files (`feature/crq-057-remove-stabilized-edition2024-feature`)
 *   25: CRQ-056: Implement Web Spider and Corpus Builder for Project Analysis (`feature/crq-056-implement-web-spider-and-corpus-builder-for-project-analysis`)
 *   24: CRQ-54: deterministic crq parser (`feature/crq-54-deterministic-crq-parser`)
 *   23: CRQ-34: crq 003 context introspector (`feature/crq-34-crq-003-context-introspector`)
