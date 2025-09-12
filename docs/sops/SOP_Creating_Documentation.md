@@ -54,6 +54,7 @@ Based on the categorized insights, draft individual SOP documents. Each SOP shou
 *   **Solution/Procedure**: Detail the steps or configuration required to resolve the problem or perform the operation.
 *   **Tools Used**: List the specific tools, commands, or code snippets involved.
 *   **Best Practices**: Include any recommended practices or considerations.
+*   **CRQ Linkage (Optional)**: If this SOP is a direct result of a CRQ or is closely related to one, consider referencing the relevant CRQ(s) for traceability and context.
 
 ### 2.5 Organize Documentation
 
@@ -77,6 +78,7 @@ Documentation is not a one-time task but an ongoing process. Embrace an iterativ
 *   **Examples**: Include code snippets or command examples to illustrate concepts.
 *   **Maintainability**: Keep documents focused on single topics to make them easier to update.
 *   **Accessibility**: Ensure documentation is easy to find and navigate.
+*   **Review and Approval**: Establish a clear process for reviewing and approving SOPs to ensure accuracy, quality, and consensus among team members.
 
 ## 5. How This SOP Was Created
 
