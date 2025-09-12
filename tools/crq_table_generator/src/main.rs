@@ -174,6 +174,7 @@ fn main() {
                     NextStep::IssueTooLarge => "Issue Too Large", // New case
                     NextStep::OverQuota => "Over Quota", // New case
                     NextStep::Unknown => "Unknown",
+                    NextStep::ReviewSkippedDueToSizeLimit => "Review Skipped Due To Size Limit",
                 };
                 println!("{:<15} {:<20} {:<15} {:<20} {:<40}",
                          crq_id,

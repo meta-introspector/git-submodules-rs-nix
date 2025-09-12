@@ -2362,6 +2362,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "wikipedia_extractor"
+version = "0.1.0"
+dependencies = [
+ "reqwest",
+ "scraper",
+ "tokio",
+]
+
+[[package]]
 name = "winapi-util"
 version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"

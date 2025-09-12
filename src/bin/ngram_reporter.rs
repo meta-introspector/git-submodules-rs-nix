@@ -4,7 +4,7 @@ use std::fs;
 use std::io::Write;
 use std::path::PathBuf;
 use walkdir::WalkDir;
-use submodules::ngram_analyzer::{analyze_hierarchical_ngrams, NGramDecomposition};
+use submodules::ngram_analyzer::analyze_hierarchical_ngrams;
 
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]

@@ -30,7 +30,7 @@ pub struct CommsAnalysisResult {
 
 use regex::Regex;
 use lazy_static::lazy_static;
-use crate::crq_state_recognizer::is_review_skipped_due_to_size_limit;
+
 
 lazy_static! {
     static ref WORD_REGEX: Regex = Regex::new(r"[a-z]+").unwrap();
