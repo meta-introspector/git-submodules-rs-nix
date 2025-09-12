@@ -22,6 +22,10 @@ struct Args {
     /// Perform individual response classification
     #[arg(long)]
     classify_individual_responses: bool,
+
+    /// Path to a single file to analyze for tokens
+    #[arg(short, long)]
+    file: Option<PathBuf>,
 }
 
 lazy_static! {
@@ -99,6 +103,22 @@ fn classify_individual_response(content: &str) -> ResponseType {
 
 fn main() {
     let args = Args::parse();
+
+    if let Some(file_path) = args.file {
+        match fs::read_to_string(&file_path) {
+            Ok(content) => {
+                let tokens = extract_tokens(&content);
+                println!("Tokens for {}:", file_path.display());
+                for token in tokens {
+                    println!("  {}", token);
+                }
+            }
+            Err(e) => {
+                eprintln!("Error reading file {}: {}", file_path.display(), e);
+            }
+        }
+        return;
+    }
 
     if args.classify_individual_responses {
         let comms_base_dir = PathBuf::from("/data/data/com.termux.nix/files/home/pick-up-nix/source/github/meta-introspector/submodules/analysis_data/comms/git/coderabbitai/");
