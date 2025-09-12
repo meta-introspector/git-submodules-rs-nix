@@ -1,0 +1,730 @@
+[
+  {
+    "domain": "google.com",
+    "count": 2
+  },
+  {
+    "domain": "http\"));",
+    "count": 8
+  },
+  {
+    "domain": "science4all.org",
+    "count": 2
+  },
+  {
+    "domain": "crates.io\";",
+    "count": 2
+  },
+  {
+    "domain": "transifex.com",
+    "count": 2
+  },
+  {
+    "domain": "oss-fuzz.com)",
+    "count": 2
+  },
+  {
+    "domain": "gnu.org",
+    "count": 2
+  },
+  {
+    "domain": "philarchive.org",
+    "count": 2
+  },
+  {
+    "domain": "arxiv.org",
+    "count": 4
+  },
+  {
+    "domain": "jsdelivr.net",
+    "count": 14
+  },
+  {
+    "domain": "git-merge.com)",
+    "count": 2
+  },
+  {
+    "domain": "launchpadcontent.net",
+    "count": 2
+  },
+  {
+    "domain": "gitbutler.com",
+    "count": 2
+  },
+  {
+    "domain": "netbsd.org",
+    "count": 2
+  },
+  {
+    "domain": "host`.",
+    "count": 2
+  },
+  {
+    "domain": "*.com'",
+    "count": 2
+  },
+  {
+    "domain": "all-proxy-fallback\"),",
+    "count": 4
+  },
+  {
+    "domain": "git-lfs\";",
+    "count": 2
+  },
+  {
+    "domain": "geeksforgeeks.org",
+    "count": 2
+  },
+  {
+    "domain": "github",
+    "count": 2
+  },
+  {
+    "domain": "youtube.com",
+    "count": 18
+  },
+  {
+    "domain": "googlesource.com",
+    "count": 4
+  },
+  {
+    "domain": "com`.",
+    "count": 2
+  },
+  {
+    "domain": "into()).is_ok());",
+    "count": 2
+  },
+  {
+    "domain": "org).",
+    "count": 3434
+  },
+  {
+    "domain": "qvq.network",
+    "count": 2
+  },
+  {
+    "domain": "plainlicense.org",
+    "count": 4
+  },
+  {
+    "domain": "bford.info",
+    "count": 2
+  },
+  {
+    "domain": "withgoogle.com",
+    "count": 2
+  },
+  {
+    "domain": "nginx.org",
+    "count": 4
+  },
+  {
+    "domain": "fossil-scm.org",
+    "count": 2
+  },
+  {
+    "domain": "http-fallback\"),",
+    "count": 4
+  },
+  {
+    "domain": "gitbutler.com)-driven",
+    "count": 2
+  },
+  {
+    "domain": "readthedocs.io",
+    "count": 2
+  },
+  {
+    "domain": "apache.org",
+    "count": 4
+  },
+  {
+    "domain": "rust-lang.org",
+    "count": 34
+  },
+  {
+    "domain": "host\"",
+    "count": 4
+  },
+  {
+    "domain": "r-project.org)",
+    "count": 2
+  },
+  {
+    "domain": "lighthouseapp.com",
+    "count": 2
+  },
+  {
+    "domain": "reddit.com",
+    "count": 75
+  },
+  {
+    "domain": "sourceforge.net",
+    "count": 2
+  },
+  {
+    "domain": "changkun.de",
+    "count": 2
+  },
+  {
+    "domain": "rustacean-station.org",
+    "count": 4
+  },
+  {
+    "domain": "overridden\"));",
+    "count": 2
+  },
+  {
+    "domain": "host.xz",
+    "count": 2
+  },
+  {
+    "domain": "codecov.io",
+    "count": 2
+  },
+  {
+    "domain": "\");",
+    "count": 2
+  },
+  {
+    "domain": "host",
+    "count": 14
+  },
+  {
+    "domain": "hit-global.helper\");",
+    "count": 2
+  },
+  {
+    "domain": "spdx.org",
+    "count": 4
+  },
+  {
+    "domain": "svgrepo.com",
+    "count": 4
+  },
+  {
+    "domain": "rustweek.org",
+    "count": 4
+  },
+  {
+    "domain": "gizmodo.com",
+    "count": 2
+  },
+  {
+    "domain": "polettix.it",
+    "count": 2
+  },
+  {
+    "domain": "semver.org",
+    "count": 142
+  },
+  {
+    "domain": "man7.org",
+    "count": 4
+  },
+  {
+    "domain": "com.helper'",
+    "count": 6
+  },
+  {
+    "domain": "example.com\"))",
+    "count": 2
+  },
+  {
+    "domain": "example.*'",
+    "count": 2
+  },
+  {
+    "domain": "asciinema.org",
+    "count": 2
+  },
+  {
+    "domain": "philpapers.org",
+    "count": 2
+  },
+  {
+    "domain": "imgflip.com",
+    "count": 2
+  },
+  {
+    "domain": "twitter.com",
+    "count": 73
+  },
+  {
+    "domain": "merge.berlin",
+    "count": 2
+  },
+  {
+    "domain": "crates.io",
+    "count": 14
+  },
+  {
+    "domain": "hit-global.helper\"",
+    "count": 2
+  },
+  {
+    "domain": "youtu.be",
+    "count": 4
+  },
+  {
+    "domain": "wordpress.org",
+    "count": 2
+  },
+  {
+    "domain": "example.com",
+    "count": 184
+  },
+  {
+    "domain": "foo",
+    "count": 6
+  },
+  {
+    "domain": "planetmath.org",
+    "count": 4
+  },
+  {
+    "domain": "jdx.dev",
+    "count": 6
+  },
+  {
+    "domain": "\")",
+    "count": 2
+  },
+  {
+    "domain": "conventionalcommits.org",
+    "count": 2
+  },
+  {
+    "domain": "kaggle.com",
+    "count": 6
+  },
+  {
+    "domain": "github.io",
+    "count": 140
+  },
+  {
+    "domain": "example.com\"",
+    "count": 10
+  },
+  {
+    "domain": "rustup.rs",
+    "count": 10
+  },
+  {
+    "domain": "joshtriplett.org",
+    "count": 6
+  },
+  {
+    "domain": "keybase.io",
+    "count": 2
+  },
+  {
+    "domain": "example.com\");",
+    "count": 10
+  },
+  {
+    "domain": "com\").unwrap(),",
+    "count": 2
+  },
+  {
+    "domain": "aliyun.com",
+    "count": 2
+  },
+  {
+    "domain": "kernel.org",
+    "count": 4
+  },
+  {
+    "domain": "example.com'",
+    "count": 4
+  },
+  {
+    "domain": "trello.com",
+    "count": 2
+  },
+  {
+    "domain": "columbia.edu",
+    "count": 2
+  },
+  {
+    "domain": "radicle.xyz)",
+    "count": 4
+  },
+  {
+    "domain": "github.blog",
+    "count": 4
+  },
+  {
+    "domain": "com.helper",
+    "count": 2
+  },
+  {
+    "domain": "buildit.dev",
+    "count": 2
+  },
+  {
+    "domain": "primepuzzles.net",
+    "count": 2
+  },
+  {
+    "domain": "drips.network)",
+    "count": 4
+  },
+  {
+    "domain": "com.usehttppath",
+    "count": 2
+  },
+  {
+    "domain": "spdx.dev",
+    "count": 2
+  },
+  {
+    "domain": "github.com\"))",
+    "count": 4
+  },
+  {
+    "domain": "http\"),",
+    "count": 4
+  },
+  {
+    "domain": "domain.invalid",
+    "count": 2
+  },
+  {
+    "domain": "original",
+    "count": 8
+  },
+  {
+    "domain": "python.org",
+    "count": 2
+  },
+  {
+    "domain": "https\"),",
+    "count": 2
+  },
+  {
+    "domain": "w3.org",
+    "count": 52
+  },
+  {
+    "domain": "apple.com",
+    "count": 2
+  },
+  {
+    "domain": "org\")).is_ok());",
+    "count": 2
+  },
+  {
+    "domain": "host`",
+    "count": 2
+  },
+  {
+    "domain": "linkedin.com",
+    "count": 69
+  },
+  {
+    "domain": "docs.rs",
+    "count": 198
+  },
+  {
+    "domain": "git-scm.com",
+    "count": 66
+  },
+  {
+    "domain": "wikipedia.org",
+    "count": 10
+  },
+  {
+    "domain": "com\".into()),",
+    "count": 2
+  },
+  {
+    "domain": "keepachangelog.com",
+    "count": 136
+  },
+  {
+    "domain": "github.io)",
+    "count": 4
+  },
+  {
+    "domain": "shields.io",
+    "count": 28
+  },
+  {
+    "domain": "msys2.org",
+    "count": 2
+  },
+  {
+    "domain": "localhost",
+    "count": 8
+  },
+  {
+    "domain": "host.local",
+    "count": 26
+  },
+  {
+    "domain": "gitlab.com",
+    "count": 4
+  },
+  {
+    "domain": "unwrap_err().to_string(),",
+    "count": 2
+  },
+  {
+    "domain": "fedoraproject.org",
+    "count": 2
+  },
+  {
+    "domain": "*.helper'",
+    "count": 6
+  },
+  {
+    "domain": "mise.run",
+    "count": 6
+  },
+  {
+    "domain": "huggingface.co",
+    "count": 20
+  },
+  {
+    "domain": "drips.network",
+    "count": 6
+  },
+  {
+    "domain": "nushell.sh",
+    "count": 2
+  },
+  {
+    "domain": "gitbutler.com),",
+    "count": 2
+  },
+  {
+    "domain": "self-issued.info",
+    "count": 2
+  },
+  {
+    "domain": "caniuse.rs",
+    "count": 2
+  },
+  {
+    "domain": "buildit.dev),",
+    "count": 2
+  },
+  {
+    "domain": "git.io",
+    "count": 2
+  },
+  {
+    "domain": "probe.rs\",",
+    "count": 2
+  },
+  {
+    "domain": "opencollective.com",
+    "count": 4
+  },
+  {
+    "domain": "github.com\"),",
+    "count": 4
+  },
+  {
+    "domain": "*'",
+    "count": 4
+  },
+  {
+    "domain": "microsoft.com",
+    "count": 8
+  },
+  {
+    "domain": "bunny.net",
+    "count": 2
+  },
+  {
+    "domain": "github.com",
+    "count": 71792
+  },
+  {
+    "domain": "de).",
+    "count": 2
+  },
+  {
+    "domain": "magit.vc",
+    "count": 2
+  },
+  {
+    "domain": "into()).is_err());",
+    "count": 2
+  },
+  {
+    "domain": "unpkg.com",
+    "count": 2
+  },
+  {
+    "domain": "nixos.org",
+    "count": 12
+  },
+  {
+    "domain": "crates.io\"`",
+    "count": 2
+  },
+  {
+    "domain": "buildit.dev)",
+    "count": 2
+  },
+  {
+    "domain": "ein.hub",
+    "count": 6
+  },
+  {
+    "domain": "com)\").unwrap();",
+    "count": 2
+  },
+  {
+    "domain": "githubusercontent.com",
+    "count": 46
+  },
+  {
+    "domain": "stanford.edu",
+    "count": 2
+  },
+  {
+    "domain": "conventionalcommits.org)",
+    "count": 2
+  },
+  {
+    "domain": "gitbutler.com)",
+    "count": 10
+  },
+  {
+    "domain": "contributor-covenant.org",
+    "count": 8
+  },
+  {
+    "domain": "xyz).",
+    "count": 2
+  },
+  {
+    "domain": "host\");",
+    "count": 2
+  },
+  {
+    "domain": "reproducible-builds.org",
+    "count": 2
+  },
+  {
+    "domain": "mastodon.social",
+    "count": 69
+  },
+  {
+    "domain": "coderabbit.ai",
+    "count": 34
+  },
+  {
+    "domain": "coding.net",
+    "count": 2
+  },
+  {
+    "domain": "danieljanus.pl",
+    "count": 2
+  },
+  {
+    "domain": "editorconfig.org",
+    "count": 2
+  },
+  {
+    "domain": "redirected.org",
+    "count": 8
+  },
+  {
+    "domain": "phabricator.com",
+    "count": 14
+  },
+  {
+    "domain": "com).",
+    "count": 6
+  },
+  {
+    "domain": "gitorious.org",
+    "count": 2
+  },
+  {
+    "domain": "cygwin.com",
+    "count": 2
+  },
+  {
+    "domain": "github.io),",
+    "count": 2
+  },
+  {
+    "domain": "merge.berlin),",
+    "count": 2
+  },
+  {
+    "domain": "rs).",
+    "count": 2
+  },
+  {
+    "domain": "drips.network),",
+    "count": 2
+  },
+  {
+    "domain": "\"",
+    "count": 4
+  },
+  {
+    "domain": "githubcopilot.com",
+    "count": 2
+  },
+  {
+    "domain": "wordpress.com",
+    "count": 4
+  },
+  {
+    "domain": "domain.test",
+    "count": 2
+  },
+  {
+    "domain": "exherbo.org",
+    "count": 2
+  },
+  {
+    "domain": "chalkdustmagazine.com",
+    "count": 2
+  },
+  {
+    "domain": "opensource.org",
+    "count": 2
+  },
+  {
+    "domain": "lintcode.com",
+    "count": 2
+  },
+  {
+    "domain": "radworks.org)",
+    "count": 4
+  },
+  {
+    "domain": "example.",
+    "count": 4
+  },
+  {
+    "domain": "airbnb.io",
+    "count": 2
+  },
+  {
+    "domain": "host.xz\",",
+    "count": 2
+  },
+  {
+    "domain": "gpgtools.org",
+    "count": 8
+  },
+  {
+    "domain": "sekretz.com",
+    "count": 2
+  },
+  {
+    "domain": "*",
+    "count": 8
+  }
+]

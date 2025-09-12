@@ -1,0 +1,1 @@
+never revert or delete or reverse anything without commiting first and documenting. in fact, we are going to write plans and tests and docs before we write the code. Do not plan to revert temporary changes; instead, plan to keep everything as an example or helper command, integrating it properly into the codebase and documentation.
