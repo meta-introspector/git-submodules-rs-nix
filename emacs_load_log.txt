@@ -1,0 +1,21 @@
+--- Starting Emacs Configuration Test ---
+Project Root: /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules
+Emacs Config Path: /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/.emacs.d/terlar-emacs-config
+Init Org Path: /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/.emacs.d/terlar-emacs-config/init.org
+Init El Path: /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/.emacs.d/terlar-emacs-config/init.el
+Log File: /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/emacs_load_log.txt
+
+Updating Git submodules...
+Submodules updated.
+
+Tangling init.org to init.el...
+[K[KSymbol’s value as variable is void: /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/.emacs.d/terlar-emacs-config/init.org
+
+Error: void-variable (/data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/.emacs.d/terlar-emacs-config/init.org)
+  mapbacktrace(#f(compiled-function (evald func args flags) #<bytecode 0x1f726d605daed388>))
+  debug-early-backtrace()
+  debug-early(error (void-variable /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/.emacs.d/terlar-emacs-config/init.org))
+  (org-babel-tangle-file /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/.emacs.d/terlar-emacs-config/init.org)
+  command-line-1(("-l" "org" "--eval" "(org-babel-tangle-file /data/data/com.termux.nix/files/home/nix/source/github/meta-introspector/submodules/.emacs.d/terlar-emacs-config/init.org)"))
+  command-line()
+  normal-top-level()
