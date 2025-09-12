@@ -31,6 +31,10 @@ path = "src/bin/crq-parser-cli.rs"
 name = "state-word-reporter"
 path = "src/bin/state-word-reporter.rs"
 
+[[bin]]
+name = "ngram-reporter"
+path = "src/bin/ngram_reporter.rs"
+
 [[bench]]
 name = "my_profiling_bench"
 path = "benches/my_profiling_bench.rs"
