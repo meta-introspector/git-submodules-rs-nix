@@ -35,6 +35,16 @@ This SOP applies to all users working within this project who require a fully fu
 1.  **Magit:** Inside the newly launched Emacs instance, press `M-x` (Alt-x or Esc-x), type `magit-status`, and press Enter. A Magit status buffer should open, reflecting the Git status of your current project.
 2.  **Other Packages:** Test other expected functionalities, such as completion (Corfu/Vertico), by typing in a buffer or using minibuffer commands.
 
+### 4.6. Automated Verification (Headless Test)
+For automated, non-interactive verification of the Emacs configuration, you can run the headless batch test.
+
+1.  **Execute the headless test script:**
+    `./run_emacs_batch_test.sh`
+
+2.  **Review the output:** The script will print messages indicating whether each test (e.g., Magit loading, use-package loading) passed or failed.
+
+3.  **Check the exit code:** The script will exit with `0` for success (all tests passed) or `1` for failure (one or more tests failed).
+
 ## 5. Troubleshooting
 *   **`nix develop` errors:** If Emacs fails to launch with Nix-related errors, ensure your Nix installation is healthy (`nix-shell --version`, `nix develop --help`). Also, check the `flake.nix` and `shell.nix` files in `.emacs.d/terlar-emacs-config/` for any syntax errors or outdated dependencies.
 *   **`tmux` session not found:** If the `launch_nix_emacs.sh` script reports that the `tmux` session was not found, ensure you are running the script from within an active `tmux` session and that the `SESSION_NAME` variable in the script matches your `tmux` session name (default is `gemini-dev-session`).
