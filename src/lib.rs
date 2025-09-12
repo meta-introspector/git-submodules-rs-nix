@@ -6,6 +6,7 @@ pub mod lattice_model;
 pub mod crq_parser;
 pub mod word_classifier;
 pub mod ngram_analyzer;
+pub mod crq_state_recognizer;
 
 use lattice_model::{Lattice, LatticeLayer, Instance, ValueType};
 use crq_parser::CRQ;
