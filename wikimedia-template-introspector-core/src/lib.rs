@@ -8,7 +8,7 @@ pub struct TemplateInvocation {
 }
 
 pub fn parse_template_invocation(input: &str) -> Option<TemplateInvocation> {
-    let re = Regex::new(r"\{\{(?P<name>[^|]+)(?:\|(?P<params>.*))?\}\}").unwrap();
+    let re = Regex::new(r"{{\{{(?P<name>[^|]+)(?:\|(?P<params>.*))?}}\}}").unwrap();
     if let Some(caps) = re.captures(input) {
         let name = caps["name"].to_string();
         let params_str = caps.name("params").map_or("", |m| m.as_str());
@@ -42,7 +42,7 @@ pub fn generate_rust_function(invocation: &TemplateInvocation) -> String {
             format_args.push(quote! { #param_ident = #param_ident });
         } else {
             // Positional parameter
-            let param_name_str = format!("param{}", i + 1);
+            let param_name_str = format!("param{{}}", i + 1);
             let param_ident = Ident::new(&param_name_str, proc_macro2::Span::call_site());
             param_declarations.push(quote! { #param_ident: &str });
             param_assignments.push(quote! { let #param_ident = #param_ident; });
@@ -52,7 +52,7 @@ pub fn generate_rust_function(invocation: &TemplateInvocation) -> String {
 
     let expanded = quote! {
         pub fn #fn_name(#(#param_declarations),*) -> String {
-            format!("Template: {} Parameters: {}", #(#format_args),*)
+            format!("Template: {{}} Parameters: {{}}", #(#format_args),*)
         }
     };
 
@@ -97,7 +97,7 @@ mod tests {
         assert!(generated_code.contains(r"render_helloworld"));
         assert!(generated_code.contains(r"name"));
         assert!(generated_code.contains(r"& str"));
-        assert!(generated_code.contains(r"-> String {"));
+        assert!(generated_code.contains(r"-> String {{"));
         assert!(generated_code.contains(r"Template: "));
         assert!(generated_code.contains(r"Parameters: "));
         assert!(generated_code.contains(r"name = name"));
@@ -117,10 +117,51 @@ mod tests {
         assert!(generated_code.contains(r"& str"));
         assert!(generated_code.contains(r"param2"));
         assert!(generated_code.contains(r"& str"));
-        assert!(generated_code.contains(r"-> String {"));
+        assert!(generated_code.contains(r"-> String {{"));
         assert!(generated_code.contains(r"Template: "));
         assert!(generated_code.contains(r"Parameters: "));
         assert!(generated_code.contains(r"param1"));
         assert!(generated_code.contains(r"param2"));
     }
+}
+mod template_code_generator;
+
+use std::collections::HashMap;
+use crate::template_code_generator;
+
+// This function will generate the WikiProject crates and their template functions
+pub fn generate_wikiproject_crates_content() -> HashMap<String, String> {
+    println!("Starting WikiProject crate content generation...");
+    let wikiprojects_data = vec![
+        ("solfunmeme", vec!["{{Welcome|user=JohnDoe}}", "{{Another Template|param1=value1|param2=value2}}"]),
+        // Add more WikiProjects and their templates here
+    ];
+
+    let mut generated_contents = HashMap::new();
+
+    for (wikiproject_name, templates) in wikiprojects_data {
+        println!("Processing WikiProject: {}", wikiproject_name);
+        let mut file_content = String::new();
+        file_content.push_str(&format!("// Generated functions for the '{}' WikiProject\n\n", wikiproject_name));
+
+        for template_str in templates {
+            println!("  Parsing template: {}", template_str);
+            if let Some(invocation) = crate::parse_template_invocation(template_str) {
+                println!("    Generating Rust function for template: {}", invocation.name);
+                let generated_fn_code = 
+                    template_code_generator::generate_wikiproject_template_function(
+                        wikiproject_name,
+                        &invocation,
+                    );
+                file_content.push_str(&format!("{}\n", generated_fn_code));
+            } else {
+                eprintln!("Warning: Could not parse template string: {{}}", template_str);
+            }
+        }
+        generated_contents.insert(wikiproject_name.to_string(), file_content);
+        println!("Finished processing WikiProject: {}", wikiproject_name);
+    }
+
+    println!("WikiProject crate content generation complete.");
+    generated_contents
 }

@@ -473,6 +473,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "generated_wiki_templates"
+version = "0.1.0"
+
+[[package]]
 name = "getopts"
 version = "0.2.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1970,6 +1974,30 @@ dependencies = [
  "once_cell",
  "rustix",
  "windows-sys 0.61.0",
+]
+
+[[package]]
+name = "template_function_generator"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.106",
+ "wikimedia-template-introspector-core",
+]
+
+[[package]]
+name = "template_generator_bin"
+version = "0.1.0"
+dependencies = [
+ "wikimedia-template-introspector-core",
+]
+
+[[package]]
+name = "template_generator_cli"
+version = "0.1.0"
+dependencies = [
+ "wikimedia-template-introspector",
 ]
 
 [[package]]
