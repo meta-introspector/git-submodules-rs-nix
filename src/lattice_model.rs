@@ -77,7 +77,7 @@ impl<T: HasValueCount + std::fmt::Debug> LatticeLayer<T> {
 
     pub fn add_instance(&mut self, instance: Instance<T>) {
         assert_eq!(T::value_count(), self.value_type.count(),
-                   "Instance unit value count must match layer's value type");
+                   "Instance unit value count must match layer's value count");
         self.instances.push(instance);
     }
 }
@@ -132,5 +132,9 @@ impl PredicateClassifier {
         self.target_predicates.iter()
             .map(|p| WordPredicate(lower_text.contains(p)))
             .collect()
+    }
+
+    pub fn get_target_predicates(&self) -> &Vec<String> {
+        &self.target_predicates
     }
 }
