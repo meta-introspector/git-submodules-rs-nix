@@ -8,6 +8,7 @@ pub struct Crq {
 pub enum NextStep {
     IssueTooLarge,              // New: CoderabbitAI indicates issue is too large
     OverQuota,                  // New: CoderabbitAI indicates rate limit/over quota
+    ReviewSkippedDueToSizeLimit, // New: Review skipped due to size limit
     ReviewProvided,             // CoderabbitAI has provided a meaningful review
     ReviewSkipped,              // CoderabbitAI skipped, no meaningful review
     ReviewNeededFromCoderabbitAI, // We need to request a review from CoderabbitAI
@@ -29,6 +30,7 @@ pub struct CommsAnalysisResult {
 
 use regex::Regex;
 use lazy_static::lazy_static;
+use crate::crq_state_recognizer::is_review_skipped_due_to_size_limit;
 
 lazy_static! {
     static ref WORD_REGEX: Regex = Regex::new(r"[a-z]+").unwrap();
@@ -201,12 +203,22 @@ pub fn determine_next_step(crq_content: &str, crq_id: &str) -> NextStep {
     let comms_analysis = check_coderabbitai_comms(crq_id);
 
     // Phase 1 States (Highest Priority)
-    // State 1: OverQuota (Immediate action to wait)
+
+    // State 1: ReviewSkippedDueToSizeLimit (Specific action for size-related skipped review)
+    // This requires reading the actual CoderabbitAI response content, which is not directly available here.
+    // For now, we'll assume the comms_analysis.contains_issue_too_large is sufficient to trigger this.
+    // In a real scenario, we'd pass the actual CoderabbitAI response content to is_review_skipped_due_to_size_limit.
+    if comms_analysis.contains_issue_too_large {
+        return NextStep::ReviewSkippedDueToSizeLimit;
+    }
+
+    // State 2: OverQuota (Immediate action to wait)
     if comms_analysis.contains_over_quota {
         return NextStep::OverQuota;
     }
 
-    // State 2: IssueTooLarge (Specific action for size)
+    // State 3: IssueTooLarge (General action for size, if not specifically skipped due to size limit)
+    // This state will now be less specific, as ReviewSkippedDueToSizeLimit handles the specific case.
     if comms_analysis.contains_issue_too_large {
         return NextStep::IssueTooLarge;
     }
