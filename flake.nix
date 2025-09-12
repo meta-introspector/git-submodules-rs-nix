@@ -147,6 +147,7 @@
             pkgs.shellcheck
             pkgs.shfmt
             pkgs.nixpkgs-fmt
+            pkgs.pinentry
           ];
           # No shellHook as per user instruction
         };
