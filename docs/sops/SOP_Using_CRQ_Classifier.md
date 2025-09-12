@@ -2,7 +2,11 @@
 
 ## Purpose
 
-This Standard Operating Procedure (SOP) outlines the steps for using the `classify_crq.sh` script to determine the suggested next step for a Change Request/Question (CRQ) document. This tool leverages the deterministic CRQ parser to provide automated guidance.
+This Standard Operating Procedure (SOP) outlines the steps for using the `classify_crq.sh` script to determine a basic suggested next step for a Change Request/Question (CRQ) document. This tool provides a quick, individual CRQ classification.
+
+## Background
+
+The `classify_crq.sh` script utilizes the `crq-parser` Rust executable, which performs a basic classification of a single CRQ based on its content. For a more comprehensive and nuanced analysis of all CRQs, including communication log analysis and detailed state classification, refer to `SOP_Generating_CRQ_Report.md` which uses the more advanced `crq_table_generator`.
 
 ## Prerequisites
 
@@ -28,27 +32,12 @@ This Standard Operating Procedure (SOP) outlines the steps for using the `classi
     **Example:**
     To classify a CRQ located at `docs/crq_standardized/CRQ-054-deterministic-crq-parser.md`:
 
-    ```bash
+    ```bashash
     ./tools/classify_crq.sh docs/crq_standardized/CRQ-054-deterministic-crq-parser.md
     ```
 
 3.  **Review the Output:**
-    The script will output the parsed CRQ content and the suggested next step.
-
-    **Example Output:**
-    ```
-    Reading CRQ from file: docs/crq_standardized/CRQ-054-deterministic-crq-parser.md
-
-    -- Parsed CRQ --
-    Problem/Goal: To establish a clear and automated mechanism for identifying and prioritizing the next steps in the project development lifecycle.
-
-    Proposed Solution: Develop a deterministic CRQ parser capable of analyzing change requests/questions to programmatically determine the subsequent actions required for project progression.
-
-    Justification/Impact: This parser will enable more efficient and consistent project management by providing a structured approach to decision-making, akin to an "AI shepherd" guiding the project towards optimal outcomes. It will reduce ambiguity and streamline the process of identifying critical path items.
-
-    -- Suggested Next Step --
-    Action: Develop/Implement new features.
-    ```
+    The script will output the parsed CRQ content and the suggested next step (Develop/Implement, Refactor, Document, or Unknown).
 
 ## Troubleshooting
 
@@ -58,5 +47,6 @@ This Standard Operating Procedure (SOP) outlines the steps for using the `classi
 
 ## Related Documents
 
-*   [SOP_Generating_CRQ_Report.md](SOP_Generating_CRQ_Report.md) (To be created)
-*   [SOP_Creating_New_CRQ.md](SOP_Creating_New_CRQ.md) (To be created)
+*   [SOP_Generating_CRQ_Report.md](SOP_Generating_CRQ_Report.md)
+*   [SOP_Creating_New_CRQ.md](SOP_Creating_New_CRQ.md)
+*   [SOP_CRQ_State_Classification.md](SOP_CRQ_State_Classification.md)
