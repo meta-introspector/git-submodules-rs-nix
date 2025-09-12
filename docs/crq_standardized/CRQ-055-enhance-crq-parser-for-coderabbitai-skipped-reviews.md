@@ -68,3 +68,27 @@ This phase of the CRQ is considered complete. Further work will be tracked under
 *   **Next Steps:** Further refinement of the classification rules based on the insights gained from n-gram analysis and individual response type classification. This will lead to a more robust and accurate state machine for CRQ triage.
 
 This report summarizes the significant progress made in automating and refining our CRQ management and classification processes.
+
+## Related Work: Wikipedia and Wikidata Extraction
+
+During the analysis of the codebase, significant components related to Wikipedia and Wikidata extraction were identified, primarily within the `wikipedia_extractor` Rust crate. This crate is designed to facilitate the extraction of information from Wikipedia articles and Wikidata entities, which is crucial for the broader project goal of analyzing and understanding external knowledge sources.
+
+**Key Files and Components:**
+
+*   **`wikipedia_extractor/Cargo.toml`**: Defines the crate and its dependencies, including `wikipedia` and `wikidata` crates for API interactions, `reqwest` for HTTP, `tokio` for async operations, `scraper` for HTML parsing, and `serde` for data serialization/deserialization.
+*   **`wikipedia_extractor/src/lib.rs`**: The main library file, exposing the following modules and functions:
+    *   `data_structures`: Defines data structures like `WikipediaArticle`, `WikidataFact`, and `WikidataEntity` for representing extracted information.
+    *   `wikipedia_parser`: Contains logic for parsing Wikipedia articles, including `extract_article_data`.
+    *   `wikidata_client`: Handles interactions with the Wikidata API, including `fetch_wikidata_entity`.
+    *   `cache`: Provides caching mechanisms with functions like `save_article_to_cache`, `load_article_from_cache`, `save_entity_to_cache`, and `load_entity_from_cache`.
+*   **`wikipedia_extractor/src/wikipedia_parser.rs`**: Implements the core logic for fetching and parsing Wikipedia articles.
+*   **`wikipedia_extractor/src/wikidata_client.rs`**: Implements the core logic for fetching Wikidata entities.
+*   **`wikipedia_extractor/src/cache.rs`**: Manages the caching of Wikipedia articles and Wikidata entities, using `wikipedia_extractor/cache/wikipedia` and `wikipedia_extractor/cache/wikidata` directories.
+*   **`wikipedia_extractor/tests/integration_test.rs`**: Contains integration tests demonstrating the functionality of fetching and processing Wikipedia articles and Wikidata entities.
+
+This `wikipedia_extractor` crate directly supports the project's objectives of:
+*   Extracting links from the repository (by processing content that might contain Wikipedia/Wikidata links).
+*   Finding Wikipedia articles and Wikidata entities.
+*   Cross-referencing extracted links with Wikipedia content.
+
+The presence and active development of this crate indicate a strong focus on integrating external knowledge bases into the meta-introspector's analytical capabilities.
