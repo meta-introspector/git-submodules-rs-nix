@@ -42,6 +42,7 @@ SOP Documents (in `docs/sops/`):
 *   SOP_GH_CLI_Check_PRs.md
 *   SOP_GH_CLI_Check_Workflows.md
 *   SOP_Integrated_Binary_Workflow.md
+*   llm_rust_refactoring_strategy.md
 *   SOP_Managing_Git_Sources_Nix.md
 *   SOP_Nix_Flake_Debugging_Rust_Builds.md
 *   SOP_OODA_Loop_Decision_Cycle.md
