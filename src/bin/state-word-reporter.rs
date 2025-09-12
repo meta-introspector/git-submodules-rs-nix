@@ -2,7 +2,7 @@ use clap::Parser;
 use std::fs;
 use std::path::PathBuf;
 use walkdir::WalkDir;
-use submodules::lattice_model::PredicateClassifier;
+use submodules::word_classifier::PredicateClassifier;
 
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
