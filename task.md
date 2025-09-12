@@ -91,14 +91,18 @@ CRQ Documents (in `docs/crq_standardized/`):
 *   CRQ-43-crq-010-dynamic-information-flow.md
 *   CRQ-44-crq-011-bott-periodicity.md
 *   CRQ-45-crq-012-naersk-integration.md
+*   CRQ-46-agent-rate-limit-management-and-interaction-receipts.md
+*   CRQ-46-crq-classification-via-comms-analysis-and-state-machine.md
 *   CRQ-46-crq-document-index.md
 *   CRQ-47-k-value-type-semantics.md
 *   CRQ-48-lattice-and-quine-relay.md
-*   CRQ-49-lattice-code-generation and mapping.md
+*   CRQ-49-lattice-code-generation-and-mapping.md
 *   CRQ-50-llm-communication-protocol.md
 *   CRQ-51-meta-lattice-application.md
 *   CRQ-52-orchestration-layer-architecture.md
 *   CRQ-53-recursive-decomposition.md
+*   CRQ-54-agent-communication-analysis.md
+*   CRQ-055-enhance-crq-parser-for-coderabbitai-skipped-reviews.md
 
 **CRQ: Deterministic CRQ Parser for Project Next Steps**
 
