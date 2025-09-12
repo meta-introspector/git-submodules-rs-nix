@@ -1,0 +1,4971 @@
+{
+  "@context": {
+    "RepositoryCount": "http://example.org/RepositoryCount",
+    "count": "http://example.org/count",
+    "owner": "http://example.org/owner",
+    "repo": "http://example.org/repo",
+    "url": "http://schema.org/url"
+  },
+  "@graph": [
+    {
+      "@id": "https://github.com/fz139/vigruzki",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "fz139",
+      "repo": "vigruzki",
+      "url": "https://github.com/fz139/vigruzki"
+    },
+    {
+      "@id": "https://github.com/rust-math/intel-mkl-src\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "rust-math",
+      "repo": "intel-mkl-src\":",
+      "url": "https://github.com/rust-math/intel-mkl-src\":"
+    },
+    {
+      "@id": "https://github.com/ihciah/clean-dns-bpf\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "ihciah",
+      "repo": "clean-dns-bpf\":",
+      "url": "https://github.com/ihciah/clean-dns-bpf\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/paiml-mcp-agent-toolkit.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "paiml-mcp-agent-toolkit.git\",",
+      "url": "https://github.com/meta-introspector/paiml-mcp-agent-toolkit.git\","
+    },
+    {
+      "@id": "https://github.com/Pistonite/magoo",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "Pistonite",
+      "repo": "magoo",
+      "url": "https://github.com/Pistonite/magoo"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/paiml-mcp-agent-toolkit.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "paiml-mcp-agent-toolkit.git\":",
+      "url": "https://github.com/meta-introspector/paiml-mcp-agent-toolkit.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/rust-clippy)",
+      "@type": "RepositoryCount",
+      "count": 476,
+      "owner": "rust-lang",
+      "repo": "rust-clippy)",
+      "url": "https://github.com/rust-lang/rust-clippy)"
+    },
+    {
+      "@id": "https://github.com/BoostIO/BoostNote-App\",\"primaryLanguage\":\"JavaScript\",\"createdAt\":\"2016-03-06T17:06:07Z\",\"pushedAt\":\"2022-12-08T17:30:37Z\",\"defaultBranchCommitCount\":4730,\"license\":\"Other\",\"assignableUserCount\":14,\"codeOfConduct\":null,\"forkingAllowed\":true,\"nameWithOwner\":\"BoostIO",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "BoostIO",
+      "repo": "BoostNote-App\",\"primaryLanguage\":\"JavaScript\",\"createdAt\":\"2016-03-06T17:06:07Z\",\"pushedAt\":\"2022-12-08T17:30:37Z\",\"defaultBranchCommitCount\":4730,\"license\":\"Other\",\"assignableUserCount\":14,\"codeOfConduct\":null,\"forkingAllowed\":true,\"nameWithOwner\":\"BoostIO",
+      "url": "https://github.com/BoostIO/BoostNote-App\",\"primaryLanguage\":\"JavaScript\",\"createdAt\":\"2016-03-06T17:06:07Z\",\"pushedAt\":\"2022-12-08T17:30:37Z\",\"defaultBranchCommitCount\":4730,\"license\":\"Other\",\"assignableUserCount\":14,\"codeOfConduct\":null,\"forkingAllowed\":true,\"nameWithOwner\":\"BoostIO"
+    },
+    {
+      "@id": "https://github.com/rust-itertools/itertools),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-itertools",
+      "repo": "itertools),",
+      "url": "https://github.com/rust-itertools/itertools),"
+    },
+    {
+      "@id": "https://github.com/coin-or/Ipopt\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "coin-or",
+      "repo": "Ipopt\":",
+      "url": "https://github.com/coin-or/Ipopt\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/siumai.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "siumai.git\":",
+      "url": "https://github.com/meta-introspector/siumai.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/crates.io-index\"",
+      "@type": "RepositoryCount",
+      "count": 2298,
+      "owner": "rust-lang",
+      "repo": "crates.io-index\"",
+      "url": "https://github.com/rust-lang/crates.io-index\""
+    },
+    {
+      "@id": "https://github.com/rusqlite/rusqlite",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rusqlite",
+      "repo": "rusqlite",
+      "url": "https://github.com/rusqlite/rusqlite"
+    },
+    {
+      "@id": "https://github.com/user-name/repo-name.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "user-name",
+      "repo": "repo-name.git\"",
+      "url": "https://github.com/user-name/repo-name.git\""
+    },
+    {
+      "@id": "https://github.com/meta-introspector/mcp-discovery.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "mcp-discovery.git\":",
+      "url": "https://github.com/meta-introspector/mcp-discovery.git\":"
+    },
+    {
+      "@id": "https://github.com/zip-rs/zip2).",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "zip-rs",
+      "repo": "zip2).",
+      "url": "https://github.com/zip-rs/zip2)."
+    },
+    {
+      "@id": "https://github.com/nix-community/rnix-parser.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "nix-community",
+      "repo": "rnix-parser.git\",",
+      "url": "https://github.com/nix-community/rnix-parser.git\","
+    },
+    {
+      "@id": "https://github.com/Escaped-RDFa/namespace.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Escaped-RDFa",
+      "repo": "namespace.git\",",
+      "url": "https://github.com/Escaped-RDFa/namespace.git\","
+    },
+    {
+      "@id": "https://github.com/example/my-lib.git",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "example",
+      "repo": "my-lib.git",
+      "url": "https://github.com/example/my-lib.git"
+    },
+    {
+      "@id": "https://github.com/rust-lang/miri.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "miri.git]",
+      "url": "https://github.com/rust-lang/miri.git]"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/hackathon\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "hackathon\":",
+      "url": "https://github.com/meta-introspector/hackathon\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/submod.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "submod.git\",",
+      "url": "https://github.com/meta-introspector/submod.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/lattice-introspector\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "lattice-introspector\",",
+      "url": "https://github.com/meta-introspector/lattice-introspector\","
+    },
+    {
+      "@id": "https://github.com/example/override.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "override.git\"",
+      "url": "https://github.com/example/override.git\""
+    },
+    {
+      "@id": "https://github.com/BurntSushi/ripgrep",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "BurntSushi",
+      "repo": "ripgrep",
+      "url": "https://github.com/BurntSushi/ripgrep"
+    },
+    {
+      "@id": "https://github.com/emacsmirror/lsp-scheme\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "emacsmirror",
+      "repo": "lsp-scheme\",",
+      "url": "https://github.com/emacsmirror/lsp-scheme\","
+    },
+    {
+      "@id": "https://github.com/a-h/nix-asciinema-agg\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "a-h",
+      "repo": "nix-asciinema-agg\",",
+      "url": "https://github.com/a-h/nix-asciinema-agg\","
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60)\"",
+      "@type": "RepositoryCount",
+      "count": 16,
+      "owner": "rust-random",
+      "repo": "rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60)\"",
+      "url": "https://github.com/rust-random/rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60)\""
+    },
+    {
+      "@id": "https://github.com/example/my-library.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "my-library.git\"",
+      "url": "https://github.com/example/my-library.git\""
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodule-tools-rs.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "git-submodule-tools-rs.git\",",
+      "url": "https://github.com/meta-introspector/git-submodule-tools-rs.git\","
+    },
+    {
+      "@id": "https://github.com/JakWai01/lurk\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "JakWai01",
+      "repo": "lurk\":",
+      "url": "https://github.com/JakWai01/lurk\":"
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?branch=0.7)\"",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "rust-random",
+      "repo": "rand?branch=0.7)\"",
+      "url": "https://github.com/rust-random/rand?branch=0.7)\""
+    },
+    {
+      "@id": "https://github.com/rustsec/rustsec",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "rustsec",
+      "repo": "rustsec",
+      "url": "https://github.com/rustsec/rustsec"
+    },
+    {
+      "@id": "https://github.com/nmattia/naersk-fixtures?branch=git-single-repository-with-multiple-crates#0f3830ac71a4c5ddaaeaeb6bbec3398c0388fafa\"",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "nmattia",
+      "repo": "naersk-fixtures?branch=git-single-repository-with-multiple-crates#0f3830ac71a4c5ddaaeaeb6bbec3398c0388fafa\"",
+      "url": "https://github.com/nmattia/naersk-fixtures?branch=git-single-repository-with-multiple-crates#0f3830ac71a4c5ddaaeaeb6bbec3398c0388fafa\""
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-metameme\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-metameme\",",
+      "url": "https://github.com/meta-introspector/solfunmeme-metameme\","
+    },
+    {
+      "@id": "https://github.com/example/repo.git\");",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "repo.git\");",
+      "url": "https://github.com/example/repo.git\");"
+    },
+    {
+      "@id": "https://github.com/Byron/gitplusplus).",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Byron",
+      "repo": "gitplusplus).",
+      "url": "https://github.com/Byron/gitplusplus)."
+    },
+    {
+      "@id": "https://github.com/meta-introspector/gen-mod-form\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "gen-mod-form\":",
+      "url": "https://github.com/meta-introspector/gen-mod-form\":"
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/gitoxide.git",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "GitoxideLabs",
+      "repo": "gitoxide.git",
+      "url": "https://github.com/GitoxideLabs/gitoxide.git"
+    },
+    {
+      "@id": "https://github.com/polachok/bpfjit\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "polachok",
+      "repo": "bpfjit\":",
+      "url": "https://github.com/polachok/bpfjit\":"
+    },
+    {
+      "@id": "https://github.com/apple-oss-distributions/hfs",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "apple-oss-distributions",
+      "repo": "hfs",
+      "url": "https://github.com/apple-oss-distributions/hfs"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/coccinelleforrust_personal_mirror\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "coccinelleforrust_personal_mirror\",",
+      "url": "https://github.com/meta-introspector/coccinelleforrust_personal_mirror\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rustc-stable-hash\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "rustc-stable-hash\",",
+      "url": "https://github.com/meta-introspector/rustc-stable-hash\","
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df#5b0d87436999c3d930e17f9f10bdb68cd0aa38df\"",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "rust-random",
+      "repo": "rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df#5b0d87436999c3d930e17f9f10bdb68cd0aa38df\"",
+      "url": "https://github.com/rust-random/rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df#5b0d87436999c3d930e17f9f10bdb68cd0aa38df\""
+    },
+    {
+      "@id": "https://github.com/kollerma/git-submodule-tools\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "kollerma",
+      "repo": "git-submodule-tools\",",
+      "url": "https://github.com/kollerma/git-submodule-tools\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/simd-kernels\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "simd-kernels\":",
+      "url": "https://github.com/meta-introspector/simd-kernels\":"
+    },
+    {
+      "@id": "https://github.com/niklasf/rust-btoi",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "niklasf",
+      "repo": "rust-btoi",
+      "url": "https://github.com/niklasf/rust-btoi"
+    },
+    {
+      "@id": "https://github.com/rust-lang/crates.io-index)\",",
+      "@type": "RepositoryCount",
+      "count": 88,
+      "owner": "rust-lang",
+      "repo": "crates.io-index)\",",
+      "url": "https://github.com/rust-lang/crates.io-index)\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/rustlings",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "rustlings",
+      "url": "https://github.com/rust-lang/rustlings"
+    },
+    {
+      "@id": "https://github.com/jqlang/jq.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "jqlang",
+      "repo": "jq.git\",",
+      "url": "https://github.com/jqlang/jq.git\","
+    },
+    {
+      "@id": "https://github.com/nix-community/nix-on-droid.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nix-community",
+      "repo": "nix-on-droid.git\":",
+      "url": "https://github.com/nix-community/nix-on-droid.git\":"
+    },
+    {
+      "@id": "https://github.com/beefsack/GDScript-sublime.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "beefsack",
+      "repo": "GDScript-sublime.git\",",
+      "url": "https://github.com/beefsack/GDScript-sublime.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/copper\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "copper\",",
+      "url": "https://github.com/meta-introspector/copper\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-metameme\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-metameme\":",
+      "url": "https://github.com/meta-introspector/solfunmeme-metameme\":"
+    },
+    {
+      "@id": "https://github.com/nektos/act\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "nektos",
+      "repo": "act\":",
+      "url": "https://github.com/nektos/act\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/time-2025\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "time-2025\",",
+      "url": "https://github.com/meta-introspector/time-2025\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rmcp-agent.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rmcp-agent.git\",",
+      "url": "https://github.com/meta-introspector/rmcp-agent.git\","
+    },
+    {
+      "@id": "https://github.com/KyleMayes/clang-rs\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "KyleMayes",
+      "repo": "clang-rs\":",
+      "url": "https://github.com/KyleMayes/clang-rs\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/rust-clippy",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "rust-clippy",
+      "url": "https://github.com/rust-lang/rust-clippy"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nixpacks\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "nixpacks\":",
+      "url": "https://github.com/meta-introspector/nixpacks\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/cargo.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "rust-lang",
+      "repo": "cargo.git\",",
+      "url": "https://github.com/rust-lang/cargo.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/ar_archive_writer\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "ar_archive_writer\":",
+      "url": "https://github.com/meta-introspector/ar_archive_writer\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/lattice-introspector\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "lattice-introspector\":",
+      "url": "https://github.com/meta-introspector/lattice-introspector\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-banner.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-banner.git\",",
+      "url": "https://github.com/meta-introspector/solfunmeme-banner.git\","
+    },
+    {
+      "@id": "https://github.com/example/sub1.git\\n[submodule",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "sub1.git\\n[submodule",
+      "url": "https://github.com/example/sub1.git\\n[submodule"
+    },
+    {
+      "@id": "https://github.com/jpgrayson/gitoxide",
+      "@type": "RepositoryCount",
+      "count": 782,
+      "owner": "jpgrayson",
+      "repo": "gitoxide",
+      "url": "https://github.com/jpgrayson/gitoxide"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/memkb-mcp-rust\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "memkb-mcp-rust\",",
+      "url": "https://github.com/meta-introspector/memkb-mcp-rust\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/checkout.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "checkout.git\":",
+      "url": "https://github.com/meta-introspector/checkout.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/cloud-deployment-eliza\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "cloud-deployment-eliza\",",
+      "url": "https://github.com/meta-introspector/cloud-deployment-eliza\","
+    },
+    {
+      "@id": "https://github.com/rust-embedded/book.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-embedded",
+      "repo": "book.git\",",
+      "url": "https://github.com/rust-embedded/book.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/naersk.git",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "naersk.git",
+      "url": "https://github.com/meta-introspector/naersk.git"
+    },
+    {
+      "@id": "https://github.com/gitbutlerapp/gitbutler",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "gitbutlerapp",
+      "repo": "gitbutler",
+      "url": "https://github.com/gitbutlerapp/gitbutler"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/magoo.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "magoo.git\",",
+      "url": "https://github.com/meta-introspector/magoo.git\","
+    },
+    {
+      "@id": "https://github.com/webdesus/fs_extra",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "webdesus",
+      "repo": "fs_extra",
+      "url": "https://github.com/webdesus/fs_extra"
+    },
+    {
+      "@id": "https://github.com/rust-lang/crates.io-index)\";",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "crates.io-index)\";",
+      "url": "https://github.com/rust-lang/crates.io-index)\";"
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?tag=0.7.3#074cb6a997f91db653f8a53c755ddc07495ab429\"",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "rust-random",
+      "repo": "rand?tag=0.7.3#074cb6a997f91db653f8a53c755ddc07495ab429\"",
+      "url": "https://github.com/rust-random/rand?tag=0.7.3#074cb6a997f91db653f8a53c755ddc07495ab429\""
+    },
+    {
+      "@id": "https://github.com/braver/SublimeSass.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "braver",
+      "repo": "SublimeSass.git\":",
+      "url": "https://github.com/braver/SublimeSass.git\":"
+    },
+    {
+      "@id": "https://github.com/thundergolfer/strace-rs\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "thundergolfer",
+      "repo": "strace-rs\":",
+      "url": "https://github.com/thundergolfer/strace-rs\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/tclifford\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "tclifford\":",
+      "url": "https://github.com/meta-introspector/tclifford\":"
+    },
+    {
+      "@id": "https://github.com/Oxen-AI/oxen-release",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Oxen-AI",
+      "repo": "oxen-release",
+      "url": "https://github.com/Oxen-AI/oxen-release"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nix-github-actions.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "nix-github-actions.git\",",
+      "url": "https://github.com/meta-introspector/nix-github-actions.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/streamofrandom\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "streamofrandom\":",
+      "url": "https://github.com/meta-introspector/streamofrandom\":"
+    },
+    {
+      "@id": "https://github.com/xacrimon/dashmap",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "xacrimon",
+      "repo": "dashmap",
+      "url": "https://github.com/xacrimon/dashmap"
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/gitoxide\".",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "GitoxideLabs",
+      "repo": "gitoxide\".",
+      "url": "https://github.com/GitoxideLabs/gitoxide\"."
+    },
+    {
+      "@id": "https://github.com/meta-introspector/lean4\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "lean4\":",
+      "url": "https://github.com/meta-introspector/lean4\":"
+    },
+    {
+      "@id": "https://github.com/AmrDeveloper/GQL",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "AmrDeveloper",
+      "repo": "GQL",
+      "url": "https://github.com/AmrDeveloper/GQL"
+    },
+    {
+      "@id": "https://github.com/jiri/rust-emojicons\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "jiri",
+      "repo": "rust-emojicons\",",
+      "url": "https://github.com/jiri/rust-emojicons\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/asciinema\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "asciinema\",",
+      "url": "https://github.com/meta-introspector/asciinema\","
+    },
+    {
+      "@id": "https://github.com/example/repo.git\";",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "example",
+      "repo": "repo.git\";",
+      "url": "https://github.com/example/repo.git\";"
+    },
+    {
+      "@id": "https://github.com/Canop/bacon",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Canop",
+      "repo": "bacon",
+      "url": "https://github.com/Canop/bacon"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/introspector-llc\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "introspector-llc\",",
+      "url": "https://github.com/meta-introspector/introspector-llc\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/ragit\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "ragit\":",
+      "url": "https://github.com/meta-introspector/ragit\":"
+    },
+    {
+      "@id": "https://github.com/example/comprehensive.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "comprehensive.git\"",
+      "url": "https://github.com/example/comprehensive.git\""
+    },
+    {
+      "@id": "https://github.com/tmux/tmux\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "tmux",
+      "repo": "tmux\",",
+      "url": "https://github.com/tmux/tmux\","
+    },
+    {
+      "@id": "https://github.com/sectordistrict/intentrace\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "sectordistrict",
+      "repo": "intentrace\":",
+      "url": "https://github.com/sectordistrict/intentrace\":"
+    },
+    {
+      "@id": "https://github.com/boxdot/github-issues-export-rs.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "boxdot",
+      "repo": "github-issues-export-rs.git\",",
+      "url": "https://github.com/boxdot/github-issues-export-rs.git\","
+    },
+    {
+      "@id": "https://github.com/JuliaEditorSupport/Julia-sublime.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "JuliaEditorSupport",
+      "repo": "Julia-sublime.git\":",
+      "url": "https://github.com/JuliaEditorSupport/Julia-sublime.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/gcc.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "gcc.git\",",
+      "url": "https://github.com/rust-lang/gcc.git\","
+    },
+    {
+      "@id": "https://github.com/example/my-submodule.git\"",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "example",
+      "repo": "my-submodule.git\"",
+      "url": "https://github.com/example/my-submodule.git\""
+    },
+    {
+      "@id": "https://github.com/helix-editor/helix",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "helix-editor",
+      "repo": "helix",
+      "url": "https://github.com/helix-editor/helix"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/n00b\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "n00b\":",
+      "url": "https://github.com/meta-introspector/n00b\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust-index-guix.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rust-index-guix.git\",",
+      "url": "https://github.com/meta-introspector/rust-index-guix.git\","
+    },
+    {
+      "@id": "https://github.com/apache/arrow-rs\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "apache",
+      "repo": "arrow-rs\":",
+      "url": "https://github.com/apache/arrow-rs\":"
+    },
+    {
+      "@id": "https://github.com/Pistonite/magoo)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Pistonite",
+      "repo": "magoo)",
+      "url": "https://github.com/Pistonite/magoo)"
+    },
+    {
+      "@id": "https://github.com/rust-lang/enzyme.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "enzyme.git\",",
+      "url": "https://github.com/rust-lang/enzyme.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/quasi-meta-meme\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "quasi-meta-meme\",",
+      "url": "https://github.com/meta-introspector/quasi-meta-meme\","
+    },
+    {
+      "@id": "https://github.com/user-attachments/assets",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "user-attachments",
+      "repo": "assets",
+      "url": "https://github.com/user-attachments/assets"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodules-rs-nix.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "git-submodules-rs-nix.git\",",
+      "url": "https://github.com/meta-introspector/git-submodules-rs-nix.git\","
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/gitoxide\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "GitoxideLabs",
+      "repo": "gitoxide\":",
+      "url": "https://github.com/GitoxideLabs/gitoxide\":"
+    },
+    {
+      "@id": "https://github.com/braver/SublimeSass.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "braver",
+      "repo": "SublimeSass.git\",",
+      "url": "https://github.com/braver/SublimeSass.git\","
+    },
+    {
+      "@id": "https://github.com/josh-project/josh)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "josh-project",
+      "repo": "josh)",
+      "url": "https://github.com/josh-project/josh)"
+    },
+    {
+      "@id": "https://github.com/XAMPPRocky/octocrab\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "XAMPPRocky",
+      "repo": "octocrab\",",
+      "url": "https://github.com/XAMPPRocky/octocrab\","
+    },
+    {
+      "@id": "https://github.com/python/cpython",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "python",
+      "repo": "cpython",
+      "url": "https://github.com/python/cpython"
+    },
+    {
+      "@id": "https://github.com/osa1/lexgen\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "osa1",
+      "repo": "lexgen\",",
+      "url": "https://github.com/osa1/lexgen\","
+    },
+    {
+      "@id": "https://github.com/ramosbugs/oauth2-rs\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "ramosbugs",
+      "repo": "oauth2-rs\",",
+      "url": "https://github.com/ramosbugs/oauth2-rs\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/livestream-tiktok-plugin\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "livestream-tiktok-plugin\",",
+      "url": "https://github.com/meta-introspector/livestream-tiktok-plugin\","
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df)\"",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "rust-random",
+      "repo": "rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df)\"",
+      "url": "https://github.com/rust-random/rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df)\""
+    },
+    {
+      "@id": "https://github.com/apache/parquet-testing.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "apache",
+      "repo": "parquet-testing.git\":",
+      "url": "https://github.com/apache/parquet-testing.git\":"
+    },
+    {
+      "@id": "https://github.com/nix-community/cache-nix-action\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nix-community",
+      "repo": "cache-nix-action\":",
+      "url": "https://github.com/nix-community/cache-nix-action\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/magoo.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "magoo.git\":",
+      "url": "https://github.com/meta-introspector/magoo.git\":"
+    },
+    {
+      "@id": "https://github.com/example/sub2.git\");",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "sub2.git\");",
+      "url": "https://github.com/example/sub2.git\");"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/siumai.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "siumai.git\",",
+      "url": "https://github.com/meta-introspector/siumai.git\","
+    },
+    {
+      "@id": "https://github.com/example/my-lib.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "my-lib.git\"",
+      "url": "https://github.com/example/my-lib.git\""
+    },
+    {
+      "@id": "https://github.com/bheisler/criterion.rs",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "bheisler",
+      "repo": "criterion.rs",
+      "url": "https://github.com/bheisler/criterion.rs"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/submod.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "submod.git\":",
+      "url": "https://github.com/meta-introspector/submod.git\":"
+    },
+    {
+      "@id": "https://github.com/example/sub1.git\\n\");",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "sub1.git\\n\");",
+      "url": "https://github.com/example/sub1.git\\n\");"
+    },
+    {
+      "@id": "https://github.com/phiresky/ripgrep-all",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "phiresky",
+      "repo": "ripgrep-all",
+      "url": "https://github.com/phiresky/ripgrep-all"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/ragit.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "ragit.git\",",
+      "url": "https://github.com/meta-introspector/ragit.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/hackathon\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "hackathon\",",
+      "url": "https://github.com/meta-introspector/hackathon\","
+    },
+    {
+      "@id": "https://github.com/nix-community/naersk",
+      "@type": "RepositoryCount",
+      "count": 24,
+      "owner": "nix-community",
+      "repo": "naersk",
+      "url": "https://github.com/nix-community/naersk"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/tclifford\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "tclifford\",",
+      "url": "https://github.com/meta-introspector/tclifford\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodule-tools-rs.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "git-submodule-tools-rs.git\":",
+      "url": "https://github.com/meta-introspector/git-submodule-tools-rs.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/submod",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "submod",
+      "url": "https://github.com/meta-introspector/submod"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/bootstrap\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "meta-introspector",
+      "repo": "bootstrap\",",
+      "url": "https://github.com/meta-introspector/bootstrap\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/llvm-project.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "llvm-project.git\",",
+      "url": "https://github.com/rust-lang/llvm-project.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/hugging-face-dataset-validator-rust\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "hugging-face-dataset-validator-rust\":",
+      "url": "https://github.com/meta-introspector/hugging-face-dataset-validator-rust\":"
+    },
+    {
+      "@id": "https://github.com/modelcontextprotocol/specification.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "modelcontextprotocol",
+      "repo": "specification.git\":",
+      "url": "https://github.com/modelcontextprotocol/specification.git\":"
+    },
+    {
+      "@id": "https://github.com/asciinema/asciinema\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "asciinema",
+      "repo": "asciinema\",",
+      "url": "https://github.com/asciinema/asciinema\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nixpkgs-lint.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "nixpkgs-lint.git\",",
+      "url": "https://github.com/meta-introspector/nixpkgs-lint.git\","
+    },
+    {
+      "@id": "https://github.com/garbas/asciinema-scenario\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "garbas",
+      "repo": "asciinema-scenario\":",
+      "url": "https://github.com/garbas/asciinema-scenario\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/n00b\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "n00b\",",
+      "url": "https://github.com/meta-introspector/n00b\","
+    },
+    {
+      "@id": "https://github.com/example/lib.git\".to_string()),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "lib.git\".to_string()),",
+      "url": "https://github.com/example/lib.git\".to_string()),"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/quasi-meta-meme\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "quasi-meta-meme\":",
+      "url": "https://github.com/meta-introspector/quasi-meta-meme\":"
+    },
+    {
+      "@id": "https://github.com/jbw3/SublimeTextLinkerSyntax\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "jbw3",
+      "repo": "SublimeTextLinkerSyntax\":",
+      "url": "https://github.com/jbw3/SublimeTextLinkerSyntax\":"
+    },
+    {
+      "@id": "https://github.com/svetli-n/gitoxide",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "svetli-n",
+      "repo": "gitoxide",
+      "url": "https://github.com/svetli-n/gitoxide"
+    },
+    {
+      "@id": "https://github.com/mozilla/diversity).",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "mozilla",
+      "repo": "diversity).",
+      "url": "https://github.com/mozilla/diversity)."
+    },
+    {
+      "@id": "https://github.com/aya-rs/aya\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "aya-rs",
+      "repo": "aya\",",
+      "url": "https://github.com/aya-rs/aya\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodule-tools.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "git-submodule-tools.git\",",
+      "url": "https://github.com/meta-introspector/git-submodule-tools.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nix-installer-action.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "nix-installer-action.git\":",
+      "url": "https://github.com/meta-introspector/nix-installer-action.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/upload-artifact\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "upload-artifact\":",
+      "url": "https://github.com/meta-introspector/upload-artifact\":"
+    },
+    {
+      "@id": "https://github.com/example/utils.git\"",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "example",
+      "repo": "utils.git\"",
+      "url": "https://github.com/example/utils.git\""
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?branch=0.7)\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "rust-random",
+      "repo": "rand?branch=0.7)\",",
+      "url": "https://github.com/rust-random/rand?branch=0.7)\","
+    },
+    {
+      "@id": "https://github.com/hwchen/keyring-rs\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "hwchen",
+      "repo": "keyring-rs\":",
+      "url": "https://github.com/hwchen/keyring-rs\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/crates.io-index)\"",
+      "@type": "RepositoryCount",
+      "count": 64,
+      "owner": "rust-lang",
+      "repo": "crates.io-index)\"",
+      "url": "https://github.com/rust-lang/crates.io-index)\""
+    },
+    {
+      "@id": "https://github.com/zip-rs/zip2",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "zip-rs",
+      "repo": "zip2",
+      "url": "https://github.com/zip-rs/zip2"
+    },
+    {
+      "@id": "https://github.com/byron/gogit)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "byron",
+      "repo": "gogit)",
+      "url": "https://github.com/byron/gogit)"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/lean4\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "lean4\",",
+      "url": "https://github.com/meta-introspector/lean4\","
+    },
+    {
+      "@id": "https://github.com/NixOS/nix\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "NixOS",
+      "repo": "nix\",",
+      "url": "https://github.com/NixOS/nix\","
+    },
+    {
+      "@id": "https://github.com/apache/arrow-rs\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "apache",
+      "repo": "arrow-rs\",",
+      "url": "https://github.com/apache/arrow-rs\","
+    },
+    {
+      "@id": "https://github.com/mozilla/rust-code-analysis.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "mozilla",
+      "repo": "rust-code-analysis.git\",",
+      "url": "https://github.com/mozilla/rust-code-analysis.git\","
+    },
+    {
+      "@id": "https://github.com/Byron/crates-index-diff-rs",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Byron",
+      "repo": "crates-index-diff-rs",
+      "url": "https://github.com/Byron/crates-index-diff-rs"
+    },
+    {
+      "@id": "https://github.com/modelcontextprotocol/specification.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "modelcontextprotocol",
+      "repo": "specification.git\",",
+      "url": "https://github.com/modelcontextprotocol/specification.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust-mcp-sdk.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rust-mcp-sdk.git\":",
+      "url": "https://github.com/meta-introspector/rust-mcp-sdk.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodule-tools.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "git-submodule-tools.git\":",
+      "url": "https://github.com/meta-introspector/git-submodule-tools.git\":"
+    },
+    {
+      "@id": "https://github.com/niklasf/rust-btoi>",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "niklasf",
+      "repo": "rust-btoi>",
+      "url": "https://github.com/niklasf/rust-btoi>"
+    },
+    {
+      "@id": "https://github.com/rust-lang/rust",
+      "@type": "RepositoryCount",
+      "count": 26,
+      "owner": "rust-lang",
+      "repo": "rust",
+      "url": "https://github.com/rust-lang/rust"
+    },
+    {
+      "@id": "https://github.com/gitpython-developers/GitPython",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "gitpython-developers",
+      "repo": "GitPython",
+      "url": "https://github.com/gitpython-developers/GitPython"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-banner\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-banner\":",
+      "url": "https://github.com/meta-introspector/solfunmeme-banner\":"
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?branch=0.7#353d0e802bf16e82017bbc161a439b6a646fe1cf\"",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "rust-random",
+      "repo": "rand?branch=0.7#353d0e802bf16e82017bbc161a439b6a646fe1cf\"",
+      "url": "https://github.com/rust-random/rand?branch=0.7#353d0e802bf16e82017bbc161a439b6a646fe1cf\""
+    },
+    {
+      "@id": "https://github.com/mozilla/rust-code-analysis.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "mozilla",
+      "repo": "rust-code-analysis.git\":",
+      "url": "https://github.com/mozilla/rust-code-analysis.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/monomcp-rust\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "meta-introspector",
+      "repo": "monomcp-rust\",",
+      "url": "https://github.com/meta-introspector/monomcp-rust\","
+    },
+    {
+      "@id": "https://github.com/XAMPPRocky/octocrab.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "XAMPPRocky",
+      "repo": "octocrab.git\":",
+      "url": "https://github.com/XAMPPRocky/octocrab.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/meta-meme\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "meta-meme\":",
+      "url": "https://github.com/meta-introspector/meta-meme\":"
+    },
+    {
+      "@id": "https://github.com/elm-community/SublimeElmLanguageSupport.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "elm-community",
+      "repo": "SublimeElmLanguageSupport.git\",",
+      "url": "https://github.com/elm-community/SublimeElmLanguageSupport.git\","
+    },
+    {
+      "@id": "https://github.com/kimmobrunfeldt/git-hours#how-it-works",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "kimmobrunfeldt",
+      "repo": "git-hours#how-it-works",
+      "url": "https://github.com/kimmobrunfeldt/git-hours#how-it-works"
+    },
+    {
+      "@id": "https://github.com/byron/gitoxide\";",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "byron",
+      "repo": "gitoxide\";",
+      "url": "https://github.com/byron/gitoxide\";"
+    },
+    {
+      "@id": "https://github.com/Byron/gitoxide)",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Byron",
+      "repo": "gitoxide)",
+      "url": "https://github.com/Byron/gitoxide)"
+    },
+    {
+      "@id": "https://github.com/kollerma/git-submodule-tools}.",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "kollerma",
+      "repo": "git-submodule-tools}.",
+      "url": "https://github.com/kollerma/git-submodule-tools}."
+    },
+    {
+      "@id": "https://github.com/sublimehq/Packages.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "sublimehq",
+      "repo": "Packages.git\":",
+      "url": "https://github.com/sublimehq/Packages.git\":"
+    },
+    {
+      "@id": "https://github.com/cirosantilli/test-many-commits-1m.git",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "cirosantilli",
+      "repo": "test-many-commits-1m.git",
+      "url": "https://github.com/cirosantilli/test-many-commits-1m.git"
+    },
+    {
+      "@id": "https://github.com/beefsack/GDScript-sublime.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "beefsack",
+      "repo": "GDScript-sublime.git\":",
+      "url": "https://github.com/beefsack/GDScript-sublime.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/cache.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "cache.git\":",
+      "url": "https://github.com/meta-introspector/cache.git\":"
+    },
+    {
+      "@id": "https://github.com/rustsec/advisory-db\"]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rustsec",
+      "repo": "advisory-db\"]",
+      "url": "https://github.com/rustsec/advisory-db\"]"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/MoCoPr.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "MoCoPr.git\":",
+      "url": "https://github.com/meta-introspector/MoCoPr.git\":"
+    },
+    {
+      "@id": "https://github.com/nix-community/cache-nix-action\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "nix-community",
+      "repo": "cache-nix-action\",",
+      "url": "https://github.com/nix-community/cache-nix-action\","
+    },
+    {
+      "@id": "https://github.com/Byron/gitoxide\">https:",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Byron",
+      "repo": "gitoxide\">https:",
+      "url": "https://github.com/Byron/gitoxide\">https:"
+    },
+    {
+      "@id": "https://github.com/nmattia/niv\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nmattia",
+      "repo": "niv\",",
+      "url": "https://github.com/nmattia/niv\","
+    },
+    {
+      "@id": "https://github.com/skozlovf/Sublime-GenericConfig.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "skozlovf",
+      "repo": "Sublime-GenericConfig.git\",",
+      "url": "https://github.com/skozlovf/Sublime-GenericConfig.git\","
+    },
+    {
+      "@id": "https://github.com/praetorian-inc/noseyparker)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "praetorian-inc",
+      "repo": "noseyparker)",
+      "url": "https://github.com/praetorian-inc/noseyparker)"
+    },
+    {
+      "@id": "https://github.com/elizaos-plugins/plugin-twitter\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "elizaos-plugins",
+      "repo": "plugin-twitter\",",
+      "url": "https://github.com/elizaos-plugins/plugin-twitter\","
+    },
+    {
+      "@id": "https://github.com/qmonnet/rbpf\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "qmonnet",
+      "repo": "rbpf\",",
+      "url": "https://github.com/qmonnet/rbpf\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/edition-guide.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "edition-guide.git]",
+      "url": "https://github.com/rust-lang/edition-guide.git]"
+    },
+    {
+      "@id": "https://github.com/rust-lang/rust-by-example.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "rust-by-example.git]",
+      "url": "https://github.com/rust-lang/rust-by-example.git]"
+    },
+    {
+      "@id": "https://github.com/Phidica/sublime-fish.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "Phidica",
+      "repo": "sublime-fish.git\",",
+      "url": "https://github.com/Phidica/sublime-fish.git\","
+    },
+    {
+      "@id": "https://github.com/jasonwilliams/sublime_toml_highlighting.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "jasonwilliams",
+      "repo": "sublime_toml_highlighting.git\":",
+      "url": "https://github.com/jasonwilliams/sublime_toml_highlighting.git\":"
+    },
+    {
+      "@id": "https://github.com/nushell/nushell",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nushell",
+      "repo": "nushell",
+      "url": "https://github.com/nushell/nushell"
+    },
+    {
+      "@id": "https://github.com/jmikedupont2/git-submodules-rs-nix.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "jmikedupont2",
+      "repo": "git-submodules-rs-nix.git\",",
+      "url": "https://github.com/jmikedupont2/git-submodules-rs-nix.git\","
+    },
+    {
+      "@id": "https://github.com/mozilla/rust-code-analysis-output\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "mozilla",
+      "repo": "rust-code-analysis-output\",",
+      "url": "https://github.com/mozilla/rust-code-analysis-output\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/rls.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "rls.git]",
+      "url": "https://github.com/rust-lang/rls.git]"
+    },
+    {
+      "@id": "https://github.com/WebAssembly/testsuite\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "WebAssembly",
+      "repo": "testsuite\":",
+      "url": "https://github.com/WebAssembly/testsuite\":"
+    },
+    {
+      "@id": "https://github.com/oli-obk/cargo_metadata\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "oli-obk",
+      "repo": "cargo_metadata\":",
+      "url": "https://github.com/oli-obk/cargo_metadata\":"
+    },
+    {
+      "@id": "https://github.com/Geal/nom",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Geal",
+      "repo": "nom",
+      "url": "https://github.com/Geal/nom"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/grok-cli\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "grok-cli\":",
+      "url": "https://github.com/meta-introspector/grok-cli\":"
+    },
+    {
+      "@id": "https://github.com/korandoru/hawkeye",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "korandoru",
+      "repo": "hawkeye",
+      "url": "https://github.com/korandoru/hawkeye"
+    },
+    {
+      "@id": "https://github.com/bashandbone/submod.git",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "bashandbone",
+      "repo": "submod.git",
+      "url": "https://github.com/bashandbone/submod.git"
+    },
+    {
+      "@id": "https://github.com/Byron/gitoxide",
+      "@type": "RepositoryCount",
+      "count": 582,
+      "owner": "Byron",
+      "repo": "gitoxide",
+      "url": "https://github.com/Byron/gitoxide"
+    },
+    {
+      "@id": "https://github.com/dncrews/GraphQL-SublimeText3.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "dncrews",
+      "repo": "GraphQL-SublimeText3.git\",",
+      "url": "https://github.com/dncrews/GraphQL-SublimeText3.git\","
+    },
+    {
+      "@id": "https://github.com/bytecodealliance/wasmtime.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "bytecodealliance",
+      "repo": "wasmtime.git\":",
+      "url": "https://github.com/bytecodealliance/wasmtime.git\":"
+    },
+    {
+      "@id": "https://github.com/MiniZinc/minizinc-js\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "MiniZinc",
+      "repo": "minizinc-js\":",
+      "url": "https://github.com/MiniZinc/minizinc-js\":"
+    },
+    {
+      "@id": "https://github.com/user/émoji-repo.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "user",
+      "repo": "émoji-repo.git\"",
+      "url": "https://github.com/user/émoji-repo.git\""
+    },
+    {
+      "@id": "https://github.com/Stebalien/tempfile",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Stebalien",
+      "repo": "tempfile",
+      "url": "https://github.com/Stebalien/tempfile"
+    },
+    {
+      "@id": "https://github.com/jdx/hk)",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "jdx",
+      "repo": "hk)",
+      "url": "https://github.com/jdx/hk)"
+    },
+    {
+      "@id": "https://github.com/example/sub1.git\");",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "example",
+      "repo": "sub1.git\");",
+      "url": "https://github.com/example/sub1.git\");"
+    },
+    {
+      "@id": "https://github.com/asbjornenge/Docker.tmbundle.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "asbjornenge",
+      "repo": "Docker.tmbundle.git\",",
+      "url": "https://github.com/asbjornenge/Docker.tmbundle.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-dioxus.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-dioxus.git\":",
+      "url": "https://github.com/meta-introspector/solfunmeme-dioxus.git\":"
+    },
+    {
+      "@id": "https://github.com/jmikedupont2/ai-agent-terraform",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "jmikedupont2",
+      "repo": "ai-agent-terraform",
+      "url": "https://github.com/jmikedupont2/ai-agent-terraform"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/ar_archive_writer\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "ar_archive_writer\",",
+      "url": "https://github.com/meta-introspector/ar_archive_writer\","
+    },
+    {
+      "@id": "https://github.com/euler0/sublime-glsl.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "euler0",
+      "repo": "sublime-glsl.git\":",
+      "url": "https://github.com/euler0/sublime-glsl.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-embedded/book.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-embedded",
+      "repo": "book.git]",
+      "url": "https://github.com/rust-embedded/book.git]"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/aichat\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "aichat\",",
+      "url": "https://github.com/meta-introspector/aichat\","
+    },
+    {
+      "@id": "https://github.com/LegNeato/asciicast-rs.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "LegNeato",
+      "repo": "asciicast-rs.git\",",
+      "url": "https://github.com/LegNeato/asciicast-rs.git\","
+    },
+    {
+      "@id": "https://github.com/coin-or/Ipopt\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "coin-or",
+      "repo": "Ipopt\",",
+      "url": "https://github.com/coin-or/Ipopt\","
+    },
+    {
+      "@id": "https://github.com/egoist/dum\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "egoist",
+      "repo": "dum\",",
+      "url": "https://github.com/egoist/dum\","
+    },
+    {
+      "@id": "https://github.com/clap-rs/clap)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "clap-rs",
+      "repo": "clap)",
+      "url": "https://github.com/clap-rs/clap)"
+    },
+    {
+      "@id": "https://github.com/KyleMayes/clang-rs\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "KyleMayes",
+      "repo": "clang-rs\",",
+      "url": "https://github.com/KyleMayes/clang-rs\","
+    },
+    {
+      "@id": "https://github.com/nmattia/naersk-fixtures?branch=git-symlink#5594f722b8e5bc5116901d6e9af9cf4360e903df\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nmattia",
+      "repo": "naersk-fixtures?branch=git-symlink#5594f722b8e5bc5116901d6e9af9cf4360e903df\"",
+      "url": "https://github.com/nmattia/naersk-fixtures?branch=git-symlink#5594f722b8e5bc5116901d6e9af9cf4360e903df\""
+    },
+    {
+      "@id": "https://github.com/eclipse/jgit",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "eclipse",
+      "repo": "jgit",
+      "url": "https://github.com/eclipse/jgit"
+    },
+    {
+      "@id": "https://github.com/JohnNilsson/awk-sublime.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "JohnNilsson",
+      "repo": "awk-sublime.git\":",
+      "url": "https://github.com/JohnNilsson/awk-sublime.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/meta-meme\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "meta-introspector",
+      "repo": "meta-meme\",",
+      "url": "https://github.com/meta-introspector/meta-meme\","
+    },
+    {
+      "@id": "https://github.com/AntonGepting/tmux-interface-rs\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "AntonGepting",
+      "repo": "tmux-interface-rs\":",
+      "url": "https://github.com/AntonGepting/tmux-interface-rs\":"
+    },
+    {
+      "@id": "https://github.com/WebAssembly/testsuite\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "WebAssembly",
+      "repo": "testsuite\",",
+      "url": "https://github.com/WebAssembly/testsuite\","
+    },
+    {
+      "@id": "https://github.com/vickenty/lang-c\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "vickenty",
+      "repo": "lang-c\",",
+      "url": "https://github.com/vickenty/lang-c\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/abi_stable_crates\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "abi_stable_crates\":",
+      "url": "https://github.com/meta-introspector/abi_stable_crates\":"
+    },
+    {
+      "@id": "https://github.com/deepfence/ebpfguard\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "deepfence",
+      "repo": "ebpfguard\":",
+      "url": "https://github.com/deepfence/ebpfguard\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodule-tools-rs\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "git-submodule-tools-rs\",",
+      "url": "https://github.com/meta-introspector/git-submodule-tools-rs\","
+    },
+    {
+      "@id": "https://github.com/jj-vcs/jj),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "jj-vcs",
+      "repo": "jj),",
+      "url": "https://github.com/jj-vcs/jj),"
+    },
+    {
+      "@id": "https://github.com/probe-rs/probe-rs",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "probe-rs",
+      "repo": "probe-rs",
+      "url": "https://github.com/probe-rs/probe-rs"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/minizinc-introspector\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "meta-introspector",
+      "repo": "minizinc-introspector\",",
+      "url": "https://github.com/meta-introspector/minizinc-introspector\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/rust-by-example.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "rust-by-example.git\",",
+      "url": "https://github.com/rust-lang/rust-by-example.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/asciinema\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "asciinema\":",
+      "url": "https://github.com/meta-introspector/asciinema\":"
+    },
+    {
+      "@id": "https://github.com/sponsors/Byron)",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "sponsors",
+      "repo": "Byron)",
+      "url": "https://github.com/sponsors/Byron)"
+    },
+    {
+      "@id": "https://github.com/jmforsythe/Git-Heat-Map",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "jmforsythe",
+      "repo": "Git-Heat-Map",
+      "url": "https://github.com/jmforsythe/Git-Heat-Map"
+    },
+    {
+      "@id": "https://github.com/asbjornenge/Docker.tmbundle.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "asbjornenge",
+      "repo": "Docker.tmbundle.git\":",
+      "url": "https://github.com/asbjornenge/Docker.tmbundle.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/mcp-discovery.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "mcp-discovery.git\",",
+      "url": "https://github.com/meta-introspector/mcp-discovery.git\","
+    },
+    {
+      "@id": "https://github.com/jj-vcs/jj",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "jj-vcs",
+      "repo": "jj",
+      "url": "https://github.com/jj-vcs/jj"
+    },
+    {
+      "@id": "https://github.com/example/existing.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "existing.git\"",
+      "url": "https://github.com/example/existing.git\""
+    },
+    {
+      "@id": "https://github.com/315234/SublimeFortran.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "315234",
+      "repo": "SublimeFortran.git\":",
+      "url": "https://github.com/315234/SublimeFortran.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/trident\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "trident\",",
+      "url": "https://github.com/meta-introspector/trident\","
+    },
+    {
+      "@id": "https://github.com/extrawurst/gitui)",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "extrawurst",
+      "repo": "gitui)",
+      "url": "https://github.com/extrawurst/gitui)"
+    },
+    {
+      "@id": "https://github.com/kimmobrunfeldt/git-hours).",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "kimmobrunfeldt",
+      "repo": "git-hours).",
+      "url": "https://github.com/kimmobrunfeldt/git-hours)."
+    },
+    {
+      "@id": "https://github.com/Pistonite/magoo\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Pistonite",
+      "repo": "magoo\",",
+      "url": "https://github.com/Pistonite/magoo\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/guix\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "guix\":",
+      "url": "https://github.com/meta-introspector/guix\":"
+    },
+    {
+      "@id": "https://github.com/JohnNilsson/awk-sublime.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "JohnNilsson",
+      "repo": "awk-sublime.git\",",
+      "url": "https://github.com/JohnNilsson/awk-sublime.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/simd-kernels.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "simd-kernels.git\",",
+      "url": "https://github.com/meta-introspector/simd-kernels.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/monomcp-rust\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "monomcp-rust\":",
+      "url": "https://github.com/meta-introspector/monomcp-rust\":"
+    },
+    {
+      "@id": "https://github.com/osa1/lexgen\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "osa1",
+      "repo": "lexgen\":",
+      "url": "https://github.com/osa1/lexgen\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust-index-guix.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "rust-index-guix.git\":",
+      "url": "https://github.com/meta-introspector/rust-index-guix.git\":"
+    },
+    {
+      "@id": "https://github.com/o2sh/onefetch",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "o2sh",
+      "repo": "onefetch",
+      "url": "https://github.com/o2sh/onefetch"
+    },
+    {
+      "@id": "https://github.com/dotnet/runtime",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "dotnet",
+      "repo": "runtime",
+      "url": "https://github.com/dotnet/runtime"
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60#703452450770d4b2bb0b117dfc83aea5ba61ec60\"",
+      "@type": "RepositoryCount",
+      "count": 16,
+      "owner": "rust-random",
+      "repo": "rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60#703452450770d4b2bb0b117dfc83aea5ba61ec60\"",
+      "url": "https://github.com/rust-random/rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60#703452450770d4b2bb0b117dfc83aea5ba61ec60\""
+    },
+    {
+      "@id": "https://github.com/RustCrypto/asm-hashes",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "RustCrypto",
+      "repo": "asm-hashes",
+      "url": "https://github.com/RustCrypto/asm-hashes"
+    },
+    {
+      "@id": "https://github.com/RustCrypto/hashes",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "RustCrypto",
+      "repo": "hashes",
+      "url": "https://github.com/RustCrypto/hashes"
+    },
+    {
+      "@id": "https://github.com/rayon-rs/rayon",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rayon-rs",
+      "repo": "rayon",
+      "url": "https://github.com/rayon-rs/rayon"
+    },
+    {
+      "@id": "https://github.com/foobar/gitoxide",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "foobar",
+      "repo": "gitoxide",
+      "url": "https://github.com/foobar/gitoxide"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/bitchat-solana-zos-solfunmeme\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "bitchat-solana-zos-solfunmeme\",",
+      "url": "https://github.com/meta-introspector/bitchat-solana-zos-solfunmeme\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-dioxus\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-dioxus\":",
+      "url": "https://github.com/meta-introspector/solfunmeme-dioxus\":"
+    },
+    {
+      "@id": "https://github.com/lotabout/skim).",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "lotabout",
+      "repo": "skim).",
+      "url": "https://github.com/lotabout/skim)."
+    },
+    {
+      "@id": "https://github.com/meta-introspector/bootstrap-meme\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "bootstrap-meme\",",
+      "url": "https://github.com/meta-introspector/bootstrap-meme\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/abi_stable_crates\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "abi_stable_crates\",",
+      "url": "https://github.com/meta-introspector/abi_stable_crates\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/cache-nix-action.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "cache-nix-action.git\",",
+      "url": "https://github.com/meta-introspector/cache-nix-action.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nix-installer-action.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "nix-installer-action.git\",",
+      "url": "https://github.com/meta-introspector/nix-installer-action.git\","
+    },
+    {
+      "@id": "https://github.com/byron/gitoxide\".into()),",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "byron",
+      "repo": "gitoxide\".into()),",
+      "url": "https://github.com/byron/gitoxide\".into()),"
+    },
+    {
+      "@id": "https://github.com/cool-japan/scirs.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "cool-japan",
+      "repo": "scirs.git\":",
+      "url": "https://github.com/cool-japan/scirs.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/gitoxide.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "gitoxide.git\",",
+      "url": "https://github.com/meta-introspector/gitoxide.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/tmux-interface-rs\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "tmux-interface-rs\":",
+      "url": "https://github.com/meta-introspector/tmux-interface-rs\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-model-builder-quiz\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-model-builder-quiz\",",
+      "url": "https://github.com/meta-introspector/solfunmeme-model-builder-quiz\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/gemini-cli\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "gemini-cli\":",
+      "url": "https://github.com/meta-introspector/gemini-cli\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/cargo.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "cargo.git]",
+      "url": "https://github.com/rust-lang/cargo.git]"
+    },
+    {
+      "@id": "https://github.com/Pistonight/mono-dev",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Pistonight",
+      "repo": "mono-dev",
+      "url": "https://github.com/Pistonight/mono-dev"
+    },
+    {
+      "@id": "https://github.com/JuliaBinaryWrappers/MiniZinc_jll.jl\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "JuliaBinaryWrappers",
+      "repo": "MiniZinc_jll.jl\":",
+      "url": "https://github.com/JuliaBinaryWrappers/MiniZinc_jll.jl\":"
+    },
+    {
+      "@id": "https://github.com/conradkleinespel/duck).",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "conradkleinespel",
+      "repo": "duck).",
+      "url": "https://github.com/conradkleinespel/duck)."
+    },
+    {
+      "@id": "https://github.com/example/dev-tools.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "dev-tools.git\"",
+      "url": "https://github.com/example/dev-tools.git\""
+    },
+    {
+      "@id": "https://github.com/meta-introspector/meta-meme.wiki.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "meta-meme.wiki.git\":",
+      "url": "https://github.com/meta-introspector/meta-meme.wiki.git\":"
+    },
+    {
+      "@id": "https://github.com/filhodanuvem/gitql).",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "filhodanuvem",
+      "repo": "gitql).",
+      "url": "https://github.com/filhodanuvem/gitql)."
+    },
+    {
+      "@id": "https://github.com/google/reftable",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "google",
+      "repo": "reftable",
+      "url": "https://github.com/google/reftable"
+    },
+    {
+      "@id": "https://github.com/rust-lang/stdarch",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "stdarch",
+      "url": "https://github.com/rust-lang/stdarch"
+    },
+    {
+      "@id": "https://github.com/microsoft/windows-rs",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "microsoft",
+      "repo": "windows-rs",
+      "url": "https://github.com/microsoft/windows-rs"
+    },
+    {
+      "@id": "https://github.com/$REPOSITORY/releases",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "$REPOSITORY",
+      "repo": "releases",
+      "url": "https://github.com/$REPOSITORY/releases"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/checkout.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "checkout.git\",",
+      "url": "https://github.com/meta-introspector/checkout.git\","
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/nonexistent",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "GitoxideLabs",
+      "repo": "nonexistent",
+      "url": "https://github.com/GitoxideLabs/nonexistent"
+    },
+    {
+      "@id": "https://github.com/tokio-rs/tracing.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "tokio-rs",
+      "repo": "tracing.git\",",
+      "url": "https://github.com/tokio-rs/tracing.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/naersk.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "naersk.git\":",
+      "url": "https://github.com/meta-introspector/naersk.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/aichat\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "aichat\":",
+      "url": "https://github.com/meta-introspector/aichat\":"
+    },
+    {
+      "@id": "https://github.com/byron/gitoxide\".into())?;",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "byron",
+      "repo": "gitoxide\".into())?;",
+      "url": "https://github.com/byron/gitoxide\".into())?;"
+    },
+    {
+      "@id": "https://github.com/jmikedupont2/git-submodules-rs-nix.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "jmikedupont2",
+      "repo": "git-submodules-rs-nix.git\":",
+      "url": "https://github.com/jmikedupont2/git-submodules-rs-nix.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/twitter-plugin\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "twitter-plugin\",",
+      "url": "https://github.com/meta-introspector/twitter-plugin\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/neo\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "neo\":",
+      "url": "https://github.com/meta-introspector/neo\":"
+    },
+    {
+      "@id": "https://github.com/danro/LESS-sublime.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "danro",
+      "repo": "LESS-sublime.git\",",
+      "url": "https://github.com/danro/LESS-sublime.git\","
+    },
+    {
+      "@id": "https://github.com/hoest/sublimetext-fsharp.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "hoest",
+      "repo": "sublimetext-fsharp.git\":",
+      "url": "https://github.com/hoest/sublimetext-fsharp.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/mes\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "mes\":",
+      "url": "https://github.com/meta-introspector/mes\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rustc-stable-hash\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rustc-stable-hash\":",
+      "url": "https://github.com/meta-introspector/rustc-stable-hash\":"
+    },
+    {
+      "@id": "https://github.com/SublimeText/AsciiDoc.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "SublimeText",
+      "repo": "AsciiDoc.git\",",
+      "url": "https://github.com/SublimeText/AsciiDoc.git\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/reference.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "reference.git]",
+      "url": "https://github.com/rust-lang/reference.git]"
+    },
+    {
+      "@id": "https://github.com/Byron/cargo-smart-release)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Byron",
+      "repo": "cargo-smart-release)",
+      "url": "https://github.com/Byron/cargo-smart-release)"
+    },
+    {
+      "@id": "https://github.com/starship/starship",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "starship",
+      "repo": "starship",
+      "url": "https://github.com/starship/starship"
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60)\",",
+      "@type": "RepositoryCount",
+      "count": 26,
+      "owner": "rust-random",
+      "repo": "rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60)\",",
+      "url": "https://github.com/rust-random/rand?rev=703452450770d4b2bb0b117dfc83aea5ba61ec60)\","
+    },
+    {
+      "@id": "https://github.com/garbas/asciinema-scenario\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "garbas",
+      "repo": "asciinema-scenario\",",
+      "url": "https://github.com/garbas/asciinema-scenario\","
+    },
+    {
+      "@id": "https://github.com/example/inherits.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "inherits.git\"",
+      "url": "https://github.com/example/inherits.git\""
+    },
+    {
+      "@id": "https://github.com/jmikedupont2/git-submodules-rs-nix.git\";",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "jmikedupont2",
+      "repo": "git-submodules-rs-nix.git\";",
+      "url": "https://github.com/jmikedupont2/git-submodules-rs-nix.git\";"
+    },
+    {
+      "@id": "https://github.com/emacsmirror/lsp-scheme\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "emacsmirror",
+      "repo": "lsp-scheme\":",
+      "url": "https://github.com/emacsmirror/lsp-scheme\":"
+    },
+    {
+      "@id": "https://github.com/zyxar/Sublime-CMakeLists.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "zyxar",
+      "repo": "Sublime-CMakeLists.git\",",
+      "url": "https://github.com/zyxar/Sublime-CMakeLists.git\","
+    },
+    {
+      "@id": "https://github.com/Martin819/sublime-jinja2.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "Martin819",
+      "repo": "sublime-jinja2.git\",",
+      "url": "https://github.com/Martin819/sublime-jinja2.git\","
+    },
+    {
+      "@id": "https://github.com/foobar/gitoxide\";",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "foobar",
+      "repo": "gitoxide\";",
+      "url": "https://github.com/foobar/gitoxide\";"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/ramparts.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "ramparts.git\":",
+      "url": "https://github.com/meta-introspector/ramparts.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/ragit.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "ragit.git\":",
+      "url": "https://github.com/meta-introspector/ragit.git\":"
+    },
+    {
+      "@id": "https://github.com/Lutetium-Vanadium/requestty",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Lutetium-Vanadium",
+      "repo": "requestty",
+      "url": "https://github.com/Lutetium-Vanadium/requestty"
+    },
+    {
+      "@id": "https://github.com/jmikedupont2/pick-up-nix.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "jmikedupont2",
+      "repo": "pick-up-nix.git\":",
+      "url": "https://github.com/jmikedupont2/pick-up-nix.git\":"
+    },
+    {
+      "@id": "https://github.com/Byron/therror),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Byron",
+      "repo": "therror),",
+      "url": "https://github.com/Byron/therror),"
+    },
+    {
+      "@id": "https://github.com/315234/SublimeFortran.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "315234",
+      "repo": "SublimeFortran.git\",",
+      "url": "https://github.com/315234/SublimeFortran.git\","
+    },
+    {
+      "@id": "https://github.com/rust-itertools/itertools",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-itertools",
+      "repo": "itertools",
+      "url": "https://github.com/rust-itertools/itertools"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/trident\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "trident\":",
+      "url": "https://github.com/meta-introspector/trident\":"
+    },
+    {
+      "@id": "https://github.com/Phidica/sublime-fish.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Phidica",
+      "repo": "sublime-fish.git\":",
+      "url": "https://github.com/Phidica/sublime-fish.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/forgejo-python\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "forgejo-python\":",
+      "url": "https://github.com/meta-introspector/forgejo-python\":"
+    },
+    {
+      "@id": "https://github.com/uuid-rs/uuid\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "uuid-rs",
+      "repo": "uuid\"",
+      "url": "https://github.com/uuid-rs/uuid\""
+    },
+    {
+      "@id": "https://github.com/mozilla/nixpkgs-mozilla",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "mozilla",
+      "repo": "nixpkgs-mozilla",
+      "url": "https://github.com/mozilla/nixpkgs-mozilla"
+    },
+    {
+      "@id": "https://github.com/用户/项目.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "用户",
+      "repo": "项目.git\"",
+      "url": "https://github.com/用户/项目.git\""
+    },
+    {
+      "@id": "https://github.com/byron/gitoxide\"),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "byron",
+      "repo": "gitoxide\"),",
+      "url": "https://github.com/byron/gitoxide\"),"
+    },
+    {
+      "@id": "https://github.com/JuliaBinaryWrappers/MiniZinc_jll.jl\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "JuliaBinaryWrappers",
+      "repo": "MiniZinc_jll.jl\",",
+      "url": "https://github.com/JuliaBinaryWrappers/MiniZinc_jll.jl\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/submod.git",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "submod.git",
+      "url": "https://github.com/meta-introspector/submod.git"
+    },
+    {
+      "@id": "https://github.com/getzola/zola.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "getzola",
+      "repo": "zola.git\",",
+      "url": "https://github.com/getzola/zola.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nixtract.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "nixtract.git\":",
+      "url": "https://github.com/meta-introspector/nixtract.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/minizinc-introspector\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "minizinc-introspector\":",
+      "url": "https://github.com/meta-introspector/minizinc-introspector\":"
+    },
+    {
+      "@id": "https://github.com/nix-community/fenix",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nix-community",
+      "repo": "fenix",
+      "url": "https://github.com/nix-community/fenix"
+    },
+    {
+      "@id": "https://github.com/cross-rs/cross",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "cross-rs",
+      "repo": "cross",
+      "url": "https://github.com/cross-rs/cross"
+    },
+    {
+      "@id": "https://github.com/joshtriplett/)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "joshtriplett",
+      "repo": ")",
+      "url": "https://github.com/joshtriplett/)"
+    },
+    {
+      "@id": "https://github.com/xmo-odoo/gitoxide",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "xmo-odoo",
+      "repo": "gitoxide",
+      "url": "https://github.com/xmo-odoo/gitoxide"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-banner\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-banner\",",
+      "url": "https://github.com/meta-introspector/solfunmeme-banner\","
+    },
+    {
+      "@id": "https://github.com/company/react-components.git",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "company",
+      "repo": "react-components.git",
+      "url": "https://github.com/company/react-components.git"
+    },
+    {
+      "@id": "https://github.com/bpfman/bpfman\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "bpfman",
+      "repo": "bpfman\",",
+      "url": "https://github.com/bpfman/bpfman\","
+    },
+    {
+      "@id": "https://github.com/bashandbone/submod\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "bashandbone",
+      "repo": "submod\",",
+      "url": "https://github.com/bashandbone/submod\","
+    },
+    {
+      "@id": "https://github.com/foobar/gitoxide\")?;",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "foobar",
+      "repo": "gitoxide\")?;",
+      "url": "https://github.com/foobar/gitoxide\")?;"
+    },
+    {
+      "@id": "https://github.com/foobar/gitoxide\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "foobar",
+      "repo": "gitoxide\",",
+      "url": "https://github.com/foobar/gitoxide\","
+    },
+    {
+      "@id": "https://github.com/owner/repo`.",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "owner",
+      "repo": "repo`.",
+      "url": "https://github.com/owner/repo`."
+    },
+    {
+      "@id": "https://github.com/hwchen/keyring-rs\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "hwchen",
+      "repo": "keyring-rs\",",
+      "url": "https://github.com/hwchen/keyring-rs\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/stdarch.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "stdarch.git]",
+      "url": "https://github.com/rust-lang/stdarch.git]"
+    },
+    {
+      "@id": "https://github.com/WebAssembly/wasi-threads\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "WebAssembly",
+      "repo": "wasi-threads\":",
+      "url": "https://github.com/WebAssembly/wasi-threads\":"
+    },
+    {
+      "@id": "https://github.com/princemaple/elixir-sublime-syntax.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "princemaple",
+      "repo": "elixir-sublime-syntax.git\",",
+      "url": "https://github.com/princemaple/elixir-sublime-syntax.git\","
+    },
+    {
+      "@id": "https://github.com/dncrews/GraphQL-SublimeText3.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "dncrews",
+      "repo": "GraphQL-SublimeText3.git\":",
+      "url": "https://github.com/dncrews/GraphQL-SublimeText3.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/cargo",
+      "@type": "RepositoryCount",
+      "count": 56,
+      "owner": "rust-lang",
+      "repo": "cargo",
+      "url": "https://github.com/rust-lang/cargo"
+    },
+    {
+      "@id": "https://github.com/mattwparas/steel\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "mattwparas",
+      "repo": "steel\",",
+      "url": "https://github.com/mattwparas/steel\","
+    },
+    {
+      "@id": "https://github.com/bashandbone/submod",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "bashandbone",
+      "repo": "submod",
+      "url": "https://github.com/bashandbone/submod"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/magoo",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "magoo",
+      "url": "https://github.com/meta-introspector/magoo"
+    },
+    {
+      "@id": "https://github.com/byron/gitoxide\",",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "byron",
+      "repo": "gitoxide\",",
+      "url": "https://github.com/byron/gitoxide\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rs-gapi-oauth\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "meta-introspector",
+      "repo": "rs-gapi-oauth\",",
+      "url": "https://github.com/meta-introspector/rs-gapi-oauth\","
+    },
+    {
+      "@id": "https://github.com/MiniZinc/minizinc-python\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "MiniZinc",
+      "repo": "minizinc-python\",",
+      "url": "https://github.com/MiniZinc/minizinc-python\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rust\",",
+      "url": "https://github.com/meta-introspector/rust\","
+    },
+    {
+      "@id": "https://github.com/kimmobrunfeldt/git-hours",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "kimmobrunfeldt",
+      "repo": "git-hours",
+      "url": "https://github.com/kimmobrunfeldt/git-hours"
+    },
+    {
+      "@id": "https://github.com/byron/gitoxide`.",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "byron",
+      "repo": "gitoxide`.",
+      "url": "https://github.com/byron/gitoxide`."
+    },
+    {
+      "@id": "https://github.com/meta-introspector/grok-cli.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "grok-cli.git\",",
+      "url": "https://github.com/meta-introspector/grok-cli.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/gitoxide",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "gitoxide",
+      "url": "https://github.com/meta-introspector/gitoxide"
+    },
+    {
+      "@id": "https://github.com/NagatoDEV/PlayStation-Home-Master-Archive",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "NagatoDEV",
+      "repo": "PlayStation-Home-Master-Archive",
+      "url": "https://github.com/NagatoDEV/PlayStation-Home-Master-Archive"
+    },
+    {
+      "@id": "https://github.com/stacked-git/stgit",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "stacked-git",
+      "repo": "stgit",
+      "url": "https://github.com/stacked-git/stgit"
+    },
+    {
+      "@id": "https://github.com/KyleMayes/clang-sys\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "KyleMayes",
+      "repo": "clang-sys\":",
+      "url": "https://github.com/KyleMayes/clang-sys\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/git2-rs)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "git2-rs)",
+      "url": "https://github.com/rust-lang/git2-rs)"
+    },
+    {
+      "@id": "https://github.com/tweag/nixtract.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "tweag",
+      "repo": "nixtract.git\",",
+      "url": "https://github.com/tweag/nixtract.git\","
+    },
+    {
+      "@id": "https://github.com/pemistahl/grex\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "pemistahl",
+      "repo": "grex\":",
+      "url": "https://github.com/pemistahl/grex\":"
+    },
+    {
+      "@id": "https://github.com/XAMPPRocky/octocrab.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "XAMPPRocky",
+      "repo": "octocrab.git\",",
+      "url": "https://github.com/XAMPPRocky/octocrab.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/hugging-face-dataset-validator-rust\",",
+      "@type": "RepositoryCount",
+      "count": 18,
+      "owner": "meta-introspector",
+      "repo": "hugging-face-dataset-validator-rust\",",
+      "url": "https://github.com/meta-introspector/hugging-face-dataset-validator-rust\","
+    },
+    {
+      "@id": "https://github.com/SalGnt/Sublime-VimL.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "SalGnt",
+      "repo": "Sublime-VimL.git\",",
+      "url": "https://github.com/SalGnt/Sublime-VimL.git\","
+    },
+    {
+      "@id": "https://github.com/kollerma/git-submodule-tools",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "kollerma",
+      "repo": "git-submodule-tools",
+      "url": "https://github.com/kollerma/git-submodule-tools"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/forgejo-python\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "forgejo-python\",",
+      "url": "https://github.com/meta-introspector/forgejo-python\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust-mcp-filesystem.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rust-mcp-filesystem.git\":",
+      "url": "https://github.com/meta-introspector/rust-mcp-filesystem.git\":"
+    },
+    {
+      "@id": "https://github.com/pascalkuthe/imara-diff",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "pascalkuthe",
+      "repo": "imara-diff",
+      "url": "https://github.com/pascalkuthe/imara-diff"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/ragit\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "ragit\",",
+      "url": "https://github.com/meta-introspector/ragit\","
+    },
+    {
+      "@id": "https://github.com/dotnet/docs",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "dotnet",
+      "repo": "docs",
+      "url": "https://github.com/dotnet/docs"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rs-gapi-oauth\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rs-gapi-oauth\":",
+      "url": "https://github.com/meta-introspector/rs-gapi-oauth\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-dioxus.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-dioxus.git\",",
+      "url": "https://github.com/meta-introspector/solfunmeme-dioxus.git\","
+    },
+    {
+      "@id": "https://github.com/foobar/gitoxide\".to_owned())?",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "foobar",
+      "repo": "gitoxide\".to_owned())?",
+      "url": "https://github.com/foobar/gitoxide\".to_owned())?"
+    },
+    {
+      "@id": "https://github.com/nix-community/rnix-parser.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nix-community",
+      "repo": "rnix-parser.git\":",
+      "url": "https://github.com/nix-community/rnix-parser.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/install-nix-action.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "install-nix-action.git\",",
+      "url": "https://github.com/meta-introspector/install-nix-action.git\","
+    },
+    {
+      "@id": "https://github.com/jiri/rust-emojicons\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "jiri",
+      "repo": "rust-emojicons\":",
+      "url": "https://github.com/jiri/rust-emojicons\":"
+    },
+    {
+      "@id": "https://github.com/pemistahl/grex\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "pemistahl",
+      "repo": "grex\",",
+      "url": "https://github.com/pemistahl/grex\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/naersk",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "naersk",
+      "url": "https://github.com/meta-introspector/naersk"
+    },
+    {
+      "@id": "https://github.com/Martin819/sublime-jinja2.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Martin819",
+      "repo": "sublime-jinja2.git\":",
+      "url": "https://github.com/Martin819/sublime-jinja2.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme\":",
+      "url": "https://github.com/meta-introspector/solfunmeme\":"
+    },
+    {
+      "@id": "https://github.com/railwayapp/nixpacks\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "railwayapp",
+      "repo": "nixpacks\",",
+      "url": "https://github.com/railwayapp/nixpacks\","
+    },
+    {
+      "@id": "https://github.com/tiann/eadb\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "tiann",
+      "repo": "eadb\",",
+      "url": "https://github.com/tiann/eadb\","
+    },
+    {
+      "@id": "https://github.com/nmattia/naersk-fixtures\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "nmattia",
+      "repo": "naersk-fixtures\",",
+      "url": "https://github.com/nmattia/naersk-fixtures\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/install-nix-action.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "install-nix-action.git\":",
+      "url": "https://github.com/meta-introspector/install-nix-action.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/rustc-dev-guide.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "rustc-dev-guide.git]",
+      "url": "https://github.com/rust-lang/rustc-dev-guide.git]"
+    },
+    {
+      "@id": "https://github.com/<owner>/<repo>",
+      "@type": "RepositoryCount",
+      "count": 28,
+      "owner": "<owner>",
+      "repo": "<repo>",
+      "url": "https://github.com/<owner>/<repo>"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/upload-artifact\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "upload-artifact\",",
+      "url": "https://github.com/meta-introspector/upload-artifact\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/streamofrandom\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "streamofrandom\",",
+      "url": "https://github.com/meta-introspector/streamofrandom\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/introspector-llc\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "introspector-llc\":",
+      "url": "https://github.com/meta-introspector/introspector-llc\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/naersk.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "naersk.git\",",
+      "url": "https://github.com/meta-introspector/naersk.git\","
+    },
+    {
+      "@id": "https://github.com/skozlovf/Sublime-GenericConfig.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "skozlovf",
+      "repo": "Sublime-GenericConfig.git\":",
+      "url": "https://github.com/skozlovf/Sublime-GenericConfig.git\":"
+    },
+    {
+      "@id": "https://github.com/WebAssembly/wasi-threads\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "WebAssembly",
+      "repo": "wasi-threads\",",
+      "url": "https://github.com/WebAssembly/wasi-threads\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/bootstrap-meme\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "bootstrap-meme\":",
+      "url": "https://github.com/meta-introspector/bootstrap-meme\":"
+    },
+    {
+      "@id": "https://github.com/VcamX/protobuf-syntax-highlighting.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "VcamX",
+      "repo": "protobuf-syntax-highlighting.git\":",
+      "url": "https://github.com/VcamX/protobuf-syntax-highlighting.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/memkb-mcp-rust\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "memkb-mcp-rust\":",
+      "url": "https://github.com/meta-introspector/memkb-mcp-rust\":"
+    },
+    {
+      "@id": "https://github.com/apache/parquet-testing.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "apache",
+      "repo": "parquet-testing.git\",",
+      "url": "https://github.com/apache/parquet-testing.git\","
+    },
+    {
+      "@id": "https://github.com/a-h/nix-asciinema-agg\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "a-h",
+      "repo": "nix-asciinema-agg\":",
+      "url": "https://github.com/a-h/nix-asciinema-agg\":"
+    },
+    {
+      "@id": "https://github.com/serde-rs/serde",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "serde-rs",
+      "repo": "serde",
+      "url": "https://github.com/serde-rs/serde"
+    },
+    {
+      "@id": "https://github.com/sectordistrict/intentrace\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "sectordistrict",
+      "repo": "intentrace\",",
+      "url": "https://github.com/sectordistrict/intentrace\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/nomicon.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "nomicon.git\",",
+      "url": "https://github.com/rust-lang/nomicon.git\","
+    },
+    {
+      "@id": "https://github.com/thundergolfer/strace-rs\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "thundergolfer",
+      "repo": "strace-rs\",",
+      "url": "https://github.com/thundergolfer/strace-rs\","
+    },
+    {
+      "@id": "https://github.com/pingcap/talent-plan",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "pingcap",
+      "repo": "talent-plan",
+      "url": "https://github.com/pingcap/talent-plan"
+    },
+    {
+      "@id": "https://github.com/bashandbone/submod\"",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "bashandbone",
+      "repo": "submod\"",
+      "url": "https://github.com/bashandbone/submod\""
+    },
+    {
+      "@id": "https://github.com/target/lorri",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "target",
+      "repo": "lorri",
+      "url": "https://github.com/target/lorri"
+    },
+    {
+      "@id": "https://github.com/example/repo.git",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "example",
+      "repo": "repo.git",
+      "url": "https://github.com/example/repo.git"
+    },
+    {
+      "@id": "https://github.com/[^/]+",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "[^",
+      "repo": "]+",
+      "url": "https://github.com/[^/]+"
+    },
+    {
+      "@id": "https://github.com/ziglang/sublime-zig-language.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "ziglang",
+      "repo": "sublime-zig-language.git\",",
+      "url": "https://github.com/ziglang/sublime-zig-language.git\","
+    },
+    {
+      "@id": "https://github.com/jmikedupont2/git-submodules-rs-nix.git`),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "jmikedupont2",
+      "repo": "git-submodules-rs-nix.git`),",
+      "url": "https://github.com/jmikedupont2/git-submodules-rs-nix.git`),"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/turbomcp\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "turbomcp\",",
+      "url": "https://github.com/meta-introspector/turbomcp\","
+    },
+    {
+      "@id": "https://github.com/sponsors/Byron).",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "sponsors",
+      "repo": "Byron).",
+      "url": "https://github.com/sponsors/Byron)."
+    },
+    {
+      "@id": "https://github.com/kkos/oniguruma.git\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "kkos",
+      "repo": "oniguruma.git\",",
+      "url": "https://github.com/kkos/oniguruma.git\","
+    },
+    {
+      "@id": "https://github.com/nmattia/naersk-fixtures.",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nmattia",
+      "repo": "naersk-fixtures.",
+      "url": "https://github.com/nmattia/naersk-fixtures."
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodules-rs-nix.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "git-submodules-rs-nix.git\":",
+      "url": "https://github.com/meta-introspector/git-submodules-rs-nix.git\":"
+    },
+    {
+      "@id": "https://github.com/languitar/pass-git-helper",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "languitar",
+      "repo": "pass-git-helper",
+      "url": "https://github.com/languitar/pass-git-helper"
+    },
+    {
+      "@id": "https://github.com/git/git",
+      "@type": "RepositoryCount",
+      "count": 124,
+      "owner": "git",
+      "repo": "git",
+      "url": "https://github.com/git/git"
+    },
+    {
+      "@id": "https://github.com/kollerma/git-submodule-tools\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "kollerma",
+      "repo": "git-submodule-tools\"",
+      "url": "https://github.com/kollerma/git-submodule-tools\""
+    },
+    {
+      "@id": "https://github.com/meta-introspector/mcp-attr.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "mcp-attr.git\",",
+      "url": "https://github.com/meta-introspector/mcp-attr.git\","
+    },
+    {
+      "@id": "https://github.com/Gecode/gecode\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Gecode",
+      "repo": "gecode\":",
+      "url": "https://github.com/Gecode/gecode\":"
+    },
+    {
+      "@id": "https://github.com/rust-random/rand\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "rust-random",
+      "repo": "rand\",",
+      "url": "https://github.com/rust-random/rand\","
+    },
+    {
+      "@id": "https://github.com/tree-sitter/tree-sitter.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "tree-sitter",
+      "repo": "tree-sitter.git\",",
+      "url": "https://github.com/tree-sitter/tree-sitter.git\","
+    },
+    {
+      "@id": "https://github.com/tiann/eadb\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "tiann",
+      "repo": "eadb\":",
+      "url": "https://github.com/tiann/eadb\":"
+    },
+    {
+      "@id": "https://github.com/microsoft/monitors4codegen\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "microsoft",
+      "repo": "monitors4codegen\":",
+      "url": "https://github.com/microsoft/monitors4codegen\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/tmux.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "tmux.git\":",
+      "url": "https://github.com/meta-introspector/tmux.git\":"
+    },
+    {
+      "@id": "https://github.com/MiniZinc/minizinc-python\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "MiniZinc",
+      "repo": "minizinc-python\":",
+      "url": "https://github.com/MiniZinc/minizinc-python\":"
+    },
+    {
+      "@id": "https://github.com/ziglang/sublime-zig-language.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "ziglang",
+      "repo": "sublime-zig-language.git\":",
+      "url": "https://github.com/ziglang/sublime-zig-language.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/amazon-q-developer-cli\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "amazon-q-developer-cli\":",
+      "url": "https://github.com/meta-introspector/amazon-q-developer-cli\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-banner.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-banner.git\":",
+      "url": "https://github.com/meta-introspector/solfunmeme-banner.git\":"
+    },
+    {
+      "@id": "https://github.com/seanmonstar/reqwest",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "seanmonstar",
+      "repo": "reqwest",
+      "url": "https://github.com/seanmonstar/reqwest"
+    },
+    {
+      "@id": "https://github.com/nix-community/nix-on-droid.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "nix-community",
+      "repo": "nix-on-droid.git\",",
+      "url": "https://github.com/nix-community/nix-on-droid.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/ramparts.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "ramparts.git\",",
+      "url": "https://github.com/meta-introspector/ramparts.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/cache-nix-action.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "cache-nix-action.git\":",
+      "url": "https://github.com/meta-introspector/cache-nix-action.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-random/rand.git?rev=...\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-random",
+      "repo": "rand.git?rev=...\"",
+      "url": "https://github.com/rust-random/rand.git?rev=...\""
+    },
+    {
+      "@id": "https://github.com/WebAssembly/wasi-testsuite.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "WebAssembly",
+      "repo": "wasi-testsuite.git\":",
+      "url": "https://github.com/WebAssembly/wasi-testsuite.git\":"
+    },
+    {
+      "@id": "https://github.com/mattwparas/steel\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "mattwparas",
+      "repo": "steel\":",
+      "url": "https://github.com/mattwparas/steel\":"
+    },
+    {
+      "@id": "https://github.com/ramosbugs/oauth2-rs\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "ramosbugs",
+      "repo": "oauth2-rs\":",
+      "url": "https://github.com/ramosbugs/oauth2-rs\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/emojis-rs\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "emojis-rs\":",
+      "url": "https://github.com/meta-introspector/emojis-rs\":"
+    },
+    {
+      "@id": "https://github.com/deepfence/ebpfguard\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "deepfence",
+      "repo": "ebpfguard\",",
+      "url": "https://github.com/deepfence/ebpfguard\","
+    },
+    {
+      "@id": "https://github.com/example/sub2.git\\n",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "sub2.git\\n",
+      "url": "https://github.com/example/sub2.git\\n"
+    },
+    {
+      "@id": "https://github.com/rust-lang/book.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "book.git]",
+      "url": "https://github.com/rust-lang/book.git]"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/meta-meme.wiki.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "meta-meme.wiki.git\",",
+      "url": "https://github.com/meta-introspector/meta-meme.wiki.git\","
+    },
+    {
+      "@id": "https://github.com/WebAssembly/wasi-testsuite.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "WebAssembly",
+      "repo": "wasi-testsuite.git\",",
+      "url": "https://github.com/WebAssembly/wasi-testsuite.git\","
+    },
+    {
+      "@id": "https://github.com/nmattia/naersk",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "nmattia",
+      "repo": "naersk",
+      "url": "https://github.com/nmattia/naersk"
+    },
+    {
+      "@id": "https://github.com/LegNeato/asciicast-rs.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "LegNeato",
+      "repo": "asciicast-rs.git\":",
+      "url": "https://github.com/LegNeato/asciicast-rs.git\":"
+    },
+    {
+      "@id": "https://github.com/yourusername/submod.git",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "yourusername",
+      "repo": "submod.git",
+      "url": "https://github.com/yourusername/submod.git"
+    },
+    {
+      "@id": "https://github.com/Byron/gitoxide<",
+      "@type": "RepositoryCount",
+      "count": 48,
+      "owner": "Byron",
+      "repo": "gitoxide<",
+      "url": "https://github.com/Byron/gitoxide<"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/tmux-interface-rs\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "tmux-interface-rs\",",
+      "url": "https://github.com/meta-introspector/tmux-interface-rs\","
+    },
+    {
+      "@id": "https://github.com/tellnobody1/sublime-purescript-syntax.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "tellnobody1",
+      "repo": "sublime-purescript-syntax.git\":",
+      "url": "https://github.com/tellnobody1/sublime-purescript-syntax.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/sophia_rs\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "sophia_rs\":",
+      "url": "https://github.com/meta-introspector/sophia_rs\":"
+    },
+    {
+      "@id": "https://github.com/tree-sitter/tree-sitter.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "tree-sitter",
+      "repo": "tree-sitter.git\":",
+      "url": "https://github.com/tree-sitter/tree-sitter.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rmcp-agent.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rmcp-agent.git\":",
+      "url": "https://github.com/meta-introspector/rmcp-agent.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/neo\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "neo\",",
+      "url": "https://github.com/meta-introspector/neo\","
+    },
+    {
+      "@id": "https://github.com/github/git-sizer),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "github",
+      "repo": "git-sizer),",
+      "url": "https://github.com/github/git-sizer),"
+    },
+    {
+      "@id": "https://github.com/rust-lang/rust-installer.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "rust-installer.git]",
+      "url": "https://github.com/rust-lang/rust-installer.git]"
+    },
+    {
+      "@id": "https://github.com/vuejs/vue-syntax-highlight.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "vuejs",
+      "repo": "vue-syntax-highlight.git\",",
+      "url": "https://github.com/vuejs/vue-syntax-highlight.git\","
+    },
+    {
+      "@id": "https://github.com/bashandbone/submod)**",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "bashandbone",
+      "repo": "submod)**",
+      "url": "https://github.com/bashandbone/submod)**"
+    },
+    {
+      "@id": "https://github.com/boxdot/github-issues-export-rs.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "boxdot",
+      "repo": "github-issues-export-rs.git\":",
+      "url": "https://github.com/boxdot/github-issues-export-rs.git\":"
+    },
+    {
+      "@id": "https://github.com/polachok/bpfjit\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "polachok",
+      "repo": "bpfjit\",",
+      "url": "https://github.com/polachok/bpfjit\","
+    },
+    {
+      "@id": "https://github.com/user/special-chars.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "user",
+      "repo": "special-chars.git\"",
+      "url": "https://github.com/user/special-chars.git\""
+    },
+    {
+      "@id": "https://github.com/nektos/act\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "nektos",
+      "repo": "act\",",
+      "url": "https://github.com/nektos/act\","
+    },
+    {
+      "@id": "https://github.com/Byron/byron",
+      "@type": "RepositoryCount",
+      "count": 104,
+      "owner": "Byron",
+      "repo": "byron",
+      "url": "https://github.com/Byron/byron"
+    },
+    {
+      "@id": "https://github.com/syncthing/syncthing",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "syncthing",
+      "repo": "syncthing",
+      "url": "https://github.com/syncthing/syncthing"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/grok-cli\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "grok-cli\",",
+      "url": "https://github.com/meta-introspector/grok-cli\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust-mcp-filesystem.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rust-mcp-filesystem.git\",",
+      "url": "https://github.com/meta-introspector/rust-mcp-filesystem.git\","
+    },
+    {
+      "@id": "https://github.com/frewsxcv/rust-crates-index",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "frewsxcv",
+      "repo": "rust-crates-index",
+      "url": "https://github.com/frewsxcv/rust-crates-index"
+    },
+    {
+      "@id": "https://github.com/foobar/gitoxide\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "foobar",
+      "repo": "gitoxide\"",
+      "url": "https://github.com/foobar/gitoxide\""
+    },
+    {
+      "@id": "https://github.com/rust-lang/edition-guide.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "edition-guide.git\",",
+      "url": "https://github.com/rust-lang/edition-guide.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/agentic\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "agentic\",",
+      "url": "https://github.com/meta-introspector/agentic\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/MoCoPr.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "MoCoPr.git\",",
+      "url": "https://github.com/meta-introspector/MoCoPr.git\","
+    },
+    {
+      "@id": "https://github.com/originaluser/submod.git",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "originaluser",
+      "repo": "submod.git",
+      "url": "https://github.com/originaluser/submod.git"
+    },
+    {
+      "@id": "https://github.com/gitpython-developers/GitPython)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "gitpython-developers",
+      "repo": "GitPython)",
+      "url": "https://github.com/gitpython-developers/GitPython)"
+    },
+    {
+      "@id": "https://github.com/obi1kenobi/cargo-semver-checks",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "obi1kenobi",
+      "repo": "cargo-semver-checks",
+      "url": "https://github.com/obi1kenobi/cargo-semver-checks"
+    },
+    {
+      "@id": "https://github.com/Escaped-RDFa/namespace.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "Escaped-RDFa",
+      "repo": "namespace.git\":",
+      "url": "https://github.com/Escaped-RDFa/namespace.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-lang/backtrace-rs.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "backtrace-rs.git]",
+      "url": "https://github.com/rust-lang/backtrace-rs.git]"
+    },
+    {
+      "@id": "https://github.com/praetorian-inc/noseyparker",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "praetorian-inc",
+      "repo": "noseyparker",
+      "url": "https://github.com/praetorian-inc/noseyparker"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-model-builder-quiz\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-model-builder-quiz\":",
+      "url": "https://github.com/meta-introspector/solfunmeme-model-builder-quiz\":"
+    },
+    {
+      "@id": "https://github.com/JuliaEditorSupport/Julia-sublime.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "JuliaEditorSupport",
+      "repo": "Julia-sublime.git\",",
+      "url": "https://github.com/JuliaEditorSupport/Julia-sublime.git\","
+    },
+    {
+      "@id": "https://github.com/qmonnet/rbpf\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "qmonnet",
+      "repo": "rbpf\":",
+      "url": "https://github.com/qmonnet/rbpf\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/gitoxide.git",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "gitoxide.git",
+      "url": "https://github.com/meta-introspector/gitoxide.git"
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/gitoxide",
+      "@type": "RepositoryCount",
+      "count": 56814,
+      "owner": "GitoxideLabs",
+      "repo": "gitoxide",
+      "url": "https://github.com/GitoxideLabs/gitoxide"
+    },
+    {
+      "@id": "https://github.com/the-lean-crate/criner",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "the-lean-crate",
+      "repo": "criner",
+      "url": "https://github.com/the-lean-crate/criner"
+    },
+    {
+      "@id": "https://github.com/example/sub3.git\");",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "sub3.git\");",
+      "url": "https://github.com/example/sub3.git\");"
+    },
+    {
+      "@id": "https://github.com/rust-lang/reference.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "reference.git\",",
+      "url": "https://github.com/rust-lang/reference.git\","
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?tag=0.7.3)\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "rust-random",
+      "repo": "rand?tag=0.7.3)\",",
+      "url": "https://github.com/rust-random/rand?tag=0.7.3)\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/tmux.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "tmux.git\",",
+      "url": "https://github.com/meta-introspector/tmux.git\","
+    },
+    {
+      "@id": "https://github.com/nmattia/naersk-fixtures?branch=with%2Fslash#5873040d43624da948d59a1e62088c6cdd29c41d\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nmattia",
+      "repo": "naersk-fixtures?branch=with%2Fslash#5873040d43624da948d59a1e62088c6cdd29c41d\"",
+      "url": "https://github.com/nmattia/naersk-fixtures?branch=with%2Fslash#5873040d43624da948d59a1e62088c6cdd29c41d\""
+    },
+    {
+      "@id": "https://github.com/rust-lang/rustc-perf.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "rustc-perf.git\",",
+      "url": "https://github.com/rust-lang/rustc-perf.git\","
+    },
+    {
+      "@id": "https://github.com/NixOS/nix",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "NixOS",
+      "repo": "nix",
+      "url": "https://github.com/NixOS/nix"
+    },
+    {
+      "@id": "https://github.com/elm-community/SublimeElmLanguageSupport.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "elm-community",
+      "repo": "SublimeElmLanguageSupport.git\":",
+      "url": "https://github.com/elm-community/SublimeElmLanguageSupport.git\":"
+    },
+    {
+      "@id": "https://github.com/XAMPPRocky/octocrab\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "XAMPPRocky",
+      "repo": "octocrab\":",
+      "url": "https://github.com/XAMPPRocky/octocrab\":"
+    },
+    {
+      "@id": "https://github.com/dutchcoders/trace\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "dutchcoders",
+      "repo": "trace\",",
+      "url": "https://github.com/dutchcoders/trace\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/cache.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "cache.git\",",
+      "url": "https://github.com/meta-introspector/cache.git\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/crates.io-index\"]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "crates.io-index\"]",
+      "url": "https://github.com/rust-lang/crates.io-index\"]"
+    },
+    {
+      "@id": "https://github.com/example/sub3.git\\n",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "sub3.git\\n",
+      "url": "https://github.com/example/sub3.git\\n"
+    },
+    {
+      "@id": "https://github.com/serde-rs/serde\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "serde-rs",
+      "repo": "serde\",",
+      "url": "https://github.com/serde-rs/serde\","
+    },
+    {
+      "@id": "https://github.com/tokio-rs/tracing.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "tokio-rs",
+      "repo": "tracing.git\":",
+      "url": "https://github.com/tokio-rs/tracing.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nixtract.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "nixtract.git\",",
+      "url": "https://github.com/meta-introspector/nixtract.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme-dioxus\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme-dioxus\",",
+      "url": "https://github.com/meta-introspector/solfunmeme-dioxus\","
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?tag=0.7.3)\"",
+      "@type": "RepositoryCount",
+      "count": 8,
+      "owner": "rust-random",
+      "repo": "rand?tag=0.7.3)\"",
+      "url": "https://github.com/rust-random/rand?tag=0.7.3)\""
+    },
+    {
+      "@id": "https://github.com/libbpf/libbpf-rs\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "libbpf",
+      "repo": "libbpf-rs\":",
+      "url": "https://github.com/libbpf/libbpf-rs\":"
+    },
+    {
+      "@id": "https://github.com/jqlang/jq.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "jqlang",
+      "repo": "jq.git\":",
+      "url": "https://github.com/jqlang/jq.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/time",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "time",
+      "url": "https://github.com/meta-introspector/time"
+    },
+    {
+      "@id": "https://github.com/VcamX/protobuf-syntax-highlighting.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "VcamX",
+      "repo": "protobuf-syntax-highlighting.git\",",
+      "url": "https://github.com/VcamX/protobuf-syntax-highlighting.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nixpkgs-lint.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "nixpkgs-lint.git\":",
+      "url": "https://github.com/meta-introspector/nixpkgs-lint.git\":"
+    },
+    {
+      "@id": "https://github.com/RustCrypto/hashes)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "RustCrypto",
+      "repo": "hashes)",
+      "url": "https://github.com/RustCrypto/hashes)"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/turbomcp\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "turbomcp\":",
+      "url": "https://github.com/meta-introspector/turbomcp\":"
+    },
+    {
+      "@id": "https://github.com/BartoszMilewski/DaoFP\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "BartoszMilewski",
+      "repo": "DaoFP\",",
+      "url": "https://github.com/BartoszMilewski/DaoFP\","
+    },
+    {
+      "@id": "https://github.com/zyxar/Sublime-CMakeLists.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "zyxar",
+      "repo": "Sublime-CMakeLists.git\":",
+      "url": "https://github.com/zyxar/Sublime-CMakeLists.git\":"
+    },
+    {
+      "@id": "https://github.com/mhagger/diff-slider-tools.",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "mhagger",
+      "repo": "diff-slider-tools.",
+      "url": "https://github.com/mhagger/diff-slider-tools."
+    },
+    {
+      "@id": "https://github.com/meta-introspector/DaoFP\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "DaoFP\",",
+      "url": "https://github.com/meta-introspector/DaoFP\","
+    },
+    {
+      "@id": "https://github.com/spenserblack/gengo",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "spenserblack",
+      "repo": "gengo",
+      "url": "https://github.com/spenserblack/gengo"
+    },
+    {
+      "@id": "https://github.com/plantuml-stdlib/C4-PlantUML\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "plantuml-stdlib",
+      "repo": "C4-PlantUML\":",
+      "url": "https://github.com/plantuml-stdlib/C4-PlantUML\":"
+    },
+    {
+      "@id": "https://github.com/lotabout/skim",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "lotabout",
+      "repo": "skim",
+      "url": "https://github.com/lotabout/skim"
+    },
+    {
+      "@id": "https://github.com/mass10/r-google-oauth2",
+      "@type": "RepositoryCount",
+      "count": 18,
+      "owner": "mass10",
+      "repo": "r-google-oauth2",
+      "url": "https://github.com/mass10/r-google-oauth2"
+    },
+    {
+      "@id": "https://github.com/rust-random/rand.git?rev=bda997404d9ab8a89d590734d8b0bb72aed10758#bda997404d9ab8a89d590734d8b0bb72aed10758\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-random",
+      "repo": "rand.git?rev=bda997404d9ab8a89d590734d8b0bb72aed10758#bda997404d9ab8a89d590734d8b0bb72aed10758\"",
+      "url": "https://github.com/rust-random/rand.git?rev=bda997404d9ab8a89d590734d8b0bb72aed10758#bda997404d9ab8a89d590734d8b0bb72aed10758\""
+    },
+    {
+      "@id": "https://github.com/libbpf/libbpf\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "libbpf",
+      "repo": "libbpf\",",
+      "url": "https://github.com/libbpf/libbpf\","
+    },
+    {
+      "@id": "https://github.com/mhagger/diff-slider-tools",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "mhagger",
+      "repo": "diff-slider-tools",
+      "url": "https://github.com/mhagger/diff-slider-tools"
+    },
+    {
+      "@id": "https://github.com/byron/\"]",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "byron",
+      "repo": "\"]",
+      "url": "https://github.com/byron/\"]"
+    },
+    {
+      "@id": "https://github.com/example/test.git\"",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "example",
+      "repo": "test.git\"",
+      "url": "https://github.com/example/test.git\""
+    },
+    {
+      "@id": "https://github.com/meta-introspector/bootstrap\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "bootstrap\":",
+      "url": "https://github.com/meta-introspector/bootstrap\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "rust\":",
+      "url": "https://github.com/meta-introspector/rust\":"
+    },
+    {
+      "@id": "https://github.com/princemaple/elixir-sublime-syntax.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "princemaple",
+      "repo": "elixir-sublime-syntax.git\":",
+      "url": "https://github.com/princemaple/elixir-sublime-syntax.git\":"
+    },
+    {
+      "@id": "https://github.com/hoest/sublimetext-fsharp.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "hoest",
+      "repo": "sublimetext-fsharp.git\",",
+      "url": "https://github.com/hoest/sublimetext-fsharp.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/gitoxide.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "gitoxide.git\":",
+      "url": "https://github.com/meta-introspector/gitoxide.git\":"
+    },
+    {
+      "@id": "https://github.com/jbw3/SublimeTextLinkerSyntax\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "jbw3",
+      "repo": "SublimeTextLinkerSyntax\",",
+      "url": "https://github.com/jbw3/SublimeTextLinkerSyntax\","
+    },
+    {
+      "@id": "https://github.com/rust-random/rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df)\",",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "rust-random",
+      "repo": "rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df)\",",
+      "url": "https://github.com/rust-random/rand?rev=5b0d87436999c3d930e17f9f10bdb68cd0aa38df)\","
+    },
+    {
+      "@id": "https://github.com/ihciah/clean-dns-bpf\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "ihciah",
+      "repo": "clean-dns-bpf\",",
+      "url": "https://github.com/ihciah/clean-dns-bpf\","
+    },
+    {
+      "@id": "https://github.com/byron/gitoxide\".into())",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "byron",
+      "repo": "gitoxide\".into())",
+      "url": "https://github.com/byron/gitoxide\".into())"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust-smallvec\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "rust-smallvec\",",
+      "url": "https://github.com/meta-introspector/rust-smallvec\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/magoo.git",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "magoo.git",
+      "url": "https://github.com/meta-introspector/magoo.git"
+    },
+    {
+      "@id": "https://github.com/pascalkuthe/imara-diff),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "pascalkuthe",
+      "repo": "imara-diff),",
+      "url": "https://github.com/pascalkuthe/imara-diff),"
+    },
+    {
+      "@id": "https://github.com/rust-lang/nomicon.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "nomicon.git]",
+      "url": "https://github.com/rust-lang/nomicon.git]"
+    },
+    {
+      "@id": "https://github.com/KyleMayes/clang-sys\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "KyleMayes",
+      "repo": "clang-sys\",",
+      "url": "https://github.com/KyleMayes/clang-sys\","
+    },
+    {
+      "@id": "https://github.com/danro/LESS-sublime.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "danro",
+      "repo": "LESS-sublime.git\":",
+      "url": "https://github.com/danro/LESS-sublime.git\":"
+    },
+    {
+      "@id": "https://github.com/BartoszMilewski/DaoFP\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "BartoszMilewski",
+      "repo": "DaoFP\":",
+      "url": "https://github.com/BartoszMilewski/DaoFP\":"
+    },
+    {
+      "@id": "https://github.com/egoist/dum\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "egoist",
+      "repo": "dum\":",
+      "url": "https://github.com/egoist/dum\":"
+    },
+    {
+      "@id": "https://github.com/mhagger/diff-slider-tools),",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "mhagger",
+      "repo": "diff-slider-tools),",
+      "url": "https://github.com/mhagger/diff-slider-tools),"
+    },
+    {
+      "@id": "https://github.com/Gecode/gecode\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "Gecode",
+      "repo": "gecode\",",
+      "url": "https://github.com/Gecode/gecode\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust-mcp-sdk.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rust-mcp-sdk.git\",",
+      "url": "https://github.com/meta-introspector/rust-mcp-sdk.git\","
+    },
+    {
+      "@id": "https://github.com/cool-japan/scirs.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "cool-japan",
+      "repo": "scirs.git\",",
+      "url": "https://github.com/cool-japan/scirs.git\","
+    },
+    {
+      "@id": "https://github.com/sublimehq/Packages.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "sublimehq",
+      "repo": "Packages.git\",",
+      "url": "https://github.com/sublimehq/Packages.git\","
+    },
+    {
+      "@id": "https://github.com/Pistonite/magoo\"",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "Pistonite",
+      "repo": "magoo\"",
+      "url": "https://github.com/Pistonite/magoo\""
+    },
+    {
+      "@id": "https://github.com/meta-introspector/gen-mod-form\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "gen-mod-form\",",
+      "url": "https://github.com/meta-introspector/gen-mod-form\","
+    },
+    {
+      "@id": "https://github.com/NixOS/nixpkgs",
+      "@type": "RepositoryCount",
+      "count": 22,
+      "owner": "NixOS",
+      "repo": "nixpkgs",
+      "url": "https://github.com/NixOS/nixpkgs"
+    },
+    {
+      "@id": "https://github.com/tonsky/sublime-clojure.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "tonsky",
+      "repo": "sublime-clojure.git\":",
+      "url": "https://github.com/tonsky/sublime-clojure.git\":"
+    },
+    {
+      "@id": "https://github.com/nix-community/nixpkgs-lint.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nix-community",
+      "repo": "nixpkgs-lint.git\",",
+      "url": "https://github.com/nix-community/nixpkgs-lint.git\","
+    },
+    {
+      "@id": "https://github.com/uuid-rs/uuid#50f70278de02c106650b8d6deb325dd59b5f2a24\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "uuid-rs",
+      "repo": "uuid#50f70278de02c106650b8d6deb325dd59b5f2a24\"",
+      "url": "https://github.com/uuid-rs/uuid#50f70278de02c106650b8d6deb325dd59b5f2a24\""
+    },
+    {
+      "@id": "https://github.com/apache/arrow-testing\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "apache",
+      "repo": "arrow-testing\":",
+      "url": "https://github.com/apache/arrow-testing\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodule-tools.git",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "git-submodule-tools.git",
+      "url": "https://github.com/meta-introspector/git-submodule-tools.git"
+    },
+    {
+      "@id": "https://github.com/apache/arrow-testing\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "apache",
+      "repo": "arrow-testing\",",
+      "url": "https://github.com/apache/arrow-testing\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/grok-cli.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "grok-cli.git\":",
+      "url": "https://github.com/meta-introspector/grok-cli.git\":"
+    },
+    {
+      "@id": "https://github.com/rust-secure-code/cargo-auditable",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "rust-secure-code",
+      "repo": "cargo-auditable",
+      "url": "https://github.com/rust-secure-code/cargo-auditable"
+    },
+    {
+      "@id": "https://github.com/MiniZinc/minizinc-js\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "MiniZinc",
+      "repo": "minizinc-js\",",
+      "url": "https://github.com/MiniZinc/minizinc-js\","
+    },
+    {
+      "@id": "https://github.com/example/repo{i}.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "repo{i}.git\"",
+      "url": "https://github.com/example/repo{i}.git\""
+    },
+    {
+      "@id": "https://github.com/rust-random/rand.git\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "rust-random",
+      "repo": "rand.git\",",
+      "url": "https://github.com/rust-random/rand.git\","
+    },
+    {
+      "@id": "https://github.com/nix-community/naersk\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "nix-community",
+      "repo": "naersk\",",
+      "url": "https://github.com/nix-community/naersk\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nix-github-actions.git\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "nix-github-actions.git\":",
+      "url": "https://github.com/meta-introspector/nix-github-actions.git\":"
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/gitoxide\",",
+      "@type": "RepositoryCount",
+      "count": 18,
+      "owner": "GitoxideLabs",
+      "repo": "gitoxide\",",
+      "url": "https://github.com/GitoxideLabs/gitoxide\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/sophia_rs\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "sophia_rs\",",
+      "url": "https://github.com/meta-introspector/sophia_rs\","
+    },
+    {
+      "@id": "https://github.com/getzola/zola.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "getzola",
+      "repo": "zola.git\":",
+      "url": "https://github.com/getzola/zola.git\":"
+    },
+    {
+      "@id": "https://github.com/AntonGepting/tmux-interface-rs\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "AntonGepting",
+      "repo": "tmux-interface-rs\",",
+      "url": "https://github.com/AntonGepting/tmux-interface-rs\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/book.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "book.git\",",
+      "url": "https://github.com/rust-lang/book.git\","
+    },
+    {
+      "@id": "https://github.com/torvalds/linux",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "torvalds",
+      "repo": "linux",
+      "url": "https://github.com/torvalds/linux"
+    },
+    {
+      "@id": "https://github.com/example/repo.git\\n",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "repo.git\\n",
+      "url": "https://github.com/example/repo.git\\n"
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/gitoxide`,",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "GitoxideLabs",
+      "repo": "gitoxide`,",
+      "url": "https://github.com/GitoxideLabs/gitoxide`,"
+    },
+    {
+      "@id": "https://github.com/dutchcoders/trace\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "dutchcoders",
+      "repo": "trace\":",
+      "url": "https://github.com/dutchcoders/trace\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/mes\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "mes\",",
+      "url": "https://github.com/meta-introspector/mes\","
+    },
+    {
+      "@id": "https://github.com/tonsky/sublime-clojure.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "tonsky",
+      "repo": "sublime-clojure.git\",",
+      "url": "https://github.com/tonsky/sublime-clojure.git\","
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/gitoxide#contributions",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "GitoxideLabs",
+      "repo": "gitoxide#contributions",
+      "url": "https://github.com/GitoxideLabs/gitoxide#contributions"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/amazon-q-developer-cli\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "amazon-q-developer-cli\",",
+      "url": "https://github.com/meta-introspector/amazon-q-developer-cli\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/solfunmeme\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "meta-introspector",
+      "repo": "solfunmeme\",",
+      "url": "https://github.com/meta-introspector/solfunmeme\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/rust-smallvec\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "rust-smallvec\":",
+      "url": "https://github.com/meta-introspector/rust-smallvec\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/emojis-rs\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "emojis-rs\",",
+      "url": "https://github.com/meta-introspector/emojis-rs\","
+    },
+    {
+      "@id": "https://github.com/vickenty/lang-c\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "vickenty",
+      "repo": "lang-c\":",
+      "url": "https://github.com/vickenty/lang-c\":"
+    },
+    {
+      "@id": "https://github.com/JakWai01/lurk\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "JakWai01",
+      "repo": "lurk\",",
+      "url": "https://github.com/JakWai01/lurk\","
+    },
+    {
+      "@id": "https://github.com/nmattia/niv",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nmattia",
+      "repo": "niv",
+      "url": "https://github.com/nmattia/niv"
+    },
+    {
+      "@id": "https://github.com/bpfman/bpfman\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "bpfman",
+      "repo": "bpfman\":",
+      "url": "https://github.com/bpfman/bpfman\":"
+    },
+    {
+      "@id": "https://github.com/mozilla/DeepSpeech\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "mozilla",
+      "repo": "DeepSpeech\",",
+      "url": "https://github.com/mozilla/DeepSpeech\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/gemini-cli\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "gemini-cli\",",
+      "url": "https://github.com/meta-introspector/gemini-cli\","
+    },
+    {
+      "@id": "https://github.com/oli-obk/cargo_metadata\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "oli-obk",
+      "repo": "cargo_metadata\",",
+      "url": "https://github.com/oli-obk/cargo_metadata\","
+    },
+    {
+      "@id": "https://github.com/WordPress/wordpress-develop",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "WordPress",
+      "repo": "wordpress-develop",
+      "url": "https://github.com/WordPress/wordpress-develop"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/agentic\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "agentic\":",
+      "url": "https://github.com/meta-introspector/agentic\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/nixpacks\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "nixpacks\",",
+      "url": "https://github.com/meta-introspector/nixpacks\","
+    },
+    {
+      "@id": "https://github.com/plantuml-stdlib/C4-PlantUML\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "plantuml-stdlib",
+      "repo": "C4-PlantUML\",",
+      "url": "https://github.com/plantuml-stdlib/C4-PlantUML\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/bitchat-solana-zos-solfunmeme\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "bitchat-solana-zos-solfunmeme\":",
+      "url": "https://github.com/meta-introspector/bitchat-solana-zos-solfunmeme\":"
+    },
+    {
+      "@id": "https://github.com/NixOS/nix\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "NixOS",
+      "repo": "nix\":",
+      "url": "https://github.com/NixOS/nix\":"
+    },
+    {
+      "@id": "https://github.com/archlinux/svntogit-community",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "archlinux",
+      "repo": "svntogit-community",
+      "url": "https://github.com/archlinux/svntogit-community"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodules-rs-nix.git",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "git-submodules-rs-nix.git",
+      "url": "https://github.com/meta-introspector/git-submodules-rs-nix.git"
+    },
+    {
+      "@id": "https://github.com/aya-rs/aya\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "aya-rs",
+      "repo": "aya\":",
+      "url": "https://github.com/aya-rs/aya\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/git-submodules-rs-nix",
+      "@type": "RepositoryCount",
+      "count": 7234,
+      "owner": "meta-introspector",
+      "repo": "git-submodules-rs-nix",
+      "url": "https://github.com/meta-introspector/git-submodules-rs-nix"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/simd-kernels.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "simd-kernels.git\":",
+      "url": "https://github.com/meta-introspector/simd-kernels.git\":"
+    },
+    {
+      "@id": "https://github.com/bytecodealliance/wasmtime.git\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "bytecodealliance",
+      "repo": "wasmtime.git\",",
+      "url": "https://github.com/bytecodealliance/wasmtime.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/copper\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "copper\":",
+      "url": "https://github.com/meta-introspector/copper\":"
+    },
+    {
+      "@id": "https://github.com/libbpf/libbpf-rs\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "libbpf",
+      "repo": "libbpf-rs\",",
+      "url": "https://github.com/libbpf/libbpf-rs\","
+    },
+    {
+      "@id": "https://github.com/GitoxideLabs/gitoxide\"",
+      "@type": "RepositoryCount",
+      "count": 158,
+      "owner": "GitoxideLabs",
+      "repo": "gitoxide\"",
+      "url": "https://github.com/GitoxideLabs/gitoxide\""
+    },
+    {
+      "@id": "https://github.com/example/external.git\"",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "example",
+      "repo": "external.git\"",
+      "url": "https://github.com/example/external.git\""
+    },
+    {
+      "@id": "https://github.com/jmikedupont2/pick-up-nix.git\",",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "jmikedupont2",
+      "repo": "pick-up-nix.git\",",
+      "url": "https://github.com/jmikedupont2/pick-up-nix.git\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/llvm-project.git]",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "rust-lang",
+      "repo": "llvm-project.git]",
+      "url": "https://github.com/rust-lang/llvm-project.git]"
+    },
+    {
+      "@id": "https://github.com/rust-math/intel-mkl-src\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "rust-math",
+      "repo": "intel-mkl-src\",",
+      "url": "https://github.com/rust-math/intel-mkl-src\","
+    },
+    {
+      "@id": "https://github.com/nmattia/naersk-fixtures?branch=with",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "nmattia",
+      "repo": "naersk-fixtures?branch=with",
+      "url": "https://github.com/nmattia/naersk-fixtures?branch=with"
+    },
+    {
+      "@id": "https://github.com/trifectatechfoundation/zlib-rs)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "trifectatechfoundation",
+      "repo": "zlib-rs)",
+      "url": "https://github.com/trifectatechfoundation/zlib-rs)"
+    },
+    {
+      "@id": "https://github.com/vuejs/vue-syntax-highlight.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "vuejs",
+      "repo": "vue-syntax-highlight.git\":",
+      "url": "https://github.com/vuejs/vue-syntax-highlight.git\":"
+    },
+    {
+      "@id": "https://github.com/git-for-windows/git",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "git-for-windows",
+      "repo": "git",
+      "url": "https://github.com/git-for-windows/git"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/mcp-attr.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "mcp-attr.git\":",
+      "url": "https://github.com/meta-introspector/mcp-attr.git\":"
+    },
+    {
+      "@id": "https://github.com/microsoft/monitors4codegen\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "microsoft",
+      "repo": "monitors4codegen\",",
+      "url": "https://github.com/microsoft/monitors4codegen\","
+    },
+    {
+      "@id": "https://github.com/byron/gitoxide",
+      "@type": "RepositoryCount",
+      "count": 12,
+      "owner": "byron",
+      "repo": "gitoxide",
+      "url": "https://github.com/byron/gitoxide"
+    },
+    {
+      "@id": "https://github.com/mozilla/pdf.js\",",
+      "@type": "RepositoryCount",
+      "count": 6,
+      "owner": "mozilla",
+      "repo": "pdf.js\",",
+      "url": "https://github.com/mozilla/pdf.js\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/simd-kernels\",",
+      "@type": "RepositoryCount",
+      "count": 10,
+      "owner": "meta-introspector",
+      "repo": "simd-kernels\",",
+      "url": "https://github.com/meta-introspector/simd-kernels\","
+    },
+    {
+      "@id": "https://github.com/([^/]+)",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "([^",
+      "repo": "]+)",
+      "url": "https://github.com/([^/]+)"
+    },
+    {
+      "@id": "https://github.com/jasonwilliams/sublime_toml_highlighting.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "jasonwilliams",
+      "repo": "sublime_toml_highlighting.git\",",
+      "url": "https://github.com/jasonwilliams/sublime_toml_highlighting.git\","
+    },
+    {
+      "@id": "https://github.com/rust-lang/cargo.git\":",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "rust-lang",
+      "repo": "cargo.git\":",
+      "url": "https://github.com/rust-lang/cargo.git\":"
+    },
+    {
+      "@id": "https://github.com/meta-introspector/coccinelleforrust_personal_mirror\":",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "meta-introspector",
+      "repo": "coccinelleforrust_personal_mirror\":",
+      "url": "https://github.com/meta-introspector/coccinelleforrust_personal_mirror\":"
+    },
+    {
+      "@id": "https://github.com/npm/cli\",\"primaryLanguage\":null,\"createdAt\":\"2009-09-29T17:21:24Z\",\"pushedAt\":\"2020-08-07T14:31:21Z\",\"defaultBranchCommitCount\":8342,\"license\":null,\"assignableUserCount\":182,\"codeOfConduct\":null,\"forkingAllowed\":true,\"nameWithOwner\":\"npm",
+      "@type": "RepositoryCount",
+      "count": 2,
+      "owner": "npm",
+      "repo": "cli\",\"primaryLanguage\":null,\"createdAt\":\"2009-09-29T17:21:24Z\",\"pushedAt\":\"2020-08-07T14:31:21Z\",\"defaultBranchCommitCount\":8342,\"license\":null,\"assignableUserCount\":182,\"codeOfConduct\":null,\"forkingAllowed\":true,\"nameWithOwner\":\"npm",
+      "url": "https://github.com/npm/cli\",\"primaryLanguage\":null,\"createdAt\":\"2009-09-29T17:21:24Z\",\"pushedAt\":\"2020-08-07T14:31:21Z\",\"defaultBranchCommitCount\":8342,\"license\":null,\"assignableUserCount\":182,\"codeOfConduct\":null,\"forkingAllowed\":true,\"nameWithOwner\":\"npm"
+    },
+    {
+      "@id": "https://github.com/tellnobody1/sublime-purescript-syntax.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "tellnobody1",
+      "repo": "sublime-purescript-syntax.git\",",
+      "url": "https://github.com/tellnobody1/sublime-purescript-syntax.git\","
+    },
+    {
+      "@id": "https://github.com/meta-introspector/guix\",",
+      "@type": "RepositoryCount",
+      "count": 4,
+      "owner": "meta-introspector",
+      "repo": "guix\",",
+      "url": "https://github.com/meta-introspector/guix\","
+    },
+    {
+      "@id": "https://github.com/euler0/sublime-glsl.git\",",
+      "@type": "RepositoryCount",
+      "count": 14,
+      "owner": "euler0",
+      "repo": "sublime-glsl.git\",",
+      "url": "https://github.com/euler0/sublime-glsl.git\","
+    }
+  ]
+}

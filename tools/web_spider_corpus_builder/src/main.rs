@@ -12,8 +12,12 @@ use regex::Regex;
 #[command(author, version, about, long_about = None)]
 struct Args {
     /// Paths to markdown files containing URLs to spider
-    #[arg(short, long, value_parser, num_args = 1..)]
+    #[arg(short, long, value_parser, num_args = 1.., conflicts_with = "url_file")]
     markdown_files: Vec<PathBuf>,
+
+    /// Path to a file containing URLs to spider (one URL per line)
+    #[arg(long)]
+    url_file: Option<PathBuf>,
 }
 
 fn extract_urls_from_markdown(file_path: &Path) -> Result<Vec<String>, Box<dyn std::error::Error>> {
@@ -35,10 +39,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
 
     let mut all_urls: Vec<String> = Vec::new();
-    for md_file in &args.markdown_files {
-        println!("Extracting URLs from: {}", md_file.display());
-        let extracted = extract_urls_from_markdown(md_file)?;
-        all_urls.extend(extracted);
+    if let Some(url_file_path) = args.url_file {
+        println!("Reading URLs from: {}", url_file_path.display());
+        let content = fs::read_to_string(&url_file_path)?;
+        all_urls.extend(content.lines().map(|s| s.to_string()));
+    } else {
+        for md_file in &args.markdown_files {
+            println!("Extracting URLs from: {}", md_file.display());
+            let extracted = extract_urls_from_markdown(md_file)?;
+            all_urls.extend(extracted);
+        }
     }
 
     let output_dir = PathBuf::from("corpus/web_sources");
@@ -71,23 +81,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     fs::write(&output_path, text_content)?;
                 } else if ct.contains("application/pdf") {
                     // Handle PDF by just noting it, as direct text extraction is complex
-                    println!("  Skipping PDF: " + url_str);
+                    println!("  Skipping PDF: {}", url_str);
                     fs::write(&output_path, "PDF content from: ".to_string() + &url_str)?;
                 } else {
                     // For other content types, just save raw bytes if desired, or skip
-                    println!("  Skipping unsupported content type (" + ct + "): " + url_str);
-                    fs::write(&output_path, "Unsupported content type (".to_string() + ct + ") from: " + &url_str)?;
+                    println!("  Skipping unsupported content type ({}) : {}", ct, url_str);
+                    fs::write(&output_path, format!("Unsupported content type ({}) from: {}", ct, url_str))?;
                 }
             } else {
-                println!("  No content type, skipping: " + url_str);
-                fs::write(&output_path, "No content type from: ".to_string() + &url_str)?;
+                println!("  No content type, skipping: {}", url_str);
+                fs::write(&output_path, format!("No content type from: {}", url_str))?;
             }
         } else {
-            eprintln!("Failed to fetch " + url_str + ": Status " + &response.status().to_string());
+            eprintln!("Failed to fetch {}: Status {}", url_str, response.status());
         }
         std::thread::sleep(std::time::Duration::from_secs(1)); // Be polite
     }
 
-    println!("Corpus building complete in " + &output_dir.display().to_string());
+    println!("Corpus building complete in {}", output_dir.display());
     Ok(())
 }
