@@ -1,0 +1,7 @@
+[package]
+name = "template_generator_bin"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wikimedia-template-introspector-core = { path = "../wikimedia-template-introspector-core" }

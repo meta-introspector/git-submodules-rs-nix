@@ -1,0 +1,10 @@
+[package]
+name = "template_function_generator"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+wikimedia-template-introspector-core = { path = "../wikimedia-template-introspector-core" }
+quote = "1.0"
+syn = { version = "2.0", features = ["full", "extra-traits"] }
+proc-macro2 = "1.0"
