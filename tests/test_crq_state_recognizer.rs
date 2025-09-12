@@ -1,4 +1,4 @@
-use crate::crq_state_recognizer::is_review_skipped_due_to_size_limit;
+use submodules::crq_state_recognizer::is_review_skipped_due_to_size_limit;
 
 #[cfg(test)]
 mod tests {
@@ -38,6 +38,15 @@ mod tests {
         > ## Review skipped
         > 
         > The issue is too large for an automated review.
+        "#;
+        assert_eq!(is_review_skipped_due_to_size_limit(content), true);
+    }
+
+    #[test]
+    fn test_is_review_skipped_due_to_size_limit_positive_low_quality_review() {
+        let content = r#"
+        Review skipped
+        The review is being skipped to prevent a low-quality review.
         "#;
         assert_eq!(is_review_skipped_due_to_size_limit(content), true);
     }
