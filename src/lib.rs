@@ -2,9 +2,11 @@ pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
-mod lattice_model;
+pub mod lattice_model;
+pub mod crq_parser;
 
 use lattice_model::{Lattice, LatticeLayer, Instance, PredicateClassifier, ValueType};
+use crq_parser::CRQ;
 
 pub fn build_zos_lattice(files: &[(String, String, String)]) -> Lattice {
     let mut lattice = Lattice::new("ZOS Project Lattice");
