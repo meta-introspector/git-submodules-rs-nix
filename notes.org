@@ -1,0 +1,11 @@
+* org mode
+** emacs
+*** lisp
+**** lambda
+
+* crq/sop
+1 = vibe,vector,meme,idea,app,utility,function,need,service,good,unit,one.
+2 = pair, and : sop standard unchanging .alway there
+3 = If, disjoin, crq (2+1), adding one to the 2, optional, orthogonal. triple (statement predicate object)
+4 = compound 2*2
+5 = who,what,where,when,how 
