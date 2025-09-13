@@ -28,3 +28,6 @@
 [submodule "tools/tool-template"]
 	path = tools/tool-template
 	url = https://github.com/meta-introspector/tool-template-repo
+[submodule "tools/wikidata"]
+	path = tools/wikidata
+	url = https://github.com/meta-introspector/wikidata-tool-repo
