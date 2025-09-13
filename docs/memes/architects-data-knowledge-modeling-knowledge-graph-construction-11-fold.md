@@ -32,19 +32,19 @@ Choosing and implementing appropriate graph databases or storage solutions for e
 
 ## 8. Querying and Retrieval
 
-Developing methods, languages (e.g., SPARQL), and tools for efficiently querying and retrieving specific information or patterns from the knowledge graph.
+Developing methods for efficiently querying and retrieving information from the graph.
 
 ## 9. Reasoning and Inference
 
-Enabling the knowledge graph to derive new, implicit knowledge, infer logical conclusions, and discover hidden relationships from existing facts.
+Enabling the knowledge graph to derive new knowledge from existing facts.
 
 ## 10. Visualization and Exploration
 
-Tools and techniques for visually representing the knowledge graph, allowing users to explore its structure, entities, and relationships interactively.
+Tools and techniques for visually representing and navigating the graph.
 
 ## 11. Evolution and Maintenance
 
-Strategies and processes for continuously updating, curating, refining, and ensuring the quality and relevance of the knowledge graph over time.
+Strategies for updating, curating, and ensuring the quality of the knowledge graph over time.
 
 ---
 
