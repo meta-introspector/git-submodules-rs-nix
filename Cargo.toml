@@ -15,6 +15,7 @@ toml = "0.8"
 clap = { version = "4.0", features = ["derive"] } # For command-line argument parsing
 walkdir = "2.5"
 regex = "1.0"
+lazy_static = "1.4"
 
 [dev-dependencies]
 iai-callgrind = "0.8"
@@ -34,6 +35,10 @@ path = "src/bin/state-word-reporter.rs"
 [[bin]]
 name = "ngram-reporter"
 path = "src/bin/ngram_reporter.rs"
+
+[[bin]]
+name = "mermaid_combiner"
+path = "src/main.rs"
 
 [[bench]]
 name = "my_profiling_bench"

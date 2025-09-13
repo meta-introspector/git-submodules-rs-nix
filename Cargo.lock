@@ -1865,6 +1865,7 @@ version = "0.1.0"
 dependencies = [
  "clap",
  "iai-callgrind",
+ "lazy_static",
  "regex",
  "serde",
  "serde_json",
