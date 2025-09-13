@@ -1,0 +1,10 @@
+[package]
+name = "incident-submodule-manager"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+git2 = "0.20.2"
+anyhow = "1.0"
+clap = { version = "4.0", features = ["derive"] }
+tempfile = "3.0"

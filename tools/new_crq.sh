@@ -14,7 +14,8 @@ fi
 FILENAME=$(echo "$CRQ_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9_ -]//g' | sed 's/ /-/g' | sed 's/--/-/g')
 
 # Determine the next CRQ number
-LAST_CRQ_NUM=$(ls docs/crq_standardized/CRQ-*-*.md 2>/dev/null | grep -oP 'CRQ-\K\d+' | sort -n | tail -n 1)
+LAST_CRQ_NUM=$(printf '%s
+' docs/crq_standardized/CRQ-*-*.md 2>/dev/null | grep -oP 'CRQ-\K\d+' | sort -n | tail -n 1)
 NEXT_CRQ_NUM=$((LAST_CRQ_NUM + 1))
 CRQ_NUMBER=$(printf "%03d" "$NEXT_CRQ_NUM") # Format as 001, 002, etc.
 

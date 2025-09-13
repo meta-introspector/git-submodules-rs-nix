@@ -30,13 +30,12 @@ HIGHEST_CRQ_NUMBER=0
 
 # Collect all potential CRQ numbers from filenames in both directories
 ALL_CRQ_NUMBERS=()
-for file in $(find "$CRQ_DIR" "$STANDARDIZED_DIR" -maxdepth 1 -name "*.md" -print);
-do
+while IFS= read -r -d '' file; do
   num=$(basename "$file" | grep -oP 'CRQ-\K[0-9]+')
   if [[ -n "$num" ]]; then
     ALL_CRQ_NUMBERS+=("$num")
   fi
-done
+done < <(find "$CRQ_DIR" "$STANDARDIZED_DIR" -maxdepth 1 -name "*.md" -print0)
 
 # Iterate through all files to find the highest CRQ number from their content if they have a CRQ-XXX header
 for CRQ_FILE_PATH in $CRQ_FILES;
@@ -62,7 +61,7 @@ do
   PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
   FILENAME=$(basename "$CRQ_FILE_PATH")
   
-  echo "\n--- Processing $FILENAME ---"
+  printf "\n--- Processing %s ---\n" "$FILENAME"
 
   # Extract CRQ Number (more robustly)
   CRQ_NUMBER=$(echo "$FILENAME" | grep -oP 'CRQ-\K[0-9]+' || echo "")
@@ -76,7 +75,7 @@ do
   # Determine final title and number
   FINAL_CRQ_NUMBER=""
   FINAL_CRQ_TITLE=""
-  NEEDS_RENAME=false
+  
   NEEDS_HEADER_UPDATE=false
 
   if [[ -n "$CRQ_NUMBER" && -n "$CRQ_TITLE_FROM_HEADER" ]]; then
@@ -94,7 +93,6 @@ do
     # Non-conforming filename, but conforming header
     FINAL_CRQ_NUMBER="$NEXT_CRQ_NUMBER"
     FINAL_CRQ_TITLE="$CRQ_TITLE_FROM_HEADER"
-    NEEDS_RENAME=true
     NEEDS_HEADER_UPDATE=true # Set to true if renamed, to update header with new CRQ number
     NEXT_CRQ_NUMBER=$((10#$NEXT_CRQ_NUMBER + 1)) # Increment for next assignment
     echo "Status: Non-conforming filename, but header is good. Assigning new CRQ number."
@@ -102,7 +100,6 @@ do
     # Completely non-conforming
     FINAL_CRQ_NUMBER="$NEXT_CRQ_NUMBER"
     FINAL_CRQ_TITLE=$(echo "$FILENAME" | sed 's/\.md$//g' | sed 's/[_-]/ /g')
-    NEEDS_RENAME=true
     NEEDS_HEADER_UPDATE=true
     NEXT_CRQ_NUMBER=$((10#$NEXT_CRQ_NUMBER + 1)) # Increment for next assignment
     echo "Status: Completely non-conforming. Assigning new CRQ number and updating header."
@@ -111,7 +108,7 @@ do
   # Sanitize title for new filename
   SANITIZED_TITLE=$(echo "$FINAL_CRQ_TITLE" | sed 's/[^a-zA-Z0-9_ -]/ /g' | tr ' ' '-' | tr -s '-' | tr '[:upper:]' '[:lower:]')
   NEW_FILENAME="CRQ-${FINAL_CRQ_NUMBER}-${SANITIZED_TITLE}.md"
-  NEW_FILE_PATH="${CRQ_DIR}${NEW_FILENAME}"
+  
   DEST_FILE_PATH="${STANDARDIZED_DIR}${NEW_FILENAME}"
 
   if $DRY_RUN;
@@ -119,7 +116,7 @@ do
     echo "  Proposed New Filename: $NEW_FILENAME"
     if $NEEDS_HEADER_UPDATE;
     then
-      echo "  Proposed New Header: # CRQ-${FINAL_CRQ_NUMBER}-${SANITIZED_TITLE}.md\n\n## Change Request: ${FINAL_CRQ_TITLE}"
+      printf "  Proposed New Header: # CRQ-%s-%s.md\n\n## Change Request: %s\n" "$FINAL_CRQ_NUMBER" "$SANITIZED_TITLE" "$FINAL_CRQ_TITLE"
     fi
     echo "  Would move from $CRQ_FILE_PATH to $DEST_FILE_PATH"
   else
@@ -142,7 +139,7 @@ do
   fi
 done
 
-echo "\n--- Standardization Report ---"
+printf "\n--- Standardization Report ---\n"
 echo "Total files processed: $PROCESSED_COUNT"
 echo "Files standardized and moved: $STANDARDIZED_COUNT"
 echo "Files failed (should not happen with robust parsing): $FAILED_COUNT"

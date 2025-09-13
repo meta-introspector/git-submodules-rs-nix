@@ -7,4 +7,4 @@ edition = "2021"
 tokio = { version = "1", features = ["full"] }
 reqwest = { version = "0.12", features = ["json"] }
 url = "2.5.0" # Add url crate for URL parsing
-wikipedia_extractor = { path = "../../wikipedia_extractor" }
+wikipedia_extractor = { path = "../wikidata" }
