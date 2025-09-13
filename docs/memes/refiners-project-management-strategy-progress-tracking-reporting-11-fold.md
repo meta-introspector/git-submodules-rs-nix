@@ -24,7 +24,7 @@ Presenting data in clear and understandable charts, graphs, or tables to convey 
 
 ## 6. Variance Analysis
 
-Comparing actual progress, cost, and schedule against planned baselines to identify deviations and their root causes.
+Comparing actual progress against planned progress.
 
 ## 7. Forecasting
 
@@ -34,7 +34,7 @@ Predicting future project performance based on current trends and historical dat
 
 Communicating risk status and mitigation status.
 
-## 9. Issue Tracking
+## 9. Issue Tracking)
 
 Monitoring and reporting on project issues and their resolution.
 
