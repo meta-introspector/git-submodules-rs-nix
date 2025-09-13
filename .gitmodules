@@ -19,3 +19,6 @@
 [submodule "qa/templates/incident"]
 	path = qa/templates/incident
 	url = https://github.com/meta-introspector/qa-incident-template
+[submodule "qa/incidents/CRQ-003-incident"]
+	path = qa/incidents/CRQ-003-incident
+	url = ./qa/incidents/CRQ-003-incident
