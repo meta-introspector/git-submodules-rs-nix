@@ -6,6 +6,8 @@ Formalizing the ZOS "Vibe" as a Multi-faceted Conceptual Element
 ## 2. Problem Statement
 The concept of "vibe" within the ZOS framework, particularly as it relates to "Tool = Template + Prelude + Vibe," requires formal definition and integration into the broader ZOS architecture. This CRQ aims to establish a structured understanding of "vibe" as a quantifiable and manipulable element within ZOS.
 
+**Note on CRQ Definition:** For clarity within this framework, CRQ stands for "Change ReQuest" (Change Request), aligning with its usage in software engineering and project management for formalizing proposed changes.
+
 ## 3. Proposed Solution: The "Vibe" as a Composite Conceptual Element
 
 We propose to formalize the "vibe" as a composite conceptual element, defined by the following rule:
