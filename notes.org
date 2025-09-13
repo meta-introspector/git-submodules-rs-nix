@@ -1,11 +1,56 @@
 * org mode
+This file is in org mode, it allows for free thinking.
 ** emacs
+We edit it in emacs
 *** lisp
+Using emacs lisp
 **** lambda
 
-* crq/sop
+which is insprired from lambda calculus
+***** define expression
+
+where we define functions as expressions
+***** bind
+
+Bind values to variables
+***** apply
+
+Apply function to those variables
+***** reduce
+Reduce the size of the problem and divide and conquer.
+
+* zos crq/sop
+0 = the starting point of the empty set
 1 = vibe,vector,meme,idea,app,utility,function,need,service,good,unit,one.
 2 = pair, and : sop standard unchanging .alway there
 3 = If, disjoin, crq (2+1), adding one to the 2, optional, orthogonal. triple (statement predicate object)
 4 = compound 2*2
-5 = who,what,where,when,how 
+5 = who,what,where,when,how
+7 = model
+11 = master
+13 = change
+17 = almost there
+19 = the complete system
+
+Each of these priomorials is defined intrinsicly and applied to different idea as prime divisors.
+
+* Branches
+We have many crq and tools in our repo we collected.
+We are pushing modules out of this repo into atomic submodules and spinning them off into tools.
+
+Each crq or sop becomes its own branch, standalone atomic tool, and repo
+   
+** tuple branch
+*** tool template repo
+The tools are forked/built from a template repo to give a common git history
+
+*** tool prelude
+The template repo includes a prelude submodule.
+
+*** tool repo
+Contains submodules pointing here for crq branches to integrate.
+The tool repo can reference our crq branches back as need as a tuple of submodules.
+
+The submodule repo will allow for managing of this transition.
+we will create tools to do it and document them. using them here.
+We will manage normal git submodules and extend them with more advanced git references.
