@@ -167,7 +167,7 @@ members = [
     "url_extractor",
     "wikimedia-template-introspector",
     "wikimedia-template-introspector-core"
-]
+, "zos"]
 
 
 
