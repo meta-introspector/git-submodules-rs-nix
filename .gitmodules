@@ -22,3 +22,6 @@
 [submodule "qa/incidents/CRQ-003-incident"]
 	path = qa/incidents/CRQ-003-incident
 	url = ./qa/incidents/CRQ-003-incident
+[submodule "qa/incidents/CRQ-004-incident"]
+	path = qa/incidents/CRQ-004-incident
+	url = ./qa/incidents/CRQ-004-incident
