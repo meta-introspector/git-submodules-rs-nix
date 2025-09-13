@@ -16,3 +16,6 @@
 [submodule ".emacs.d/terlar-emacs-config"]
 	path = .emacs.d/terlar-emacs-config
 	url = https://github.com/terlar/emacs-config
+[submodule "qa/incidents/CRQ-001-incident"]
+	path = qa/incidents/CRQ-001-incident
+	url = https://github.com/meta-introspector/git-submodules-rs-nix.git
