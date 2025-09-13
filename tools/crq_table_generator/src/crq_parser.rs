@@ -19,6 +19,15 @@ pub enum NextStep {
     Unknown,
 }
 
+#[derive(Debug, PartialEq, Eq, Clone)]
+pub enum CoderabbitAIResponseType {
+    SkippedMessage,
+    RateLimitMessage,
+    ReviewSummary,
+    QuestionMessage,
+    Other,
+}
+
 pub struct CommsAnalysisResult {
     pub skipped_review_present: bool,
     pub response_count: usize,
@@ -26,6 +35,7 @@ pub struct CommsAnalysisResult {
     pub meaningful_response_present: bool,
     pub contains_issue_too_large: bool,
     pub contains_over_quota: bool,
+    pub individual_responses: Vec<(CoderabbitAIResponseType, String)>,
 }
 
 use regex::Regex;
@@ -47,7 +57,7 @@ fn extract_tokens(text: &str) -> Vec<String> {
     tokens.extend(words.clone());
 
     // Add n-grams
-    let n_gram_lengths = vec![2, 3, 5, 7];
+    let n_gram_lengths = vec![2, 3, 5, 7, 11, 13, 17, 19];
     for n in n_gram_lengths {
         if n > words.len() {
             continue;
