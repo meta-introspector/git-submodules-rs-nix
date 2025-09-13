@@ -271,15 +271,15 @@ impl ValueType {
         assert!(generated_code.contains("pub enum ValueType {"));
         assert!(generated_code.contains("Bit ,"));
         assert!(generated_code.contains("ThreeValue ,"));
-        assert!(generated_code.contains("FiveValue,"));
-        assert!(generated_code.contains("pub fn count(&self) -> u8 {"));
-        assert!(generated_code.contains("ValueType::Bit => 2"));
-        assert!(generated_code.contains("ValueType::ThreeValue => 3"));
-        assert!(generated_code.contains("ValueType::FiveValue => 5"));
-        assert!(generated_code.contains("pub fn zos_sequence() -> Vec<ValueType> {"));
-        assert!(generated_code.contains("ValueType::Bit"));
-        assert!(generated_code.contains("ValueType::ThreeValue"));
-        assert!(generated_code.contains("ValueType::FiveValue"));
+        assert!(generated_code.contains("FiveValue ,"));
+        assert!(generated_code.contains("pub fn count (& self) -> u8 {"));
+        assert!(generated_code.contains("ValueType :: Bit => 2u8"));
+        assert!(generated_code.contains("ValueType :: ThreeValue => 3u8"));
+        assert!(generated_code.contains("ValueType :: FiveValue => 5u8"));
+        assert!(generated_code.contains("pub fn zos_sequence () -> Vec < ValueType > {"));
+        assert!(generated_code.contains("ValueType :: Bit"));
+        assert!(generated_code.contains("ValueType :: ThreeValue"));
+        assert!(generated_code.contains("ValueType :: FiveValue"));
     }
 
     #[test]
@@ -289,8 +289,8 @@ impl ValueType {
         println!("Generated Code (Prime Value):\n{}", generated_code);
         assert!(generated_code.contains("pub enum ValueType {"));
         assert!(generated_code.contains("Bit ,"));
-        assert!(generated_code.contains("P7(u8),"));
-        assert!(generated_code.contains("ValueType::P7(val) => *val"));
-        assert!(generated_code.contains("ValueType::P7(7u8)")); // Changed from ValueType::P7(7) to ValueType::P7(7u8)
+        assert!(generated_code.contains("P7 (u8) ,"));
+        assert!(generated_code.contains("ValueType :: P7 (val) => * val"));
+        assert!(generated_code.contains("ValueType :: P7 (7u8)"));
     }
 }

@@ -1,0 +1,70 @@
+[
+  {
+    "extension": "svg",
+    "count": 2
+  },
+  {
+    "extension": "2",
+    "count": 2
+  },
+  {
+    "extension": "js",
+    "count": 2
+  },
+  {
+    "extension": "usehttppath",
+    "count": 2
+  },
+  {
+    "extension": "html",
+    "count": 68
+  },
+  {
+    "extension": "c",
+    "count": 66
+  },
+  {
+    "extension": "rs",
+    "count": 22
+  },
+  {
+    "extension": "sample",
+    "count": 2
+  },
+  {
+    "extension": "nix",
+    "count": 8
+  },
+  {
+    "extension": "sh",
+    "count": 8
+  },
+  {
+    "extension": "md",
+    "count": 148
+  },
+  {
+    "extension": "git",
+    "count": 60
+  },
+  {
+    "extension": "helper",
+    "count": 8
+  },
+  {
+    "extension": "yml",
+    "count": 6
+  },
+  {
+    "extension": "py",
+    "count": 2
+  },
+  {
+    "extension": "txt",
+    "count": 18
+  },
+  {
+    "extension": "h",
+    "count": 8
+  }
+]

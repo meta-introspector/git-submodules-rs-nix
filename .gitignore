@@ -7,3 +7,5 @@ result
 result/
 submodule_collector_strace.log
 *~
+.emacs.d/
+analysis_data/
