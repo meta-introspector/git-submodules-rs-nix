@@ -9,21 +9,16 @@ members = [
     "gitoxide/gix-actor",
     "gitoxide/gix-archive",
     "gitoxide/gix-attributes",
-    "gitoxide/gix-attributes/fuzz",
     "gitoxide/gix-bitmap",
     "gitoxide/gix-blame",
     "gitoxide/gix-chunk",
     "gitoxide/gix-command",
     "gitoxide/gix-commitgraph",
-    "gitoxide/gix-commitgraph/fuzz",
     "gitoxide/gix-config",
-    "gitoxide/gix-config/fuzz",
     "gitoxide/gix-config/tests",
     "gitoxide/gix-config-value",
-    "gitoxide/gix-config-value/fuzz",
     "gitoxide/gix-credentials",
     "gitoxide/gix-date",
-    "gitoxide/gix-date/fuzz",
     "gitoxide/gix-diff",
     "gitoxide/gix-diff/tests",
     "gitoxide/gix-dir",
@@ -44,11 +39,9 @@ members = [
     "gitoxide/gix-macros",
     "gitoxide/gix-mailmap",
     "gitoxide/gix-merge",
-    "gitoxide/gix-merge/fuzz",
     "gitoxide/gix-negotiate",
     "gitoxide/gix-note",
     "gitoxide/gix-object",
-    "gitoxide/gix-object/fuzz",
     "gitoxide/gix-odb",
     "gitoxide/gix-odb/tests",
     "gitoxide/gix-pack",
@@ -57,18 +50,14 @@ members = [
     "gitoxide/gix-pack/tests",
     "gitoxide/gix-path",
     "gitoxide/gix-pathspec",
-    "gitoxide/gix-pathspec/fuzz",
     "gitoxide/gix-prompt",
     "gitoxide/gix-protocol",
     "gitoxide/gix-quote",
     "gitoxide/gix-rebase",
     "gitoxide/gix-ref",
-    "gitoxide/gix-ref/fuzz",
     "gitoxide/gix-refspec",
-    "gitoxide/gix-refspec/fuzz",
     "gitoxide/gix-ref/tests",
     "gitoxide/gix-revision",
-    "gitoxide/gix-revision/fuzz",
     "gitoxide/gix-revwalk",
     "gitoxide/gix-sec",
     "gitoxide/gix-sequencer",
@@ -84,7 +73,6 @@ members = [
     "gitoxide/gix-traverse/tests",
     "gitoxide/gix-tui",
     "gitoxide/gix-url",
-    "gitoxide/gix-url/fuzz",
     "gitoxide/gix-utils",
     "gitoxide/gix-validate",
     "gitoxide/gix-worktree",
@@ -102,48 +90,7 @@ members = [
     
     
     "naersk/docparse",
-    "naersk/examples/checks",
-    "naersk/examples/cross-windows",
-    "naersk/examples/hello-world",
-    "naersk/examples/multiple-binaries",
-    "naersk/examples/multiple-binaries/crates/bar",
-    "naersk/examples/multiple-binaries/crates/foo",
-    "naersk/examples/multi-target",
-    "naersk/examples/static-musl",
-    "naersk/test/fast/cargo-config/fixtures",
-    "naersk/test/fast/cargo-wildcard/fixtures",
-    "naersk/test/fast/cargo-wildcard/fixtures/crates/crate-a",
-    "naersk/test/fast/cargo-wildcard/fixtures/crates/crate-b",
-    "naersk/test/fast/default-run/fixtures",
-    "naersk/test/fast/dummyfication/fixtures",
-    "naersk/test/fast/duplicated-cargo-lock-items/fixtures",
-    "naersk/test/fast/git-dep-by-branch/fixtures",
-    "naersk/test/fast/git-dep-by-branch-with-slash/fixtures/app",
-    "naersk/test/fast/git-dep-by-branch-with-slash-v4/fixtures/app",
-    "naersk/test/fast/git-dep-by-tag/fixtures",
-    "naersk/test/fast/git-dep-dup/fixtures",
-    "naersk/test/fast/git-dep-dup/fixtures/crate-a",
-    "naersk/test/fast/git-dep-dup/fixtures/crate-b",
-    "naersk/test/fast/git-dep-dup/fixtures/crate-c",
-    "naersk/test/fast/git-dep/fixtures",
-    "naersk/test/fast/git-single-repository-with-multiple-crates/fixtures/app",
-    "naersk/test/fast/git-symlink/fixtures/app",
-    "naersk/test/fast/openssl/fixtures",
-    "naersk/test/fast/post-install-hook/fixtures",
-    "naersk/test/fast/simple-dep/fixtures",
-    "naersk/test/fast/simple-dep-patched/fixtures",
-    "naersk/test/fast/simple-dep-patched/fixtures/my-rand",
-    "naersk/test/fast/symlinks/fixtures",
-    "naersk/test/fast/unused-patch/fixtures",
-    "naersk/test/fast/workspace-build-rs/fixtures",
-    "naersk/test/fast/workspace-build-rs/fixtures/crate-a",
-    "naersk/test/fast/workspace/fixtures",
-    "naersk/test/fast/workspace/fixtures/bar",
-    "naersk/test/fast/workspace/fixtures/foo",
-    "naersk/test/fast/workspace-patched/fixtures",
-    "naersk/test/fast/workspace-patched/fixtures/bar",
-    "naersk/test/fast/workspace-patched/fixtures/foo",
-    "naersk/test/fast/workspace-patched/fixtures/my-rand",
+    
     "project_file_lattice_builder",
     "report-analyzer-rs",
     
@@ -171,6 +118,90 @@ members = [
 
 
 
+
+ [workspace.lints.rust]
+# TODO: enable this
+# unused_qualifications = "warn"
+
+[workspace.lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+#
+# Reviewed and allowed lints
+needless_continue = "allow"
+enum_glob_use = "allow"  # x97
+missing_errors_doc = "allow"  # x1792
+missing_panics_doc = "allow"  # x447
+module_name_repetitions = "allow"  # x125
+must_use_candidate = "allow"  # x1696
+#
+# Lints that we may want to forbid in the future
+default_trait_access = "allow"  # x709
+doc_markdown = "allow"  # x552
+cast_possible_truncation = "allow"  # x216
+needless_pass_by_value = "allow"  # x205
+return_self_not_must_use = "allow"  # x204
+unreadable_literal = "allow"  # x169
+items_after_statements = "allow"  # x164
+single_match_else = "allow"  # x162
+too_many_lines = "allow"  # x161
+unnecessary_wraps = "allow"  # x110
+match_same_arms = "allow"  # x99
+cast_lossless = "allow"  # x91
+ignored_unit_patterns = "allow"  # x80
+used_underscore_binding = "allow"  # x75
+needless_raw_string_hashes = "allow"  # x75
+implicit_clone = "allow"  # x70
+manual_let_else = "allow"  # x64
+cast_precision_loss = "allow"  # x56
+trivially_copy_pass_by_ref = "allow"  # x43
+redundant_else = "allow"  # x42
+if_not_else = "allow"  # x37
+match_wildcard_for_single_variants = "allow"  # x35
+cast_sign_loss = "allow"  # x35
+similar_names = "allow"  # x32
+struct_excessive_bools = "allow"  # x29
+cast_possible_wrap = "allow"  # x26
+explicit_iter_loop = "allow"  # x24
+explicit_into_iter_loop = "allow"  # x22
+explicit_deref_methods = "allow"  # x22
+inconsistent_struct_constructor = "allow"  # x18
+range_plus_one = "allow"  # x17
+inefficient_to_string = "allow"  # x14
+from_iter_instead_of_collect = "allow"  # x13
+unused_self = "allow"  # x10
+many_single_char_names = "allow"  # x10
+manual_string_new = "allow"  # x10
+iter_not_returning_iterator = "allow"  # x10
+option_option = "allow"  # x9
+inline_always = "allow"  # x8
+manual_assert = "allow"  # x7
+iter_without_into_iter = "allow"  # x6
+copy_iterator = "allow"  # x6
+should_panic_without_expect = "allow"  # x5
+transmute_ptr_to_ptr = "allow"  # x4
+match_wild_err_arm = "allow"  # x4
+manual_is_variant_and = "allow"  # x4
+bool_to_int_with_if = "allow"  # x4
+struct_field_names = "allow"  # x3
+wildcard_imports = "allow"  # x2
+needless_for_each = "allow"  # x2
+naive_bytecount = "allow"  # x2
+mut_mut = "allow"  # x2
+match_bool = "allow"  # x2
+fn_params_excessive_bools = "allow"  # x2
+filter_map_next = "allow"  # x2
+checked_conversions = "allow"  # x2
+borrow_as_ptr = "allow"  # x2
+unnecessary_join = "allow"  # x1
+stable_sort_primitive = "allow"  # x1
+no_effect_underscore_binding = "allow"  # x1
+empty_docs = "allow"
+too_long_first_doc_paragraph = "allow"
+large_stack_arrays = "allow"
+
+# Fix one day
+result_large_err = "allow"
+large_enum_variant = "allow"
 
 [package]
 name = "submodules"
