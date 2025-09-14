@@ -58,3 +58,6 @@
 [submodule "sources/meta-introspector/memkb-mcp-rust"]
 	path = sources/meta-introspector/memkb-mcp-rust
 	url = https://github.com/meta-introspector/memkb-mcp-rust.git
+[submodule "sources/meta-introspector/mcp-discovery"]
+	path = sources/meta-introspector/mcp-discovery
+	url = https://github.com/meta-introspector/mcp-discovery.git
