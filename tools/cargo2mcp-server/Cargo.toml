@@ -1,0 +1,16 @@
+[package]
+name = "cargo2mcp-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { workspace = true, features = ["full"] }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+walkdir = { workspace = true }
+toml = { workspace = true }
+rust-mcp-sdk = { workspace = true }
+
+[lints]
+workspace = true
