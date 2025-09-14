@@ -61,3 +61,6 @@
 [submodule "sources/meta-introspector/mcp-discovery"]
 	path = sources/meta-introspector/mcp-discovery
 	url = https://github.com/meta-introspector/mcp-discovery.git
+[submodule "sources/meta-introspector/mcp-attr"]
+	path = sources/meta-introspector/mcp-attr
+	url = https://github.com/meta-introspector/mcp-attr.git
