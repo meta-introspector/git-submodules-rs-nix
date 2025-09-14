@@ -46,3 +46,6 @@
 [submodule "sources/meta-introspector/rust-mcp-filesystem"]
 	path = sources/meta-introspector/rust-mcp-filesystem
 	url = https://github.com/meta-introspector/rust-mcp-filesystem.git
+[submodule "sources/meta-introspector/turbomcp"]
+	path = sources/meta-introspector/turbomcp
+	url = https://github.com/meta-introspector/turbomcp.git
