@@ -1,0 +1,1 @@
+New Meta Meme: The number of holes is defined as the number of directories in the path length of a file meme.

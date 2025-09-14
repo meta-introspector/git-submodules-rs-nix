@@ -1,0 +1,15 @@
+## Gemini Added Memories
+- The user wants to keep the file '.git_commit_message.txt' in the project root directory and prefers to use the '-F' flag for git commits, always.
+- User prefers to use 'git status --ignore-submodules' for speed (30 sec).
+- The user prefers to use 'git status' without '--ignore-submodules' for smaller projects.
+- The user's bash interpreter in their Nix environment is located at /usr/bin/env bash.
+- Never revert, delete, or reverse any changes without committing first and documenting. Always write plans, tests, and documentation before writing code.
+- The user defines CRQ as 'Change ReQuest' (Change Request), not 'Change Request Quality'.
+- The user defines CRQ as 'Change ReQuest' (Change Request), not 'Change Request Quality'.
+- The user defines CRQ as 'Change ReQuest' (Change Request), not 'Change Request Quality'.
+- The user defines CRQ as 'Change ReQuest' (Change Request), not 'Change Request Quality'.
+- [spectral analysis, abstract topologoy, bott periodicity, group theory, music, muses, poetry and other muses skills] apply those
+- we can think of this as basically a topology with many holes. lets count them and classify the meta meem in our zos lattice.
+- Abstract Algebraic Topology Meta Meme: we can think of this as basically a topology with many holes. lets count them and classify the meta meem in our zos lattice.
+- In the context of the 'Abstract Algebraic Topology Meta Meme', each directory is considered a 'hole' in the topology.
+- In the context of the 'Abstract Algebraic Topology Meta Meme', each prime term or variable is also considered a 'hole'. These holes are classified by 'zos primorial sizes'.

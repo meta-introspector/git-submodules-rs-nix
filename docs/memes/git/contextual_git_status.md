@@ -1,0 +1,1 @@
+Small project? No need for `--ignore-submodules`. Keep your `git status` lean and focused.

@@ -1,0 +1,1 @@
+Behold the 'directory as hole' meme: each directory, a topological void in our meta-meme lattice.

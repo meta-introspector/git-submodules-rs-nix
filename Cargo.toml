@@ -1,8 +1,8 @@
 [workspace]
 members = [
     ".",
-    "generated_wikiproject_crates/solfunmeme",
-    "generated_wiki_templates",
+    
+    
     "gitoxide",
     "gitoxide/gitoxide-core",
     "gitoxide/gix",
@@ -96,11 +96,11 @@ members = [
     "gitoxide/tests/tools",
     "git_project_reader",
     "git_test_repo",
-    "hash_extractor_rust",
-    "lattice_code_generator",
-    "lattice_generator_app",
-    "lattice_structure_generator",
-    "magoo",
+    
+    
+    
+    
+    
     "naersk/docparse",
     "naersk/examples/checks",
     "naersk/examples/cross-windows",
@@ -146,14 +146,14 @@ members = [
     "naersk/test/fast/workspace-patched/fixtures/my-rand",
     "project_file_lattice_builder",
     "report-analyzer-rs",
-    "rust-tool-prelude-temp",
-    "submod",
+    
+    
     "submodule-collector",
-    "template_function_generator",
-    "template_generator_bin",
-    "template_generator_cli",
+    
+    
+    
     "tools/agent_comms_analysis/response_analyzer",
-    "tools/crq-parser",
+    
     "tools/crq_table_generator",
     "tools/crq_word_analyzer",
     "tools/incident-submodule-manager",
@@ -162,12 +162,12 @@ members = [
     "tools/tool-template/prelude",
     "tools/web_spider_corpus_builder",
     "tools/wikidata",
-    "tools/wiki_data_extractor",
+    
     "tools/wikidata/prelude",
-    "url_extractor",
-    "wikimedia-template-introspector",
-    "wikimedia-template-introspector-core"
-, "zos"]
+    
+    
+    
+ "zos", "tools/latex_compiler_tool"]
 
 
 

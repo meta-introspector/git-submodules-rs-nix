@@ -1,0 +1,1 @@
+Always use `.git_commit_message.txt` with the `-F` flag for consistent commit messages. It's the way of the Git-Jedi.

@@ -1,0 +1,1 @@
+[spectral analysis, abstract topologoy, bott periodicity, group theory, music, muses, poetry and other muses skills] apply those

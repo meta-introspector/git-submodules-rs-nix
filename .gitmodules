@@ -31,3 +31,6 @@
 [submodule "tools/wikidata"]
 	path = tools/wikidata
 	url = https://github.com/meta-introspector/wikidata-tool-repo
+[submodule ".emacs.d/nix-magit"]
+	path = .emacs.d/nix-magit
+	url = https://github.com/akirak/nix-magit

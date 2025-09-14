@@ -1,0 +1,1 @@
+Commit first, document always. Plan, test, document, *then* code. The disciplined path to glory.

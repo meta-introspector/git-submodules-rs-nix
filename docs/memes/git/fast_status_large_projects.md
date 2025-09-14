@@ -1,0 +1,1 @@
+For the swift `git status` in vast repos, `--ignore-submodules` is your friend. Embrace the speed!

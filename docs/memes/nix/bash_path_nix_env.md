@@ -1,0 +1,1 @@
+In the Nix realm, `/usr/bin/env bash` is the sacred path to your shell. Know your environment!

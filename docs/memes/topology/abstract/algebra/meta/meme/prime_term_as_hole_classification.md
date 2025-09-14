@@ -1,0 +1,1 @@
+Prime terms and variables, too, are holes! Classified by 'zos primorial sizes', they reveal the lattice's secrets.
