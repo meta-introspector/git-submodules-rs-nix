@@ -40,3 +40,6 @@
 [submodule "sources/meta-introspector/rmcp-agent"]
 	path = sources/meta-introspector/rmcp-agent
 	url = https://github.com/meta-introspector/rmcp-agent.git
+[submodule "sources/meta-introspector/ramparts"]
+	path = sources/meta-introspector/ramparts
+	url = https://github.com/meta-introspector/ramparts.git
