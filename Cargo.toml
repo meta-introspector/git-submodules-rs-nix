@@ -134,37 +134,44 @@ members = [
 anyhow = "1.0.82"
 async-stream = "0.3.6"
 async-trait = "0.1.80"
+async_zip = { version = "0.0", features = ["full"] }
 axum = { version = "0.8", features = ["ws", "tracing", "macros"] }
 chrono = { version = "0.4.41", features = ["serde"] }
 clap = { version = "4.5", features = ["derive", "env", "color"] }
 colored = "2.0"
 config = "0.14"
+derive_more = { version = "2.0", features = ["display", "from_str"] }
 dirs = "6.0"
 futures = "0.3.30"
 futures-util = "0.3.31"
 glob = "0.3"
+grep = "0.3"
 jsonrpc-core = "18.0"
 langchain-rust = "4.6.0"
 rand = "0.8"
 regex = "1.11.1"
 reqwest = { version = "0.12.5", default-features = false, features = ["json", "stream", "rustls-tls", "http2", "brotli", "gzip", "cookies", "multipart"] }
 rmcp = { version = "0.5.0", features = ["client", "server", "macros", "schemars", "reqwest", "transport-child-process", "transport-streamable-http-client", "transport-sse-client", "transport-worker", "transport-io", "transport-sse-server", "transport-streamable-http-server", "transport-streamable-http-server-session"] }
+rust-mcp-sdk = { version = "0.6.1", default-features = false, features = ["server", "macros", "2025_06_18"] }
 schemars = { version = "0.8", features = ["chrono", "uuid1"] }
 serde = { version = "1.0.197", features = ["derive", "rc"] }
 serde_json = { version = "1.0.115", features = ["raw_value", "preserve_order"] }
 serde_yaml = "0.9"
 sha2 = "0.10"
+similar = "=2.7"
 spinners = "4.1.1"
 tabled = "0.20"
 thiserror = "1.0.61"
 tokio = { version = "1.37.0", features = ["full"] }
 tokio-stream = "0.1"
+tokio-util = { version = "0.7", features = ["full"] }
 tower = { version = "0.5", features = ["full"] }
 tower-http = { version = "0.5", features = ["cors", "trace", "full"] }
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter", "std", "fmt", "json", "tracing-log"] }
 url = { version = "2.0", features = ["serde"] }
 uuid = { version = "1.9.1", features = ["v4", "serde", "v7"] }
+walkdir = "2.5"
 yara-x = "1.4"
 
 [workspace.lints.rust]
@@ -263,7 +270,6 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 toml = "0.8"
 clap = { version = "4.0", features = ["derive"] } # For command-line argument parsing
-walkdir = "2.5"
 regex = "1.0"
 
 [dev-dependencies]
