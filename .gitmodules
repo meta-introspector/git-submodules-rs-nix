@@ -64,3 +64,6 @@
 [submodule "sources/meta-introspector/mcp-attr"]
 	path = sources/meta-introspector/mcp-attr
 	url = https://github.com/meta-introspector/mcp-attr.git
+[submodule "sources/meta-introspector/MoCoPr"]
+	path = sources/meta-introspector/MoCoPr
+	url = https://github.com/meta-introspector/MoCoPr.git
