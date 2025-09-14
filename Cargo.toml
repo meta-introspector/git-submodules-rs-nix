@@ -114,6 +114,17 @@ members = [
     
     
     
+ "sources/meta-introspector/monomcp-rust",
+    "sources/meta-introspector/rmcp-agent",
+    "sources/meta-introspector/ramparts",
+    "sources/meta-introspector/rust-mcp-filesystem",
+    "sources/meta-introspector/turbomcp",
+    "sources/meta-introspector/rust-mcp-sdk",
+    "sources/meta-introspector/paiml-mcp-agent-toolkit",
+    "sources/meta-introspector/memkb-mcp-rust",
+    "sources/meta-introspector/mcp-discovery",
+    "sources/meta-introspector/mcp-attr",
+    "sources/meta-introspector/MoCoPr",
  "zos", "tools/latex_compiler_tool"]
 
 
