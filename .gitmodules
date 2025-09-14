@@ -34,3 +34,6 @@
 [submodule ".emacs.d/nix-magit"]
 	path = .emacs.d/nix-magit
 	url = https://github.com/akirak/nix-magit
+[submodule "sources/meta-introspector/monomcp-rust"]
+	path = sources/meta-introspector/monomcp-rust
+	url = https://github.com/meta-introspector/monomcp-rust
