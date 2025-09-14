@@ -130,7 +130,17 @@ members = [
 
 
 
- [workspace.lints.rust]
+ [workspace.dependencies]
+async-trait = "0.1.80"
+chrono = { version = "0.4.41", features = ["serde"] }
+futures-util = "0.3.30"
+serde_json = { version = "1.0.115", features = ["raw_value", "preserve_order"] }
+tokio = { version = "1.37.0", features = ["full"] }
+tokio-stream = "0.1"
+tracing = "0.1.41"
+uuid = { version = "1.9.1", features = ["v4", "serde"] }
+
+[workspace.lints.rust]
 # TODO: enable this
 # unused_qualifications = "warn"
 
