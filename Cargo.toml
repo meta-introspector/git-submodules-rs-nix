@@ -114,65 +114,205 @@ members = [
     
     
     
- "sources/meta-introspector/monomcp-rust",
-    "sources/meta-introspector/rmcp-agent",
-    "sources/meta-introspector/ramparts",
-    "sources/meta-introspector/rust-mcp-filesystem",
-    "sources/meta-introspector/turbomcp",
-    "sources/meta-introspector/rust-mcp-sdk",
-    "sources/meta-introspector/paiml-mcp-agent-toolkit",
-    "sources/meta-introspector/memkb-mcp-rust",
-    "sources/meta-introspector/mcp-discovery",
-    "sources/meta-introspector/mcp-attr",
-    "sources/meta-introspector/MoCoPr",
- "zos", "tools/latex_compiler_tool"]
+ #    "sources/meta-introspector/rmcp-agent",
+#    "sources/meta-introspector/ramparts",
+#    "sources/meta-introspector/rust-mcp-filesystem",
+#    "sources/meta-introspector/turbomcp",
+#    "sources/meta-introspector/rust-mcp-sdk/crates/rust-mcp-macros",
+#    "sources/meta-introspector/rust-mcp-sdk/crates/rust-mcp-sdk",
+#    "sources/meta-introspector/rust-mcp-sdk/crates/rust-mcp-transport",
+#    "sources/meta-introspector/paiml-mcp-agent-toolkit",
+#    "sources/meta-introspector/memkb-mcp-rust",
+#    "sources/meta-introspector/mcp-discovery",
+#    "sources/meta-introspector/mcp-attr/mcp-attr",
+#    "sources/meta-introspector/mcp-attr/mcp-attr-macros",
+#    "sources/meta-introspector/MoCoPr",
+#    "sources/meta-introspector/monomcp-rust/monomcp/monomcp-core",
+#    "sources/meta-introspector/monomcp-rust/monomcp/MoCoPr",
+#    "sources/meta-introspector/monomcp-rust/monomcp/agentic/crates/agentic-core",
+#    "sources/meta-introspector/monomcp-rust/monomcp/agentic/crates/agentic-tui",
+#    "sources/meta-introspector/monomcp-rust/monomcp/agentic/crates/starlit-gui",
+#    "sources/meta-introspector/monomcp-rust/monomcp/mcp-attr/codegen",
+#    "sources/meta-introspector/monomcp-rust/monomcp/mcp-attr/mcp-attr-macros",
+#    "sources/meta-introspector/monomcp-rust/monomcp/mcp-attr/mcp-attr",
+#    "sources/meta-introspector/monomcp-rust/monomcp/mcp-discovery",
+#    "sources/meta-introspector/monomcp-rust/monomcp/memkb-mcp-rust",
+#    "sources/meta-introspector/monomcp-rust/monomcp/paiml-mcp-agent-toolkit/server",
+#    "sources/meta-introspector/monomcp-rust/monomcp/ramparts", needs cranlift and crashes
+#    "sources/meta-introspector/monomcp-rust/monomcp/rmcp-agent",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-filesystem",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/crates/rust-mcp-macros",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/crates/rust-mcp-sdk",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/crates/rust-mcp-transport",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/examples/simple-mcp-client",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/examples/simple-mcp-client-core",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/examples/hello-world-mcp-server",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/examples/hello-world-mcp-server-core",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/examples/hello-world-server-streamable-http",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/examples/hello-world-server-core-streamable-http",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/examples/simple-mcp-client-sse",
+#    "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/examples/simple-mcp-client-core-sse",
+#    "sources/meta-introspector/monomcp-rust/monomcp/siumai",
+#    "sources/meta-introspector/monomcp-rust/monomcp/MoCoPr/mocopr-client",
+#    "sources/meta-introspector/monomcp-rust/monomcp/MoCoPr/mocopr-core",
+#    "sources/meta-introspector/monomcp-rust/monomcp/MoCoPr/mocopr-macros",
+#    "sources/meta-introspector/monomcp-rust/monomcp/MoCoPr/mocopr-rbac",
+#    "sources/meta-introspector/monomcp-rust/monomcp/MoCoPr/mocopr-server",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/crates/turbomcp",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/crates/turbomcp-cli",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/crates/turbomcp-client",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/crates/turbomcp-core",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/crates/turbomcp-macros",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/crates/turbomcp-protocol",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/crates/turbomcp-server",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/crates/turbomcp-transport",
+#    "sources/meta-introspector/monomcp-rust/monomcp/turbomcp/demo",
+#    "sources/meta-introspector/monomcp-rust/monomcp/vendor/hugging-face-dataset-validator-rust",
+#    "sources/meta-introspector/monomcp-rust/project_reporter", # Add project_reporter as a member
+#    "sources/meta-introspector/monomcp-rust/monomcp/models/diagram/mermaid/fuzzing",
+#    "sources/meta-introspector/monomcp-rust/monomcp/models/diagram/mermaid/hash_repro_crate",
+#    "sources/meta-introspector/monomcp-rust/monomcp/generative_modular_forms",
+ "zos",
+    "tools/latex_compiler_tool",
+    #"tools/cargo2mcp-server",
+    "cargo-mcp-wrapper",
+    "my-new-crate",
+]
 
 
 
 
  [workspace.dependencies]
-anyhow = "1.0.82"
-async-stream = "0.3.6"
-async-trait = "0.1.80"
-async_zip = { version = "0.0", features = ["full"] }
-axum = { version = "0.8", features = ["ws", "tracing", "macros"] }
-chrono = { version = "0.4.41", features = ["serde"] }
-clap = { version = "4.5", features = ["derive", "env", "color"] }
-colored = "2.0"
-config = "0.14"
-derive_more = { version = "2.0", features = ["display", "from_str"] }
-dirs = "6.0"
-futures = "0.3.30"
-futures-util = "0.3.31"
-glob = "0.3"
-grep = "0.3"
-jsonrpc-core = "18.0"
-langchain-rust = "4.6.0"
-rand = "0.8"
-regex = "1.11.1"
-reqwest = { version = "0.12.5", default-features = false, features = ["json", "stream", "rustls-tls", "http2", "brotli", "gzip", "cookies", "multipart"] }
-rmcp = { version = "0.5.0", features = ["client", "server", "macros", "schemars", "reqwest", "transport-child-process", "transport-streamable-http-client", "transport-sse-client", "transport-worker", "transport-io", "transport-sse-server", "transport-streamable-http-server", "transport-streamable-http-server-session"] }
-rust-mcp-sdk = { version = "0.6.1", default-features = false, features = ["server", "macros", "2025_06_18"] }
-schemars = { version = "0.8", features = ["chrono", "uuid1"] }
+# MoCoPr dependencies
 serde = { version = "1.0.197", features = ["derive", "rc"] }
 serde_json = { version = "1.0.115", features = ["raw_value", "preserve_order"] }
-serde_yaml = "0.9"
-sha2 = "0.10"
-similar = "=2.7"
-spinners = "4.1.1"
-tabled = "0.20"
-thiserror = "1.0.61"
 tokio = { version = "1.37.0", features = ["full"] }
-tokio-stream = "0.1"
-tokio-util = { version = "0.7", features = ["full"] }
-tower = { version = "0.5", features = ["full"] }
-tower-http = { version = "0.5", features = ["cors", "trace", "full"] }
+anyhow = "1.0.82"
+thiserror = "1.0.61"
+uuid = { version = "1.9.1", features = ["v4", "serde"] }
+chrono = { version = "0.4.41", features = ["serde"] }
+arrow-arith = { version = "56.1.0", path = "sources/meta-introspector/monomcp-rust/monomcp/vendor/arrow-rs/arrow-arith" }
+url = { version = "2.0", features = ["serde"] }
+async-trait = "0.1.80"
+futures = "0.3.30"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter", "std", "fmt", "json", "tracing-log"] }
-url = { version = "2.0", features = ["serde"] }
-uuid = { version = "1.9.1", features = ["v4", "serde", "v7"] }
-walkdir = "2.5"
-yara-x = "1.4"
+reqwest = { version = "0.12.5", default-features = false, features = ["json", "stream", "rustls-tls", "http2", "brotli", "gzip", "cookies", "multipart"] }
+tokio-tungstenite = { version = "0.23", features = ["native-tls"] }
+smallvec = { version = "1.15.1", features = ["serde"] }
+tower = { version = "0.5", features = ["full"] }
+tower-http = { version = "0.5", features = ["cors", "trace", "full"] }
+axum = { version = "0.8", features = ["ws", "tracing", "macros"] }
+tokio-process = "0.2"
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = { version = "2.0", features = ["full"] }
+tokio-test = "0.4"
+criterion = { version = "0.5", features = ["html_reports"] }
+rayon = "1.0"
+num_cpus = "1.16"
+
+# agentic dependencies
+crossterm = "0.27.0"
+figment = { version = "0.10.19", features = ["toml", "env"] }
+ratatui = { version = "0.26.2", features = ["crossterm"] }
+toml = "0.8.12"
+taffy = "0.4.0"
+directories = "5.0.1"
+strum = { version = "0.27", features = ["derive"] }
+strum_macros = "0.26.3"
+itertools = "0.13.0"
+lazy_static = "1.5.0"
+signal-hook = "0.3.17"
+textwrap = "0.16.1"
+unicode-width = "0.1.13"
+#chrono = { version = "0.4.38", features = ["serde"] }
+
+# rust-mcp-sdk dependencies
+# rust-mcp-sdk dependencies
+#rust-mcp-transport = { version = "0.5.0", path = "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/crates/rust-mcp-transport", default-features = false }
+#rust-mcp-sdk = { version = "0.5.0", path = "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/crates/rust-mcp-sdk", default-features = false }
+#rust-mcp-macros = { version = "0.5.1", path = "sources/meta-introspector/monomcp-rust/monomcp/rust-mcp-sdk/crates/rust-mcp-macros", default-features = false }
+#rust-mcp-schema = { version = "0.7", default-features = false }
+#tokio-stream = "0.1"
+#rustls = "0.23"
+#tokio-rustls = "0.26"
+#axum-server = { version = "0.7" }
+#bytes = "1.10"
+
+# turbomcp dependencies
+tokio-util = { version = "0.7", features = ["full"] }
+pin-project-lite = "0.2"
+walkdir = "2.4"
+rmp-serde = "1.1"
+sonic-rs = "0.3"
+simd-json = "0.13"
+bincode = "1.3"
+serde_cbor = "0.11"
+schemars = { version = "0.8", features = ["chrono", "uuid1"] }
+jsonschema = "0.17"
+hyper = { version = "1.0", features = ["full"] }
+hyper-util = { version = "0.1", features = ["full"] }
+
+miette = { version = "7.0", features = ["fancy"] }
+color-eyre = "0.6"
+tracing-opentelemetry = "0.22"
+opentelemetry = { version = "0.21", features = ["rt-tokio"] }
+opentelemetry-otlp = "0.14"
+metrics = "0.22"
+metrics-exporter-prometheus = "0.13"
+parking_lot = "0.12"
+dashmap = "5.5"
+crossbeam = "0.8"
+crossbeam-channel = "0.5"
+flume = "0.11"
+config = "0.14"
+clap = { version = "4.5", features = ["derive", "env", "color"] }
+clap_complete = "4.4"
+ring = "0.17"
+base64 = "0.22"
+
+jsonwebtoken = "9.2"
+time = { version = "0.3", features = ["serde", "macros"] }
+compact_str = { version = "0.7", features = ["serde"] }
+ahash = "0.8"
+once_cell = "1.19"
+arc-swap = "1.6"
+proptest = "1.4"
+wiremock = "0.5"
+pretty_assertions = "1.4"
+insta = { version = "1.34", features = ["json", "redactions"] }
+rand = "0.8"
+quickcheck = "1.0"
+quickcheck_macros = "1.0"
+mock_instant = "0.3"
+serial_test = "3.0"
+tempfile = "3.8"
+sha2 = "0.10"
+doc-comment = "0.3"
+
+# mcp-attr dependencies
+uri-template-ex = "0.0.2"
+
+# mcp-discovery dependencies
+regex = "1.11.1"
+
+# ramparts dependencies
+dirs = "6.0"
+futures-util = "0.3.31"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85.0"
+license = "MIT OR Apache-2.0"
+authors = ["Eric Evans <ciresnave@gmail.com>"]
+repository = "https://github.com/ciresnave/mocopr"
+homepage = "https://github.com/ciresnave/mocopr"
+documentation = "https://docs.rs/mocopr"
+description = "A comprehensive Rust implementation of the Model Context Protocol (MCP)"
+keywords = ["mcp", "model-context", "ai", "llm", "jsonrpc"]
+categories = ["api-bindings", "network-programming"]
 
 [workspace.lints.rust]
 # TODO: enable this
@@ -271,6 +411,7 @@ serde_json = "1.0"
 toml = "0.8"
 clap = { version = "4.0", features = ["derive"] } # For command-line argument parsing
 regex = "1.0"
+walkdir = "2.5"
 
 [dev-dependencies]
 iai-callgrind = "0.8"

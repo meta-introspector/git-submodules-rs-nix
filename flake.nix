@@ -82,6 +82,12 @@
             # naersk handles toolchain and Cargo.lock internally
           };
 
+          my-new-crate = naersk.lib.${system}.buildPackage {
+            pname = "my-new-crate";
+            version = "0.1.0"; # Matches Cargo.toml
+            src = ./.; # Source is the entire project root
+          };
+
           git-config-parser = pkgs.runCommand "git-config-parser-wrapper" {
             buildInputs = [ pkgs.coreutils ]; # For cp
             submodulesProject = self.packages.${system}.submodules-project;

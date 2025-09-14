@@ -67,3 +67,15 @@
 [submodule "sources/meta-introspector/MoCoPr"]
 	path = sources/meta-introspector/MoCoPr
 	url = https://github.com/meta-introspector/MoCoPr.git
+[submodule "sources/ironthree/cargoman"]
+	path = sources/ironthree/cargoman
+	url = https://github.com/ironthree/cargoman
+[submodule "sources/infinyon/cargo-cvm"]
+	path = sources/infinyon/cargo-cvm
+	url = https://github.com/infinyon/cargo-cvm
+[submodule "sources/simensgreen/cargo-incvec"]
+	path = sources/simensgreen/cargo-incvec
+	url = https://github.com/simensgreen/cargo-incvec
+[submodule "sources/LukeMathWalker/cargo-manifest"]
+	path = sources/LukeMathWalker/cargo-manifest
+	url = https://github.com/LukeMathWalker/cargo-manifest
