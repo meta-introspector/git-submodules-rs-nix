@@ -55,3 +55,6 @@
 [submodule "sources/meta-introspector/paiml-mcp-agent-toolkit"]
 	path = sources/meta-introspector/paiml-mcp-agent-toolkit
 	url = https://github.com/meta-introspector/paiml-mcp-agent-toolkit.git
+[submodule "sources/meta-introspector/memkb-mcp-rust"]
+	path = sources/meta-introspector/memkb-mcp-rust
+	url = https://github.com/meta-introspector/memkb-mcp-rust.git
