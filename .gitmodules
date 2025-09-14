@@ -49,3 +49,6 @@
 [submodule "sources/meta-introspector/turbomcp"]
 	path = sources/meta-introspector/turbomcp
 	url = https://github.com/meta-introspector/turbomcp.git
+[submodule "sources/meta-introspector/rust-mcp-sdk"]
+	path = sources/meta-introspector/rust-mcp-sdk
+	url = https://github.com/meta-introspector/rust-mcp-sdk.git
