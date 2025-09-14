@@ -52,3 +52,6 @@
 [submodule "sources/meta-introspector/rust-mcp-sdk"]
 	path = sources/meta-introspector/rust-mcp-sdk
 	url = https://github.com/meta-introspector/rust-mcp-sdk.git
+[submodule "sources/meta-introspector/paiml-mcp-agent-toolkit"]
+	path = sources/meta-introspector/paiml-mcp-agent-toolkit
+	url = https://github.com/meta-introspector/paiml-mcp-agent-toolkit.git
