@@ -22,6 +22,9 @@ ASCIINEMA_REC_FILE="$LOG_DIR/session_$TIMESTAMP.cast"
 
 # The script will wait here until asciinema finishes (i.e., the tmux session exits)
 
+# Launch Emacs
+/data/data/com.termux.nix/files/home/pick-up-nix/source/github/meta-introspector/submodules/.emacs.d/nix-magit/run2.sh
+
 # Initiate Crash Recovery Checks
 echo "--- Initiating Crash Recovery Checks ---" | tee -a "$LOG_DIR/crash_recovery_log_$TIMESTAMP.txt"
 echo "Git Status:" | tee -a "$LOG_DIR/crash_recovery_log_$TIMESTAMP.txt"
