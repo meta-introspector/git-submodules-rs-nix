@@ -19,12 +19,7 @@
 [submodule "qa/templates/incident"]
 	path = qa/templates/incident
 	url = https://github.com/meta-introspector/qa-incident-template
-[submodule "qa/incidents/CRQ-003-incident"]
-	path = qa/incidents/CRQ-003-incident
-	url = ./qa/incidents/CRQ-003-incident
-[submodule "qa/incidents/CRQ-004-incident"]
-	path = qa/incidents/CRQ-004-incident
-	url = ./qa/incidents/CRQ-004-incident
+
 [submodule "tools/tool-template"]
 	path = tools/tool-template
 	url = https://github.com/meta-introspector/tool-template-repo
