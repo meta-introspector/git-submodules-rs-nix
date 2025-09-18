@@ -1,9 +1,9 @@
-use rnix::{SyntaxNode, NodeOrToken, Parse};
-use rnix::parser::parse;
-use rnix::tokenizer;
-use rnix::ast::{Root, Expr};
-use rnix::ast::Expr::{AttrSet, LetIn, Lambda, List, Apply, Import};
-use rowan::ast::AstNode;
+use rnix::{SyntaxNode, Parse}; // Parse is the result type, not a constructor
+use rnix::tokenizer; // Needed for tokenizer::tokenize
+use rnix::parser::parse; // Needed for parse function
+use rnix::ast::{AstNode, Expr, AttrSet, LetIn, Lambda, List, Apply}; // Common AstNodes
+use rnix::ast::Import; // Import is a top-level AstNode, but might need its own import line
+use rnix::ast::traits::{HasEntry, HasParameters}; // Traits are in rnix::ast::traits
 use std::fs;
 
 #[derive(Debug, Default)]
@@ -34,16 +34,13 @@ pub fn analyze_nix_file(file_path: &str) -> Result<NixMetrics, Box<dyn std::erro
     let nix_code = fs::read_to_string(file_path)?;
 
     let tokens = tokenizer::tokenize(&nix_code);
-
     let (green_node, errors) = parse(tokens.into_iter());
 
-    let parse_result = Parse::new(green_node, errors);
-
-    if !parse_result.errors().is_empty() {
-        eprintln!("Parsing errors found in {}: {:?}\n", file_path, parse_result.errors());
+    if !errors.is_empty() {
+        eprintln!("Parsing errors found in {}: {:?}\n", file_path, errors);
     }
 
-    let root: SyntaxNode = parse_result.syntax();
+    let root: SyntaxNode = SyntaxNode::new_root(green_node);
 
     Ok(collect_metrics(&root))
 }
@@ -52,31 +49,32 @@ fn collect_metrics(node: &SyntaxNode) -> NixMetrics {
     let mut metrics = NixMetrics::default();
 
     for child in node.children() {
-        match Expr::cast(child) {
-            Some(Expr::AttrSet(attr_set)) => {
-                metrics.num_top_level_attrs = attr_set.attrs().count();
-            }
-            Some(Expr::LetIn(let_in)) => {
-                metrics.num_let_bindings = let_in.bindings().count();
-            }
-            Some(Expr::Lambda(lambda)) => {
-                metrics.num_function_args = lambda.args().count();
-            }
-            Some(Expr::List(list)) => {
-                metrics.num_list_elements = list.items().count();
-            }
-            Some(Expr::Apply(apply)) => {
-                if let Some(func) = apply.lambda().and_then(|n| n.as_node()) {
-                    if func.text().contains("callPackage") {
-                        metrics.num_call_packages += 1;
+        if let Some(expr) = Expr::cast(child.clone()) {
+            match expr {
+                Expr::AttrSet(attr_set) => {
+                    metrics.num_top_level_attrs = attr_set.entries().count();
+                }
+                Expr::LetIn(let_in) => {
+                    metrics.num_let_bindings = let_in.entries().count();
+                }
+                Expr::Lambda(lambda) => {
+                    metrics.num_function_args = lambda.params().count();
+                }
+                Expr::List(list) => {
+                    metrics.num_list_elements = list.items().count();
+                }
+                Expr::Apply(apply) => {
+                    if let Some(func_expr) = apply.function().and_then(|f| f.cast::<Expr>()) {
+                        if func_expr.syntax().text().contains("callPackage") {
+                            metrics.num_call_packages += 1;
+                        }
                     }
                 }
+                _ => {}
             }
-            Some(Expr::Import(import_expr)) => {
-                metrics.num_imports += 1;
-                metrics.dependencies.push(import_expr.path().map_or("unknown".to_string(), |p| p.to_string()));
-            }
-            _ => {}
+        } else if let Some(import_node) = Import::cast(child.clone()) {
+            metrics.num_imports += 1;
+            metrics.dependencies.push(import_node.path().map_or("unknown".to_string(), |p| p.to_string()));
         }
         metrics = metrics.merge(collect_metrics(&child));
     }
