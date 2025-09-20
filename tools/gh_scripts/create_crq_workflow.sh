@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$(dirname "$0")"/../../scripts/lib_git_submodule.sh
+
 CRQ_FILE="$1"
 
 if [ -z "$CRQ_FILE" ]; then
@@ -35,14 +37,7 @@ BRANCH_NAME="feature/crq-${CRQ_NUMBER}-${BRANCH_TITLE}"
 echo "Processing CRQ: CRQ-${CRQ_NUMBER} - ${CRQ_TITLE}"
 echo "Branch Name: ${BRANCH_NAME}"
 
-# Check if branch already exists
-if git rev-parse --verify "$BRANCH_NAME" >/dev/null 2>&1; then
-  echo "Branch '$BRANCH_NAME' already exists. Checking it out."
-  git checkout "$BRANCH_NAME"
-else
-  echo "Creating new branch '$BRANCH_NAME'."
-  git checkout -b "$BRANCH_NAME"
-fi
+ensure_branch_exists_and_checkout "$BRANCH_NAME"
 
 # Create task.md content
 TASK_MD_CONTENT="# Task for CRQ-${CRQ_NUMBER}: ${CRQ_TITLE}
@@ -60,11 +55,11 @@ Refer to ${CRQ_FILE} for full details.
 echo "$TASK_MD_CONTENT" > task.md
 
 # Commit task.md
-git add task.md
-git commit -m "feat: Add task.md for CRQ-${CRQ_NUMBER}: ${CRQ_TITLE}"
+git_add_all # Assuming task.md is the only change to add
+git_commit_message "feat: Add task.md for CRQ-${CRQ_NUMBER}: ${CRQ_TITLE}"
 
 # Push the new branch to remote
-git push --set-upstream origin "$BRANCH_NAME"
+push_to_origin_branch "$BRANCH_NAME"
 
 # Create temporary file for PR body
 PR_BODY_FILE=$(mktemp)
