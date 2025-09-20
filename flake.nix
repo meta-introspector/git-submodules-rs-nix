@@ -2,10 +2,10 @@
   description = "A flake for testing git submodules";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    flake-utils.url = "github:numtide/flake-utils";
-    naersk.url = "github:nix-community/naersk"; # Add naersk as an input
+    nixpkgs.url = "github:meta-introspector/nixpkgs?ref=feature/CRQ-016-nixify";
+    rust-overlay.url = "github:meta-introspector/rust-overlay?ref=feature/CRQ-016-nixify";
+    flake-utils.url = "github:meta-introspector/flake-utils?ref=feature/CRQ-016-nixify";
+    naersk.url = "github:meta-introspector/naersk?ref=feature/CRQ-016-nixify"; # Add naersk as an input
     naersk.inputs.nixpkgs.follows = "nixpkgs"; # Ensure naersk uses our nixpkgs
   };
 
@@ -19,7 +19,7 @@
         toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
         # Fetch the entire repository including submodules from remote
         repo = pkgs.fetchgit {
-          url = "https://github.com/jmikedupont2/git-submodules-rs-nix.git";
+          url = "github:meta-introspector/git-submodules-rs-nix?ref=feature/CRQ-016-nixify";
           rev = "b3da08e8e7fe2bb97b97bce5451d6750081256f8"; # Use the specific revision
           deepClone = true; # Ensure submodules are fetched
           sha256 = "clsEx25K+hTb8vXbcSzP39l6bRwjS5X3OBYNaeDm10c=";
