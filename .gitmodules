@@ -74,3 +74,6 @@
 [submodule "sources/LukeMathWalker/cargo-manifest"]
 	path = sources/LukeMathWalker/cargo-manifest
 	url = https://github.com/LukeMathWalker/cargo-manifest
+[submodule ".emacs.d/straight.el"]
+	path = .emacs.d/straight.el
+	url = https://github.com/radian-software/straight.el
